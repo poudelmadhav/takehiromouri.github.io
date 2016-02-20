@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.takehiromouri.com/</loc>
+    <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post1.html</loc>
+      
+        <lastmod>2013-06-05T00:00:00-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post2.html</loc>
+      
+        <lastmod>2013-05-27T00:00:00-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post3.html</loc>
+      
+        <lastmod>2013-04-02T00:00:00-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post4.html</loc>
+      
+        <lastmod>2013-03-15T00:00:00-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post5.html</loc>
+      
+        <lastmod>2013-02-10T00:00:00-05:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post6.html</loc>
+      
+        <lastmod>2013-01-24T00:00:00-05:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://www.takehiromouri.com/post7.html</loc>
+      
+        <lastmod>2012-11-04T00:00:00-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+  
+  <url>
+    <loc>http://www.takehiromouri.com/404</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.takehiromouri.com/atom.xml</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.takehiromouri.com/blog</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.takehiromouri.com/</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.takehiromouri.com/projects</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.takehiromouri.com/sitemap.xml</loc>
+    
+      <lastmod>2016-02-20T13:35:29-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+</urlset>
