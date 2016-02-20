@@ -19,6 +19,15 @@ body {
   /*padding: 0 0 60px;*/
 }
 
+.about_ul {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.img-circle {
+  height: 200px;
+}
+
 /* Navbar
 -------------------------------------------------- */
 
