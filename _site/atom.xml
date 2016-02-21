@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-    <title type="text" xml:lang="en">Takehiro Mouri</title>
-    <link type="application/atom+xml" rel="self" href="http://www.takehiromouri.com/atom.xml"/>
+    <title type="text" xml:lang="en">Takehiro Mouri - Ruby on Rails Developer</title>
+    <link type="application/atom+xml" rel="self" href="https://takehiromouri.github.io/atom.xml"/>
   
-  <link href="http://www.takehiromouri.com/"/>
-  <id>http://www.takehiromouri.com/</id>
-  <updated>2016-02-20T22:14:21Z</updated>
+  <link href="https://takehiromouri.github.io/"/>
+  <id>https://takehiromouri.github.io/</id>
+  <updated>2016-02-21T02:08:27Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -15,8 +15,8 @@
   
   <entry>
   <title type="text">5 Tips to Write Better Ruby Code for Beginners</title>
-  <link rel="alternate" type="text/html" href="http://www.takehiromouri.com/5-tips-to-write-better-ruby-code-for-beginners.html" />
-  <id>http://www.takehiromouri.com/5-tips-to-write-better-ruby-code-for-beginners</id>
+  <link rel="alternate" type="text/html" href="https://takehiromouri.github.io/5-tips-to-write-better-ruby-code-for-beginners.html" />
+  <id>https://takehiromouri.github.io/5-tips-to-write-better-ruby-code-for-beginners</id>
   <published>2016-02-20T00:00:00Z</published>
   <updated>2016-02-20T00:00:00Z</updated>
   <content type="html"><![CDATA[ <p>
