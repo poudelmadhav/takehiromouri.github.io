@@ -2,11 +2,6 @@
 layout: post
 title: 5 Tips to Write Better Ruby Code for Beginners
 ---
-
-<p>
-  Learning how to code in Ruby was one of the best choices I've made. The language is programmer friendly by nature and it's relatively easy to pick up, even if you are completely new to programming.
-</p>
-
 <p>
   Now that you've learned the basic syntax and gained a basic understanding of ruby works, you want to learn how to write better and more concise code. Here are 5 quick tips picked up from a fantastic book called <a href="https://read.amazon.com/kp/embed?asin=B004MMEJ36&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_JqsYwb0AAT5XE" target="_blank">Eloquent Ruby</a> that you can start using right now to make your code more readable.
 </p>
@@ -35,7 +30,7 @@ end
 {% endhighlight %}
 
 <p>
-  This makes perfect sense, except we can make it much shorter with ternary oeprators. Ternary operators work like such:
+  This makes perfect sense, except we can make it much shorter with ternary operators. Ternary operators work like such:
 </p>
 
 {% highlight ruby %}
@@ -166,3 +161,5 @@ puts "I'm a male" if current_user.is_male?
 <p>
   Just implementing these simple techniques will make you a better ruby programmer. Ruby offers many elegant solutions like these and learning them are really worth the time.
 </p>
+
+<p>Happy coding :)</p>
