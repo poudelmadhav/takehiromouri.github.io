@@ -8,11 +8,11 @@ paginate: 5
 gems: [jekyll-paginate]
 port: 8000
 safe: true
-baseurl: http://takehiromouri.com
+baseurl: http://takehiromouri.com/
 
 
 # edit here to achieve your personal greatness
-url: http://takehiromouri.com
+url: https://takehiromouri.github.io/
 title: Takehiro Mouri - Ruby on Rails Developer
 author: Takehiro Mouri
 description: Ruby on Rails developer. I'm passionate about writing and teaching code.
