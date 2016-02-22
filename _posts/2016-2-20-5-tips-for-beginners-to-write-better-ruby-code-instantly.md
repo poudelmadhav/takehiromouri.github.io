@@ -167,20 +167,27 @@ end
 </p>
 
 <h2>One Line Statements</h2>
+
+<p>Let's say we have code written like this:</p>
+
+{% highlight ruby %}
+if current_user.is_male?
+  puts "I'm a male"
+end
+{% endhighlight %}
+
+<p>Instead of using multiple lines, we can rewrite this code in one line like this:</p>
+
+{% highlight ruby %}
+puts "I'm a male" if current_user.is_male?
+{% endhighlight %}
+
 <p>
-  Let's go back to the <code>.is_male?</code> code. We can make the code even better by condensing the code into one line like this:
+  This applies to things like <code>unless</code> as well:
 </p>
 
 {% highlight ruby %}
 puts "I'm a woman" unless current_user.is_male?
-{% endhighlight %}
-
-<p>
-  We can do the same with <code>if</code> statements as well:
-</p>
-
-{% highlight ruby %}
-puts "I'm a male" if current_user.is_male?
 {% endhighlight %}
 
 <p>

@@ -6,7 +6,7 @@
   
   <link href="https://takehiromouri.github.io/"/>
   <id>https://takehiromouri.github.io/</id>
-  <updated>2016-02-22T00:30:19Z</updated>
+  <updated>2016-02-22T00:42:45Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -254,19 +254,26 @@
 <h2>One Line Statements</h2>
 
 
+
+
+<p>Let's say we have code written like this:</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span>
+  <span class="nb">puts</span> <span class="s2">&quot;I&#39;m a male&quot;</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>Instead of using multiple lines, we can rewrite this code in one line like this:</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I&#39;m a male&quot;</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
+
 <p>
-  Let's go back to the <code>.is_male?</code> code. We can make the code even better by condensing the code into one line like this:
+  This applies to things like <code>unless</code> as well:
 </p>
 
 
 <p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I&#39;m a woman&quot;</span> <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
-
-<p>
-  We can do the same with <code>if</code> statements as well:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I&#39;m a male&quot;</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
 
 <p>
   When writing these one-liners, make sure that the line isn't too long. The point here is to make the code more readable, so you don't want to defeat the purpose by cramming a bunch of code into one line just because you can.
