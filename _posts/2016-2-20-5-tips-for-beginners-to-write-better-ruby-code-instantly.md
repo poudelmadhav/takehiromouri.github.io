@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5 Tips to Write Better Ruby Code for Beginners
+title: 5 Tips for Beginners to Write Better Ruby Code Instantly
 ---
 <p>
   Now that you've learned the basic syntax and gained a basic understanding of ruby works, you want to learn how to write better and more concise code. Here are 5 quick tips picked up from a fantastic book called <a href="https://read.amazon.com/kp/embed?asin=B004MMEJ36&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_JqsYwb0AAT5XE" target="_blank">Eloquent Ruby</a> that you can start using right now to make your code more readable.
@@ -78,9 +78,40 @@ current_user.is_male?
   You can see here that <code>current_user.is_male?</code> makes a little more sense than <code>current_user.is_male</code>, since we are essentially asking a yes or no question.
 </p>
 
+<p>
+  Now let's take a look at the <code>!</code> operator in methods. The <code>!</code> operator when used in a method infers that the method is potentially dangerous and could change the state of the variable that the method is called upon. Here's an example:
+</p>
+
+{% highlight ruby %}
+a = [1, 2, 3, 4]
+
+print a.reverse
+
+print a
+# returns [1, 2, 3, 4]
+{% endhighlight %}
+
+
+<p>
+  What we see here is that we expect <code>.reverse</code> to actually modify the array <code>a</code>. However, we see that it doesn't modify the actual array, but it just returns the reversed array. Now what if we change the <code>reverse</code> method to <code>reverse!</code>?
+</p>
+
+{% highlight ruby %}
+a = [1, 2, 3, 4]
+
+print a.reverse!
+
+print a
+# returns [4, 3, 2, 1]
+{% endhighlight %}
+
+<p>
+  Now we see that <code>reverse!</code> has actually modified the actual array. It's important to know the differences between methods with and without the bang operator.
+</p>
+
 <h2>Using Unless and Until</h2>
 <p>
-  Sometimes you find yourself in a situation like this:
+  When you want to write logic when something is <i>not</i> true, you might be tempted to write code like this:
 </p>
 
 {% highlight ruby %}
@@ -98,7 +129,7 @@ end
 {% endhighlight %}
 
 <p>
-  Instead, it is often times more intuitive to use <code>unless</code>.
+  Instead of combining <code>if</code> and <code>!</code>, it is often times more intuitive to use <code>unless</code>.
 </p>
 
 {% highlight ruby %}
@@ -108,7 +139,7 @@ end
 {% endhighlight %}
 
 <p>
-  This sounds closer to English and is far more readable.
+  This sounds closer to English and is far more readable. Instead of "If current user is not a male, do this", it takes a little less mental energy if I were to say "Unless current user is a male, do this".
 </p>
 
 <p>

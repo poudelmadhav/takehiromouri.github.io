@@ -9,7 +9,7 @@
     <link rel="favicon" href="static/img/favicon.ico">
 
     
-      <title>Blog</title>
+      <title>Using case statements to declare variables</title>
     
 	
     <!-- Bootstrap -->
@@ -63,39 +63,85 @@
 </nav>
 
     <div class="container">
-<h3>Archive</h3>
-  <div class="panel panel-default">
-    <div class="panel-body">
-		
-			<div class="row">
-				 <div class="col-sm-4 col-md-4 col-lg-4">
-					 <h5 style="text-align: right">
-					 	February 21, 2016
-					 </h5>
-				 </div>
-				 <div class="col-sm-8 col-md-8 col-lg-8">
-					 <h5 style="text-align: left">
-					 	<strong><a href="Using-case-statements-to-declare-variables.html">Using case statements to declare variables</a></strong>
-					 </h5>
-				 </div>
-			</div>
-	    
-			<div class="row">
-				 <div class="col-sm-4 col-md-4 col-lg-4">
-					 <h5 style="text-align: right">
-					 	February 20, 2016
-					 </h5>
-				 </div>
-				 <div class="col-sm-8 col-md-8 col-lg-8">
-					 <h5 style="text-align: left">
-					 	<strong><a href="5-tips-for-beginners-to-write-better-ruby-code-instantly.html">5 Tips for Beginners to Write Better Ruby Code Instantly</a></strong>
-					 </h5>
-				 </div>
-			</div>
-	    
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/Using-case-statements-to-declare-variables.html">Using case statements to declare variables</a></strong>
+		</h3>
 	</div>
-  </div>
+	<div class="blog-title">
+		<h4>
+		February 21, 2016
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>
+  If you wanted to assign different variables depending on several different situations, you might be tempted to do so like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Air 13.3&#39;</span>
+  <span class="n">price</span> <span class="o">=</span> <span class="mi">999</span><span class="o">.</span><span class="mo">00</span>
+<span class="k">elsif</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 13.3&#39;</span>
+  <span class="n">price</span> <span class="o">=</span> <span class="mi">1169</span><span class="o">.</span><span class="mo">00</span>
+<span class="k">elsif</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 15&#39;</span>
+  <span class="n">price</span> <span class="o">=</span> <span class="mi">1849</span><span class="o">.</span><span class="mo">00</span>
+<span class="k">else</span>
+  <span class="n">price</span> <span class="o">=</span> <span class="s2">&quot;Could not find model&quot;</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>
+  In these situations, ruby offers a more elegant solution using <strong>case statements</strong> to do the same thing. It turns out that you can use case statements to declare variables like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">price</span> <span class="o">=</span> <span class="k">case</span> <span class="n">model</span>
+        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Air 13.3&#39;</span> <span class="k">then</span> <span class="mi">999</span><span class="o">.</span><span class="mo">00</span>
+        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 13.3&#39;</span> <span class="k">then</span> <span class="mi">1169</span><span class="o">.</span><span class="mo">00</span>
+        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 15&#39;</span> <span class="k">then</span> <span class="mi">1849</span><span class="o">.</span><span class="mo">00</span>
+        <span class="k">else</span> <span class="s2">&quot;Could not find model&quot;</span>
+        <span class="k">end</span></code></pre></figure></p>
+
+<p>
+  This is a quick little trick that you could use in this common situation.
+</p>
+
+
+
+
+<p>
+  Happy coding! :)
+</p>
+
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 20, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="5-tips-for-beginners-to-write-better-ruby-code-instantly.html">5 Tips for Beginners to Write Better Ruby Code Instantly</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
 </div>
+
 
   </div>
   <!-- Footer -->
