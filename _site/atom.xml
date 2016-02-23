@@ -6,13 +6,148 @@
   
   <link href="https://takehiromouri.github.io/"/>
   <id>https://takehiromouri.github.io/</id>
-  <updated>2016-02-22T00:42:45Z</updated>
+  <updated>2016-02-22T20:14:50Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
   </author>
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Useful techniques for arrays and strings in ruby</title>
+  <link rel="alternate" type="text/html" href="https://takehiromouri.github.io/Useful-techniques-for-arrays-and-strings-in-ruby.html" />
+  <id>https://takehiromouri.github.io/Useful-techniques-for-arrays-and-strings-in-ruby</id>
+  <published>2016-02-22T00:00:00Z</published>
+  <updated>2016-02-22T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  Ruby comes with several useful techniques that you can use to manipulate various data types. In this post, I'll go over some particularly useful techniques that can be used with arrays and strings in Ruby.
+</p>
+
+
+
+
+<h3>Using <code>%w{ }</code> to declare an array of strings</h3>
+
+
+
+
+<p>
+  You can declare an array of strings like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;pony&#39;</span><span class="o">]</span>
+<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+
+<p>
+  There's another way you can declare strings that don't contain strings, which you may find a to be pretty convenient:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
+<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+
+<p>
+  It takes less time to type but results in the same thing.
+</p>
+
+
+
+
+<h3>Using <code>find_index</code></h3>
+
+
+
+
+<p>
+  To find the index of an object in array, the <code>find_index</code> method comes in handy:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">words</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
+<span class="n">words</span><span class="o">.</span><span class="n">find_index</span><span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;pony&quot;</span><span class="p">}</span>
+<span class="c1"># returns 4</span></code></pre></figure></p>
+
+<h3>The Inject Method</h3>
+
+
+
+
+<p>
+  When you want to get the sum of all numbers in an array, the <code>inject</code> method allows you to do so in an elegant way:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
+<span class="c1"># returns 15</span></code></pre></figure></p>
+
+<p>
+  <code>inject</code> is like an <code>each</code> loop, in that it iterates through each element of the array and performs something with each element. <code>inject</code> takes in 2 arguments. The first argument (<code>sum</code>) is the result of the expression performed in the block. In this case, it is the result of <code>sum += num</code>. The second argument (<code>num</code>) is the element in the array in which the iteration is currently on. For example, the first time around, <code>num</code> will equal <code>1</code>, the second time around, <code>num</code> will equal <code>2</code>.
+</p>
+
+
+
+
+<p>
+  <code>sum</code> by default is initialized at <code>0</code>, but you can specify another value like such:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="mi">100</span><span class="p">){</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
+<span class="c1"># returns 115</span></code></pre></figure></p>
+
+<p>
+  in which case it returns <code>115</code>.
+</p>
+
+
+
+
+<h3>No more escapes with <code>%q{ }</code></h3>
+
+
+
+
+<p>
+  Isn't it annoying when you have to do something like this?
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">string_full_of_escapes</span> <span class="o">=</span> <span class="s1">&#39;I&amp;#39;m in love with Ruby. &quot;Ruby isn&amp;#39;t just a language, it&amp;#39;s a lifestyle&quot;. &#39;</span></code></pre></figure></p>
+
+<p>
+  Instead, you could simple do this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">no_escape_string</span> <span class="o">=</span> <span class="sx">%q{I&#39;m in love with Ruby. &quot;Ruby isn&#39;t just a language, it&#39;s a lifestyle.&quot;}</span></code></pre></figure></p>
+
+<p>
+  The <code>q</code> stands for quotes, and it invokes single quotes for you. Beware that <code>#{}</code> won't work with single quotes, and only works with double quotes. In that case, you want to use <code>Q%{ }</code> instead:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Takehiro&quot;</span>
+<span class="sx">%Q{My name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">}</span>
+<span class="c1"># &quot;My name is Takehiro&quot;</span></code></pre></figure></p>
+
+<hr>
+
+
+
+
+<p>
+  Happy coding!
+</p>
+
+
+
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Using case statements to declare variables</title>
   <link rel="alternate" type="text/html" href="https://takehiromouri.github.io/Using-case-statements-to-declare-variables.html" />

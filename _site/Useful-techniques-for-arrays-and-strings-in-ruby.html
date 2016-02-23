@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Takehiro Mouri" />
+    <meta name="description" content="Ruby on Rails developer. I'm passionate about writing and teaching code.">
+    <link rel="favicon" href="static/img/favicon.ico">
+
+    
+      <title>Useful techniques for arrays and strings in ruby</title>
+    
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69391421-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/Useful-techniques-for-arrays-and-strings-in-ruby.html">Useful techniques for arrays and strings in ruby</a></strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		February 22, 2016
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>
+  Ruby comes with several useful techniques that you can use to manipulate various data types. In this post, I'll go over some particularly useful techniques that can be used with arrays and strings in Ruby.
+</p>
+
+
+
+
+<h3>Using <code>%w{ }</code> to declare an array of strings</h3>
+
+
+
+
+<p>
+  You can declare an array of strings like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;pony&#39;</span><span class="o">]</span>
+<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+
+<p>
+  There's another way you can declare strings that don't contain strings, which you may find a to be pretty convenient:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
+<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+
+<p>
+  It takes less time to type but results in the same thing.
+</p>
+
+
+
+
+<h3>Using <code>find_index</code></h3>
+
+
+
+
+<p>
+  To find the index of an object in array, the <code>find_index</code> method comes in handy:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">words</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
+<span class="n">words</span><span class="o">.</span><span class="n">find_index</span><span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;pony&quot;</span><span class="p">}</span>
+<span class="c1"># returns 4</span></code></pre></figure></p>
+
+<h3>The Inject Method</h3>
+
+
+
+
+<p>
+  When you want to get the sum of all numbers in an array, the <code>inject</code> method allows you to do so in an elegant way:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
+<span class="c1"># returns 15</span></code></pre></figure></p>
+
+<p>
+  <code>inject</code> is like an <code>each</code> loop, in that it iterates through each element of the array and performs something with each element. <code>inject</code> takes in 2 arguments. The first argument (<code>sum</code>) is the result of the expression performed in the block. In this case, it is the result of <code>sum += num</code>. The second argument (<code>num</code>) is the element in the array in which the iteration is currently on. For example, the first time around, <code>num</code> will equal <code>1</code>, the second time around, <code>num</code> will equal <code>2</code>.
+</p>
+
+
+
+
+<p>
+  <code>sum</code> by default is initialized at <code>0</code>, but you can specify another value like such:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="mi">100</span><span class="p">){</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
+<span class="c1"># returns 115</span></code></pre></figure></p>
+
+<p>
+  in which case it returns <code>115</code>.
+</p>
+
+
+
+
+<h3>No more escapes with <code>%q{ }</code></h3>
+
+
+
+
+<p>
+  Isn't it annoying when you have to do something like this?
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">string_full_of_escapes</span> <span class="o">=</span> <span class="s1">&#39;I&amp;#39;m in love with Ruby. &quot;Ruby isn&amp;#39;t just a language, it&amp;#39;s a lifestyle&quot;. &#39;</span></code></pre></figure></p>
+
+<p>
+  Instead, you could simple do this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">no_escape_string</span> <span class="o">=</span> <span class="sx">%q{I&#39;m in love with Ruby. &quot;Ruby isn&#39;t just a language, it&#39;s a lifestyle.&quot;}</span></code></pre></figure></p>
+
+<p>
+  The <code>q</code> stands for quotes, and it invokes single quotes for you. Beware that <code>#{}</code> won't work with single quotes, and only works with double quotes. In that case, you want to use <code>Q%{ }</code> instead:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Takehiro&quot;</span>
+<span class="sx">%Q{My name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">}</span>
+<span class="c1"># &quot;My name is Takehiro&quot;</span></code></pre></figure></p>
+
+<hr>
+
+
+
+
+<p>
+  Happy coding!
+</p>
+
+
+
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 21, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="Using-case-statements-to-declare-variables.html">Using case statements to declare variables</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 20, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="5-tips-for-beginners-to-write-better-ruby-code-instantly.html">5 Tips for Beginners to Write Better Ruby Code Instantly</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© Takehiro Mouri 2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
