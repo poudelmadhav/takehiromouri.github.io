@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Takehiro Mouri" />
+    <meta name="description" content="Ruby on Rails developer. I'm passionate about writing and teaching code.">
+    <link rel="favicon" href="static/img/favicon.ico">
+
+    
+      <title>Caching in Rails - How ETags and fresh_when work</title>
+    
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74317216-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/Rails-Caching-How-ETags-and-fresh_when-work.html">Caching in Rails - How ETags and fresh_when work</a></strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		February 25, 2016
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>
+  To make web pages load faster, caching is super important. Let's first look at what caching means:
+</p>
+
+
+
+
+<p>
+  <q><i>Caching means to store content generated during the request-response cycle and to reuse it when responding to similar requests</i></q> (from <a href="http://edgeguides.rubyonrails.org/caching_with_rails.html" target="_blank">Rails Guides</a>)
+</p>
+
+
+
+
+<p>
+  Let's break down what happens when a request is sent to a server to figure out what this all means:
+</p>
+
+
+
+
+<h4>First Request</h4>
+
+
+<ol>
+  <li>A request is sent to server</li>
+  <li>Renders entire response body</li>
+  <li>Generates an ETag by doing an MD% hash on entire response body (looks like below)</li>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;ETag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">MD5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="n">body</span><span class="p">)</span></code></pre></figure>
+
+  <li>
+    Rails sends back the response body as well as the ETag as a header field to the client (usually a browser)
+  </li>
+  <li>The client caches the response and stores the ETag</li>
+</ol>
+
+
+
+
+<h4>Second Request</h4>
+
+
+<ol>
+  <li>We request the same page again</li>
+  <li>The client sends the stored ETag as a <code>If-None-Match</code>header</li>
+  <li>Renders entire reponse body</li>
+  <li>Generates an ETag in the same way as previous</li>
+  <li>Compares ETag that was sent as header to the one that was just generated</li>
+  <li>If it matched, then the body is not sent to the client and instead sent a <code>304</code> not modified status</li>
+</ol>
+
+
+
+
+<p>
+  Basically if the page isn't modified, the browser reads the page from the cache.
+</p>
+
+
+
+
+<h3>So what are ETags?</h3>
+
+
+<p>
+  <strong>ETags</strong> stands for <strong>Entity Tags</strong>. It's essentially a key to see if the page has changed or not.
+</p>
+
+
+
+
+<p>
+  From a client side perspective, this is awesome because now we don't have to re-download everything, everything is stored in the cache.
+</p>
+
+
+
+
+<p>
+  But from a server side perspective, it still has to generate the ETag every single time there is a request. Processing the entire response body everytime we want to generate an ETag is not the most efficient.
+</p>
+
+
+
+
+<h3>Introducing <code>fresh_when</code></h3>
+
+
+<p>
+  You can set your custom ETags with <code>fresh_when</code>. For example, let's say you have a blog application and you want to tell rails to update the cache when an article has been updated or created. You can simply add <code>fresh_when</code> in your controller action. In this case, we're going to add it in the <code>show</code> action.
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
+  <span class="vi">@article</span> <span class="o">=</span> <span class="no">Article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">fresh_when</span><span class="p">(</span><span class="vi">@article</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>
+  What this does is generate an ETag for us like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Etag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">MD5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="vi">@article</span><span class="o">.</span><span class="n">cache_key</span><span class="p">)</span></code></pre></figure></p>
+
+<p>
+  The <code>cache_key</code> is what keeps track of if something has updated. For instance, <code>@article.cache_key</code> would look something like <code>'article/23-2016-224150000'</code>.
+</p>
+
+
+
+
+<p>
+  The <code>cache_key</code> is generated in this format: <code>&lt;model name&gt;/&lt;id&gt;-&lt;updated_at&gt;</code>.
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+  According to <a href="https://robots.thoughtbot.com/introduction-to-conditional-http-caching-with-rails" target="_blank">a simple test that thoughtbot ran</a>, performance improved by 94% (33ms to 2ms) just by including one <code>fresh_when</code> in a controller action. That's an amazing improvement.
+</p>
+
+
+
+
+<p>
+  As we can see <code>fresh_when</code> is a powerful tool that we can use to improve our caching. Instead of processing the whole response body, we can focus on tracking if a resource is stale or fresh by using <code>fresh_when</code>.
+</p>
+
+
+
+
+<p>
+  Happy coding!
+</p>
+
+
+
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 24, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="How-to-write-better-ruby-methods-The-Compopsed-Method-Technique.html">How to Write Better Ruby Methods - The Composed Method Technique</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 22, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="Useful-techniques-for-arrays-and-strings-in-ruby.html">Useful techniques for arrays and strings in ruby</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	February 21, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="Using-case-statements-to-declare-variables.html">Using case statements to declare variables</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© Takehiro Mouri 2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
