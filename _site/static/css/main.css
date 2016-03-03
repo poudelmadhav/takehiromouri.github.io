@@ -30,6 +30,23 @@ body {
   height: 200px;
 }
 
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  color: gray;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+}
+
+figure {
+  margin: 50px 0px;
+}
+
+
+
 /* Navbar
 -------------------------------------------------- */
 

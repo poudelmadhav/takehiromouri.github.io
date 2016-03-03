@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://takehiromouri.github.io/</loc>
-    <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+    <loc>https://www.takehiromouri.com/</loc>
+    <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
     <url>
-      <loc>https://takehiromouri.github.io/Rails-Caching-How-ETags-and-fresh_when-work.html</loc>
+      <loc>https://www.takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html</loc>
+      
+        <lastmod>2016-03-03T00:00:00-05:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://www.takehiromouri.com/Rails-Caching-How-ETags-and-fresh_when-work.html</loc>
       
         <lastmod>2016-02-25T00:00:00-05:00</lastmod>
       
@@ -21,7 +34,7 @@
     </url>
   
     <url>
-      <loc>https://takehiromouri.github.io/How-to-write-better-ruby-methods-The-Composed-Method-Technique.html</loc>
+      <loc>https://www.takehiromouri.com/How-to-write-better-ruby-methods-The-Composed-Method-Technique.html</loc>
       
         <lastmod>2016-02-24T00:00:00-05:00</lastmod>
       
@@ -34,7 +47,7 @@
     </url>
   
     <url>
-      <loc>https://takehiromouri.github.io/Useful-techniques-for-arrays-and-strings-in-ruby.html</loc>
+      <loc>https://www.takehiromouri.com/Useful-techniques-for-arrays-and-strings-in-ruby.html</loc>
       
         <lastmod>2016-02-22T00:00:00-05:00</lastmod>
       
@@ -47,7 +60,7 @@
     </url>
   
     <url>
-      <loc>https://takehiromouri.github.io/Using-case-statements-to-declare-variables.html</loc>
+      <loc>https://www.takehiromouri.com/Using-case-statements-to-declare-variables.html</loc>
       
         <lastmod>2016-02-21T00:00:00-05:00</lastmod>
       
@@ -60,7 +73,7 @@
     </url>
   
     <url>
-      <loc>https://takehiromouri.github.io/5-tips-for-beginners-to-write-better-ruby-code-instantly.html</loc>
+      <loc>https://www.takehiromouri.com/5-tips-for-beginners-to-write-better-ruby-code-instantly.html</loc>
       
         <lastmod>2016-02-20T00:00:00-05:00</lastmod>
       
@@ -74,22 +87,9 @@
   
   
   <url>
-    <loc>https://takehiromouri.github.io/404</loc>
+    <loc>https://www.takehiromouri.com/404</loc>
     
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
-    
-    
-      <changefreq>monthly</changefreq>
-    
-    
-      <priority>0.3</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://takehiromouri.github.io/about</loc>
-    
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -100,22 +100,9 @@
   </url>
   
   <url>
-    <loc>https://takehiromouri.github.io/atom.xml</loc>
+    <loc>https://www.takehiromouri.com/about</loc>
     
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
-    
-    
-      <changefreq>monthly</changefreq>
-    
-    
-      <priority>0.3</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://takehiromouri.github.io/blog</loc>
-    
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -126,22 +113,9 @@
   </url>
   
   <url>
-    <loc>https://takehiromouri.github.io/</loc>
+    <loc>https://www.takehiromouri.com/atom.xml</loc>
     
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
-    
-    
-      <changefreq>monthly</changefreq>
-    
-    
-      <priority>0.3</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://takehiromouri.github.io/now</loc>
-    
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -152,9 +126,9 @@
   </url>
   
   <url>
-    <loc>https://takehiromouri.github.io/projects</loc>
+    <loc>https://www.takehiromouri.com/blog</loc>
     
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -165,9 +139,48 @@
   </url>
   
   <url>
-    <loc>https://takehiromouri.github.io/sitemap.xml</loc>
+    <loc>https://www.takehiromouri.com/</loc>
     
-      <lastmod>2016-03-01T17:23:10-05:00</lastmod>
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.takehiromouri.com/now</loc>
+    
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.takehiromouri.com/projects</loc>
+    
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.takehiromouri.com/sitemap.xml</loc>
+    
+      <lastmod>2016-03-03T12:21:47-05:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
