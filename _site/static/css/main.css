@@ -45,6 +45,14 @@ figure {
   margin: 50px 0px;
 }
 
+#mc_embed_signup {
+  font: inherit !important;
+}
+
+#mc_embed_signup input.email {
+  font-family: inherit !important;
+}
+
 
 
 /* Navbar
