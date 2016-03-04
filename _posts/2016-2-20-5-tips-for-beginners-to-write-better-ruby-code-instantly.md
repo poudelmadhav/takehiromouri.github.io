@@ -22,10 +22,10 @@ title: 5 Tips for Beginners to Write Better Ruby Code Instantly
 </p>
 
 {% highlight ruby %}
-if current_user.gender == "male"
-  true
+if current_user.age >= 21
+  order_beer
 else
-  false
+  order_soft_drink
 end
 {% endhighlight %}
 
@@ -42,7 +42,7 @@ if_this_is_a_true_value ? then_the_result_is_this : else_it_is_this
 </p>
 
 {% highlight ruby %}
-current_user.gender == "male" ? true : false
+current_user.age >= 21 ? order_beer : order_soft_drink
 {% endhighlight %}
 
 <h2>Method Name Conventions: Using ? and !</h2>

@@ -113,10 +113,10 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span>
-  <span class="kp">true</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
+  <span class="n">order_beer</span>
 <span class="k">else</span>
-  <span class="kp">false</span>
+  <span class="n">order_soft_drink</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>
@@ -131,7 +131,7 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">current_user</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span></code></pre></figure></p>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">current_user</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="o">?</span> <span class="n">order_beer</span> <span class="p">:</span> <span class="n">order_soft_drink</span></code></pre></figure></p>
 
 <h2>Method Name Conventions: Using ? and !</h2>
 
