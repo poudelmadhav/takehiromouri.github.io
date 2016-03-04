@@ -6,7 +6,7 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-03-04T13:53:03Z</updated>
+  <updated>2016-03-04T13:55:37Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -904,7 +904,7 @@
 <p><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
 
 <p>
-  You can see here that <code>current_user.is_legal_to_drink?</code> makes a little more sense than <code>current_user.is_legal_to_drink</code>, since we are essentially asking a yes or no question.
+  You can see here that <code>current_user.is_legal?</code> makes a little more sense than <code>current_user.is_legal</code>, since we are essentially asking a yes or no question.
 </p>
 
 

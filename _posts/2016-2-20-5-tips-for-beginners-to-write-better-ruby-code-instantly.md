@@ -75,7 +75,7 @@ current_user.is_legal?
 {% endhighlight %}
 
 <p>
-  You can see here that <code>current_user.is_legal_to_drink?</code> makes a little more sense than <code>current_user.is_legal_to_drink</code>, since we are essentially asking a yes or no question.
+  You can see here that <code>current_user.is_legal?</code> makes a little more sense than <code>current_user.is_legal</code>, since we are essentially asking a yes or no question.
 </p>
 
 <p>
