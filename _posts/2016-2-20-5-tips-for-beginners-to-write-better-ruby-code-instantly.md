@@ -13,7 +13,7 @@ title: 5 Tips for Beginners to Write Better Ruby Code Instantly
 </p>
 
 <p>
-  On the other hand, you don't want to get in the mindset of, <i>"Oh, this code is pretty messy but I'm going to add comments so it'll be fine."</i> Adding comments to make badly written code somewhat comprehensible is an extremely bad reason for adding comments. In general, your ruby code should be clear enough so that it explains itself. Hence the quote from the book, <i>"Good code is like a good joke: it needs no explanation."</i> <span style="font-size:12px;">(pg. 8 - Eloquent Ruby)</span>
+  On the other hand, you don't want to get in the mindset of, <i>"Oh, this code is pretty messy but I'm going to add comments so it'll be fine."</i> Adding comments to make badly written code somewhat comprehensible is an extremely bad reason for adding comments. <strong>In general, your ruby code should be clear enough so that it explains itself.</strong> Hence the quote from the book, <strong><i>"Good code is like a good joke: it needs no explanation."</i></strong> <span style="font-size:12px;">(pg. 8 - Eloquent Ruby)</span>
 </p>
 
 <h2>Ternary Operators</h2>
@@ -45,7 +45,7 @@ if_this_is_a_true_value ? then_the_result_is_this : else_it_is_this
 current_user.subscribed? ? render_already_subscribed_message : current_user.subscribe!
 {% endhighlight %}
 
-<h2>Method Name Conventions: Using ? and !</h2>
+<h2>Method Name Conventions: Using <code>?</code> and <code>!</code></h2>
 <p>
   When you are using ruby, you may have noticed that a lot of the built in methods use <code>?</code> and <code>!</code>. For example <code>.nil?</code> or <code>.flatten!</code>. <code>?</code> and <code>!</code> aren't special symbols in method names, but rather just naming conventions in the ruby community.
 </p>
@@ -109,7 +109,7 @@ print a
   Now we see that <code>reverse!</code> has actually modified the actual array. It's important to know the differences between methods with and without the bang operator.
 </p>
 
-<h2>Using Unless and Until</h2>
+<h2>Using <code>unless</code> and <code>until</code></h2>
 <p>
   When you want to write logic when something is <i>not</i> true, you might be tempted to write code like this:
 </p>
