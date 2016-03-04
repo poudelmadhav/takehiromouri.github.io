@@ -113,10 +113,10 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-  <span class="n">order_beer</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">subscribed?</span>
+  <span class="n">render_already_subscribed_message</span>
 <span class="k">else</span>
-  <span class="n">order_soft_drink</span>
+  <span class="n">current_user</span><span class="o">.</span><span class="n">subscribe!</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>
@@ -131,7 +131,7 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">current_user</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="o">?</span> <span class="n">order_beer</span> <span class="p">:</span> <span class="n">order_soft_drink</span></code></pre></figure></p>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">current_user</span><span class="o">.</span><span class="n">subscribed?</span> <span class="p">?</span> <span class="n">render_already_subscribed_message</span> <span class="p">:</span> <span class="n">current_user</span><span class="o">.</span><span class="n">subscribe!</span></code></pre></figure></p>
 
 <h2>Method Name Conventions: Using ? and !</h2>
 
@@ -148,25 +148,25 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_male</span>
-  <span class="n">current_user</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_legal</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
 <span class="k">end</span></p>
 
-<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_male</span></code></pre></figure></p>
+<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal</span></code></pre></figure></p>
 
 <p>
   You want to write add a <code>?</code> to the method like this:
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_male?</span>
-  <span class="n">current_user</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_legal?</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
 <span class="k">end</span></p>
 
-<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
+<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
 
 <p>
-  You can see here that <code>current_user.is_male?</code> makes a little more sense than <code>current_user.is_male</code>, since we are essentially asking a yes or no question.
+  You can see here that <code>current_user.is_legal_to_drink?</code> makes a little more sense than <code>current_user.is_legal_to_drink</code>, since we are essentially asking a yes or no question.
 </p>
 
 
@@ -211,15 +211,15 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="o">!</span><span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I&#39;m a woman&quot;</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="o">!</span><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
+  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>or alternatively</p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="ow">not</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I&#39;m a woman&quot;</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="ow">not</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
+  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>
@@ -227,12 +227,12 @@
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I&#39;m a woman&quot;</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
+  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>
-  This sounds closer to English and is far more readable. Instead of "If current user is not a male, do this", it takes a little less mental energy if I were to say "Unless current user is a male, do this".
+  This sounds closer to English and is far more readable. Instead of "If current user is not legal, do this", it takes a little less mental energy if I were to say "Unless current user is legal, do this".
 </p>
 
 
@@ -271,21 +271,21 @@
 <p>Let's say we have code written like this:</p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I&#39;m a male&quot;</span>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
+  <span class="nb">puts</span> <span class="s2">&quot;I can buy alcohol&quot;</span>
 <span class="k">end</span></code></pre></figure></p>
 
 <p>Instead of using multiple lines, we can rewrite this code in one line like this:</p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I&#39;m a male&quot;</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I can buy alcohol&quot;</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
 
 <p>
   This applies to things like <code>unless</code> as well:
 </p>
 
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I&#39;m a woman&quot;</span> <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_male?</span></code></pre></figure></p>
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span> <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
 
 <p>
   When writing these one-liners, make sure that the line isn't too long. The point here is to make the code more readable, so you don't want to defeat the purpose by cramming a bunch of code into one line just because you can.

@@ -22,10 +22,10 @@ title: 5 Tips for Beginners to Write Better Ruby Code Instantly
 </p>
 
 {% highlight ruby %}
-if current_user.age >= 21
-  order_beer
+if current_user.subscribed?
+  render_already_subscribed_message
 else
-  order_soft_drink
+  current_user.subscribe!
 end
 {% endhighlight %}
 
@@ -42,7 +42,7 @@ if_this_is_a_true_value ? then_the_result_is_this : else_it_is_this
 </p>
 
 {% highlight ruby %}
-current_user.age >= 21 ? order_beer : order_soft_drink
+current_user.subscribed? ? render_already_subscribed_message : current_user.subscribe!
 {% endhighlight %}
 
 <h2>Method Name Conventions: Using ? and !</h2>
@@ -55,11 +55,11 @@ current_user.age >= 21 ? order_beer : order_soft_drink
 </p>
 
 {% highlight ruby %}
-def is_male
-  current_user.gender == "male" ? true : false
+def is_legal
+  self.age >= 21
 end
 
-current_user.is_male
+current_user.is_legal
 {% endhighlight %}
 
 <p>
@@ -67,15 +67,15 @@ current_user.is_male
 </p>
 
 {% highlight ruby %}
-def is_male?
-  current_user.gender == "male" ? true : false
+def is_legal?
+  self.age >= 21
 end
 
-current_user.is_male?
+current_user.is_legal?
 {% endhighlight %}
 
 <p>
-  You can see here that <code>current_user.is_male?</code> makes a little more sense than <code>current_user.is_male</code>, since we are essentially asking a yes or no question.
+  You can see here that <code>current_user.is_legal_to_drink?</code> makes a little more sense than <code>current_user.is_legal_to_drink</code>, since we are essentially asking a yes or no question.
 </p>
 
 <p>
@@ -115,16 +115,16 @@ print a
 </p>
 
 {% highlight ruby %}
-if !current_user.is_male?
-  puts "I'm a woman"
+if !current_user.is_legal?
+  puts "I can't buy alcohol"
 end
 {% endhighlight %}
 
 <p>or alternatively</p>
 
 {% highlight ruby %}
-if not current_user.is_male?
-  puts "I'm a woman"
+if not current_user.is_legal?
+  puts "I can't buy alcohol"
 end
 {% endhighlight %}
 
@@ -133,13 +133,13 @@ end
 </p>
 
 {% highlight ruby %}
-unless current_user.is_male?
-  puts "I'm a woman"
+unless current_user.is_legal?
+  puts "I can't buy alcohol"
 end
 {% endhighlight %}
 
 <p>
-  This sounds closer to English and is far more readable. Instead of "If current user is not a male, do this", it takes a little less mental energy if I were to say "Unless current user is a male, do this".
+  This sounds closer to English and is far more readable. Instead of "If current user is not legal, do this", it takes a little less mental energy if I were to say "Unless current user is legal, do this".
 </p>
 
 <p>
@@ -171,15 +171,15 @@ end
 <p>Let's say we have code written like this:</p>
 
 {% highlight ruby %}
-if current_user.is_male?
-  puts "I'm a male"
+if current_user.is_legal?
+  puts "I can buy alcohol"
 end
 {% endhighlight %}
 
 <p>Instead of using multiple lines, we can rewrite this code in one line like this:</p>
 
 {% highlight ruby %}
-puts "I'm a male" if current_user.is_male?
+puts "I can buy alcohol" if current_user.is_legal?
 {% endhighlight %}
 
 <p>
@@ -187,7 +187,7 @@ puts "I'm a male" if current_user.is_male?
 </p>
 
 {% highlight ruby %}
-puts "I'm a woman" unless current_user.is_male?
+puts "I can't buy alcohol" unless current_user.is_legal?
 {% endhighlight %}
 
 <p>
