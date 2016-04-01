@@ -6,13 +6,730 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-03-16T01:01:44Z</updated>
+  <updated>2016-04-01T03:51:58Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
   </author>
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Counting Objects? Introducing counter_cache</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Counting-Objects-Introducing-counter_cache.html" />
+  <id>https://www.takehiromouri.com/Counting-Objects?-Introducing-counter_cache</id>
+  <published>2016-04-01T00:00:00Z</published>
+  <updated>2016-04-01T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has.</p>
+
+<p>For instance, let&rsquo;s say we have a <code>User</code> model and a <code>Comment</code> model where <code>User</code> <code>has_many :comments</code> and <code>Comment</code> <code>belongs_to :user</code>.</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">has_many</span> <span class="ss">:comments</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>What do we do when we want to count the number of comments that a <code>User</code> has? A lot of times, it would look something like this:</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">user</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">count</span></code></pre></figure></p>
+
+<p>This is all fine, if you&rsquo;re only using it once in a while.
+But say we need to query the database often for the number of comments that a <code>User</code> has.</p>
+
+<p>Let&rsquo;s see what the performance is like when using <code>user.comments.count</code>.
+In an example app I created with the same models as above, I tested this out with a <code>user</code> with 225 <code>comments</code>:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:015:0&gt; User.first.comments.count
+  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.<em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT 1
+   <span class="o">(</span>0.4ms<span class="o">)</span>  SELECT COUNT<span class="o">(</span></em><span class="o">)</span> FROM <span class="s2">&quot;comments&quot;</span> WHERE <span class="s2">&quot;comments&quot;</span>.<span class="s2">&quot;user_id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]]</span>
+<span class="o">=</span>&gt; 225</code></pre></figure></p>
+
+<p>Notice how the <code>comments</code> are queried here as well. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.</p>
+
+<p>Here&rsquo;s how we can improve this:</p>
+
+<h2>Introducing <code>counter_cache</code></h2>
+
+
+<p>Instead of querying <code>comments</code>, we can just store the number of comments a user has in the <code>User</code> table and get the number of comments without any SQL query.</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddCommentCounterToUser</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:comments_count</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">default</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>So here, we have created a <code>comments_counter</code> column to store the number of comments inside.</p>
+
+<p>After we migrate the file, we want to update <code>comments_count</code> for each <code>User</code>.</p>
+
+<p>We can do this by creating a rake file, or manually running code in the console:</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">User</span><span class="o">.</span><span class="n">reset_column_information</span>
+<span class="no">User</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+  <span class="no">User</span><span class="o">.</span><span class="n">update_counters</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="ss">comments_count</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">length</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p><code>reset_column_information</code> resets all the cached information about columns, and will be reloaded before the code below runs.</p>
+
+<p>Now after we run this code, we see that the correct number of comments are stored in the user object:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:016:0&gt; User.first
+  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.* FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT <span class="nv">1</span>
+<span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 225&gt;</span></code></pre></figure></p>
+
+<p>One more thing we need to do:</p>
+
+<p>In the <code>Comment</code> model, we need to add <code>counter_cache</code>.</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">counter_cache</span><span class="p">:</span> <span class="kp">true</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>This will increment and decrement the <code>comments_count</code> column in <code>User</code> whenever a comment is created or deleted.</p>
+
+<p>Let&rsquo;s test this out:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:018:0&gt; User.first.comments.create<span class="o">(</span>text: <span class="s2">&quot;Test&quot;</span><span class="o">)</span>
+  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.<em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT 1
+   <span class="o">(</span>0.2ms<span class="o">)</span>  begin transaction
+  SQL <span class="o">(</span>1.0ms<span class="o">)</span>  INSERT INTO <span class="s2">&quot;comments&quot;</span> <span class="o">(</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;user_id&quot;</span>, <span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;updated_at&quot;</span><span class="o">)</span> VALUES <span class="o">(</span>?, ?, ?, ?<span class="o">)</span>  <span class="o">[[</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;Test&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;2016-04-01 07:48:25.434601&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;updated_at&quot;</span>, <span class="s2">&quot;2016-04-01 07:48:25.434601&quot;</span><span class="o">]]</span>
+  SQL <span class="o">(</span>0.1ms<span class="o">)</span>  UPDATE <span class="s2">&quot;users&quot;</span> SET <span class="s2">&quot;comments_count&quot;</span> <span class="o">=</span> COALESCE<span class="o">(</span><span class="s2">&quot;comments_count&quot;</span>, 0<span class="o">)</span> + <span class="m">1</span> WHERE <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;id&quot;</span>, 1<span class="o">]]</span>
+   <span class="o">(</span>1.3ms<span class="o">)</span>  commit <span class="nv">transaction</span>
+<span class="o">=</span>&gt; <span class="c">#&lt;Comment id: 225, user_id: 1, text: &quot;Test&quot;, created_at: &quot;2016-04-01 07:48:25&quot;, updated_at: &quot;2016-04-01 07:48:25&quot;&gt;</span>
+irb<span class="o">(</span>main<span class="o">)</span>:019:0&gt; User.first
+  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.</em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT <span class="nv">1</span>
+<span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 226&gt;</span></code></pre></figure></p>
+
+<p>Awesome! As you can see, it properly incremented the <code>comments_count</code>.</p>
+
+<p>Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of a bunch of SQL queries, using <code>counter_cache</code>, you can access the same information by just accessing a field in the <code>User</code> table.</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">My Approach to Achieving Deep Focus</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Entering-Zen-Mode.html" />
+  <id>https://www.takehiromouri.com/Entering-Zen-Mode</id>
+  <published>2016-03-30T00:00:00Z</published>
+  <updated>2016-03-30T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>If you ever want to get good at something, I’m a firm believer of going into what I like to call <strong>“Zen Mode”</strong>. Some people call it <i>“the state of flow”</i>, some people call it <i>“deep focus”</i>, other people call it other things.</p>
+
+<p>I get the most things done when I’m in my Zen Mode.</p>
+
+<p><strong>If I’m not in my Zen Mode, I’m distracted, I’m unfocused, and I’m wasting my time.</strong></p>
+
+<h1>First I ask myself: Do I like what I’m doing?</h1>
+
+<p>First things first, I find that <strong>if I don’t like what I’m learning or doing, I’m never able to enter Zen Mode.</strong></p>
+
+<p>So if I’m trying to enter Zen Mode in something I just don’t enjoy or care about, then <strong>I’m a strong believer in picking up something else instead.</strong></p>
+
+<h1>Locking Myself Up = Deep Focus</h1>
+
+<p>One of my friends who I consider to be a genius mathematician once told me this:</p>
+
+<p><i>&ldquo;The only way you can improve on things is to lock yourself up in a room and practice.&rdquo;</i></p>
+
+<p>This might be a super asian way of thinking of things (I&rsquo;m asian) — <strong>BUT</strong> it has a lot of truths to it, especially if it’s a skill set in which individual work is important.</p>
+
+<p>How does one become a great artist? A great engineer?</p>
+
+<p><strong>Most likely through hours of practice alone.</strong></p>
+
+<p>Whenever I’m trying to improve a skill, often times the best bet is to really immerse myself in the activity.</p>
+
+<p>And <strong>to immerse myself in the activity, I can’t have other people around me, or have other distractions.</strong></p>
+
+<h2>But it’s difficult when you have friends, social pressures, and obligations.</h2>
+
+<p><strong>It’s also hard to say no.</strong></p>
+
+<p>It was personally difficult for me to turn down invitations from my friends to go out and get drunk — <strong>but after my mathematician friend gave me his perspective, it made me feel fine about not always going out or being social.</strong></p>
+
+<p>Social pressures can work for people or it can work against people. Since my friend encouraged me to feel okay about being a nerd, I&rsquo;ve encouraged my friends to do so as well.</p>
+
+<p>This kind of creates an eco system where our group of friends can freely be nerds and be okay about it, and it works great.</p>
+
+<p>If you&rsquo;re one of these people or want to make yourself feel better about being a nerd, please do message me and I will be super happy of making another hardworking nerdy friend.</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">How to Learn How to Code while Getting Paid</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-To-Learn-How-to-Code-while-Getting-Paid.html" />
+  <id>https://www.takehiromouri.com/How-To-Learn-How-to-Code-while-Getting-Paid</id>
+  <published>2016-03-20T00:00:00Z</published>
+  <updated>2016-03-20T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <h3>
+  This was my stupid 3-step plan to becoming a superstar hacker 2 years ago when I first attempted to learn how to code:
+</h3>
+
+
+
+
+<ol>
+  <li>Go through Codecademy courses</li>
+  <li>Enroll in CS50</li>
+  <li>Become a superstar coder</li>
+</ol>
+
+
+
+
+<p>
+  I thought that this was all I needed to do in order for me to start creating the next Facebook.
+</p>
+
+
+
+
+<h1>WRONG.</h1>
+
+
+
+
+<h3>
+  This is what happened instead:
+</h3>
+
+
+
+
+<p>
+  I blew through the Codecademy HTML/CSS and JavaScript/jQuery course and then quickly enrolled in CS50 (online introductory computer science course held by Harvard). Phew! After I finish CS50, I'll be amazing! - or so I thought.
+</p>
+
+
+
+
+<h3>Not Quite.</h3>
+
+
+
+
+<p>
+  For the first 3 lectures, I sat in my "virtual class environment" (my sofa + laptop) super excited about programming. And of course, as any one supposedly embarking on a new adventure would, I thought CS50 was going to change my life. The lecturer was super easy to understand, energetic, and to the point. They did a great job presenting the information and I thought I was learning a whole lot.
+</p>
+
+
+
+
+<p>
+  But then after a couple of lectures, I was confused as <strong>#%!&</strong>. Pointers? Memory allocation? <strong>Programming suddenly seemed like a super complex thing to learn.</strong> The course went on about bubble sorts and merge sorts and all sorts of sorts. I was becoming more and more confused and I simply couldn't manage my motivation.
+</p>
+
+
+
+
+<h3>After 3 weeks, I had quit.</h3>
+
+
+
+
+<p>
+  My mind was spiraling with negative thoughts: <em>"I'm not smart enough for this. Coding is for smart people. Coding is for mathy people. I'm not fit for this."</em>
+</p>
+
+
+
+
+<p>
+  Plus, even though I breezed through the Codecademy stuff, I had forgot most of the stuff that I had learned in a matter of a few weeks! <strong>This was a terrible, terrible investment of my time.</strong>
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+  Then in August 2015, I had the urge to give coding a try once again and joined a coding bootcamp called <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>. It was the best decision I made that year. (I talk more about coding bootcamps in <a href="http://takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html" target="_blank">this post</a> and how it has changed my life in many ways in non-woowoo pseudo-science ways.)
+</p>
+
+
+
+
+<p>
+  In short, the coding bootcamp was a super positive experience for me and lead me to land multiple jobs as a developer as well as dive deeper into programming and eventually computer science as well. The bootcamp's teaching methodologies enabled me to learn much quicker and much faster than going through Codecademy or CS50 or anything of that sort. 
+</p>
+
+
+
+
+<h3>
+  I hear a lot of close friends wanting to learn how to learn how to code, so this is a post that will talk about what <strong><em>I think</em></strong> is the best and fastest way to start coding based on my <strong><em>personal experiences</em></strong>.
+</h3>
+
+
+
+
+<hr>
+
+
+
+
+<h1>Step 1. Learn and Understand</h1>
+
+
+
+
+<p>
+  The first step is to <strong>learn and understand</strong>. Here's exactly how I go about it:
+</p>
+
+
+
+
+<ul>
+  <li>Google "Best resources for learning <em>&lt;programming language/framework here&gt;</em>"</li>
+  <li>If there is a Quora post, click on that (Quora tends to have higher quality answers)</li>
+  <li>Surf around other search results and find the common resources that show up in multiple places</li>
+  <li>Look through the common resources and see which ones excites me most</li>
+  <li>Start learning with the resources</li>
+</ul>
+
+
+
+
+<p>
+  The material you use for learning programming is super important. If you are spending 10 hours learning something, then the 10 hours better be spent learning material that is <strong>relevant and easy to understand</strong>. <strong>You don't want to spend hours and hours on resources that are hard to understand or not engaging - they are simply just a waste of time.</strong>
+</p>
+
+
+
+
+<p>
+  You'll see sites like Codecademy come up in your Google search, and you might be wondering if it's actually a good resource since I mentioned how it <em>didn't</em> work for me earlier in this post.
+</p>
+
+
+
+
+<p>
+  Despite my lack of success with Codecademy initially, I actually recommend it (and also websites similar to it) - it's great for learning the gist of the language. <strong>However, the important thing is to transition to Step 2 immediately after finishing this step. Otherwise, you'll just forget most of the stuff you learned (like I did initially).</strong>
+</p>
+
+
+
+
+<h1>Step 2. Build and Break</h1>
+
+
+
+
+<p>
+  You now understand the gist of the programming language or framework and how it works.
+</p>
+
+
+
+
+<p>
+  The next step is to <strong>build and break</strong>. This means going out and actually <strong>building</strong> something with the stuff you just learned and then fixing bugs as they come along. Bugs are inevitable, but you can learn a lot from bugs and broken code. <strong>You want to start building with the assumption that you're going to be writing bad code - and then improving it.</strong>
+</p>
+
+
+
+
+<p>
+  There are 2 steps to this, in my opinion. First, it's smart to go through some tutorials, or else you'll be completely lost. Once you've done some tutorials and feel comfortable, you should go and build your own project:
+</p>
+
+
+
+
+<!-- <h3>If it's your first time with the language or framework</h3>
+<p>
+  - go through some tutorials first
+</p>
+
+<h3>If you've already built something in Step 1</h3>
+<p>
+  - if you feel comfortable, then start building your own project.
+</p>
+<p>
+  - if you don't feel comfortable yet, then start another tutorial until you really understand how most of the stuff works.
+</p> -->
+
+
+
+
+<h2>Step 2-a. Tutorials</h2>
+
+
+
+
+<p>
+  Again, finding good tutorials are key here. Many times, the reputable tutorials show up in the results in Step 1, when searching for resources on whatever you're trying to learn.
+</p>
+
+
+
+
+<p>
+  If you've finished a tutorial or two and feel like you're ready to start building your app.
+</p>
+
+
+
+
+<h2>Step 2-b. Building Your Own Project</h2>
+
+
+
+
+<p>
+  In this step, you're going to be building your own project. Not following tutorials, not following directions. You're going to have to do everything yourself - but this is where you'll learn the most.
+</p>
+
+
+
+
+<h3>How to Pick a Project (this is the hardest part)</h3>
+
+
+
+
+<p>
+  In my experience, picking a project to work on is the most difficult part of this process. This is because if you pick a project that is a lousy idea, you just won't stick with it.
+</p>
+
+
+
+
+<p>
+  For example, one time I tried building a diary app with Ruby on Rails for no reason. After building out some of the basic functionality, I realized that Google Drive does the job better and it gave me no reason to keep building the app - <strong>never try building something for no reason</strong>.
+</p>
+
+
+
+
+<h3>But coming up with a good project idea is hard...</h3>
+
+
+
+
+<p>
+  <strong>TRUE.</strong>
+</p>
+
+
+
+
+<h1>
+  <strong>So here's my suggestion: Go out and sell your services.</strong>
+</h1>
+
+
+
+
+<h3><strong>Here's why:</strong></h3>
+
+
+<p>
+  <strong>If someone is paying you to build something, you're going to work your butt off to try and get everything right. You're going to be forced to learn at a super high speed in order to not mess anything up.</strong>
+</p>
+
+
+
+
+<h3><strong>BUT HOW?!</strong></h3>
+
+
+<p>
+  <strong>A lot of people want websites or web applications built for them, but lack the money to hire developers.</strong> They have ideas, but they lack the skills to actually build them. This is their thought process: 
+</p>
+
+
+
+
+<p>
+  "I have an idea that will make millions and will be the next (Facebook, Uber, replace popular start up name here) - <strong><em>if only I had a coder to build my app</em></strong>."
+</p>
+
+
+
+
+<p>
+  <strong>This is where you come in.</strong> Find these people and talk to them. Offer your services for super cheap at first and <strong>make an offer so sweet that they have no reason to reject you.</strong>
+</p>
+
+
+
+
+<p>
+  This was how I pitched myself to 2 guys who wanted to build a company based on a web app: <strong><em>"Yes, I am indeed a noob, but if you hire non-noobs, it will cost you tens of thousands. If you hire me, I can build out this app and it won't cost you tens of thousands. Instead, it will only be hundreds or maybe a couple thousand at most. Plus, if you don't like the website, you can decide not to use it and pay me nothing."</em></strong>
+</p>
+
+
+
+
+<h3><strong>This is why this worked (at least for me):</strong></h3>
+
+
+
+
+<p>
+  <strong>What was the number one thing they wanted?</strong> <em>Their idea to be built out.</em>
+</p>
+
+
+
+
+<p>
+  <strong>What was their number one constraint?</strong> <em>Money.</em>
+</p>
+
+
+
+
+<p>
+  <strong>If I were to pitch them, what would be their number one concern?</strong> <em>That I wasn't skilled enough and would be a waste of money.</em>
+</p>
+
+
+
+
+<p>
+  <strong>My pitch incorporated all of these factors so that they had no reason to reject my offer.</strong> If they didn't like the website, they could scrap it and pay <strong><em>nothing</em></strong>.
+</p>
+
+
+
+
+<p>
+  To initially build a portfolio, I personally think that it's a smart idea to price low and over-deliver (unless you're already experienced). As a side note, I did this when I first started my translation business as well and it worked that time as well. I priced my services lower than my competitors and over-delivered and built social proof.
+</p>
+
+
+
+
+<h2>Ask Yourself: Why exactly would they buy from me rather than somebody else?</h2>
+
+
+<p>
+  Would it be my price, my skill set, my past experiences, or some other factor?
+</p>
+
+
+
+
+<p>
+  Since I had minimal skill to do the job, had no past experience, the only way I could differentiate was to set a lower price and work my butt off. And for a lot of people reading this article, I'm assuming this is probably the case.
+</p>
+
+
+
+
+<p><strong>So find somebody to build a website for, give a pitch that they can't turn down, and start working on the project.</strong> Once you pass this step, it's time to do anything you can do to finish the app and build something that would satisfy your clients.</p>
+
+
+
+
+<p>
+  This means Googling for solutions to any bugs/problems you might encounter, asking people questions, and finding solutions.
+</p>
+
+
+
+
+<h3>And <strong>this</strong> is where you'll be learning <strong>2x, 3x</strong> as fast as you would compared to going through more tutorials. <strong>You're forced to build out real-world ideas and forced to solve real-world problems.</strong></h3>
+
+
+
+
+<h1>Examples</h1>
+
+
+
+
+<p>
+  I've given this advice to some people that were just starting out with their coding journey and it seems to have worked for them. One of my friends from <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>, Dany, asked for my advice. I told him mostly the same things that I laid out in this blog post and this was his response.
+</p>
+
+
+<p><img src="static/img/dany.png" alt="learning coding"></p>
+
+<p>
+  When I talked to him a couple of months after that, he told me that he took some of my advice and things were going quite well for him:
+</p>
+
+
+<p><img src="static/img/dany_2.png" alt="learning coding"></p>
+
+<p>
+  I've given the same advice to other people with the same results. It seems that it just makes sense - <strong>when you are forced to learn at an accelerated pace, you'll learn more quicker as a result.</strong>
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+  Hopefully this blog post was somewhat helpful in motivating you to go out and grab a project that you can start working on (while maybe getting paid) to accelerate your learning speeds. This is something that's worked for me and the people around me, and I hope it works for the people reading this as well!
+</p>
+
+
+
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Using Spaced Repetition Software to Learn Programming Concepts</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html" />
+  <id>https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts</id>
+  <published>2016-03-15T00:00:00Z</published>
+  <updated>2016-03-15T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  As a programmer who still has so much to learn, I strongly feel that finding the right tools and methodologies in learning how to program is super important. Learning is a hard skill - especially when it comes to increasing your knowledge around textbook type subjects. Reading a textbook and going through lectures are not always the most entertaining, and it can easily lead to a unproductive study session.
+</p>
+
+
+
+
+<p>
+  I was studying for one of my computer science classes when I stumbled across <a href="https://sivers.org/srs" target="_blank">this post</a> by Derek Sivers. He explains it perfectly, so there's really no point of me explaining it:
+</p>
+
+
+
+
+<p><em>
+  "When you hear a new fact, it's forgotten pretty quickly unless it's brought back to the forefront of your mind repeatedly. You can do this haphazardly by immersing yourself in a language, for example, where the new words you learn will be brought up by chance occasionally. <strong>But memory research shows that the most effective and efficient time for a new fact to be remembered is right before you were about to forget it.</strong> Say if you learn a new word in a foreign language, you'd want to practice it again a few minutes after hearing it, then a few hours, then the next day, then in 2 days, then 5 days, then 10 days, 3 weeks, 6 weeks, 3 months, 8 months, etc. After a while it's basically permanently memorized with a rare reminder. <strong>Spaced Repetition Software does this for you, so you can just give it a bunch of facts you want to remember, then have it quiz you once a day, and it manages the intervals based on your feedback. After each quiz question, if you say that one was easy, it won't be introduced for a long time, but if you were stumped, then it'll ask it again in a few minutes, until you've got it.</strong>" - Derek Sivers
+</em></p>
+
+
+
+
+<p>
+  Basically Spaced Repetition Software, or SRS, is a flash card software that is optimized to increase your chances of learning based on memory research. Pretty cool stuff - but like a lot of you (I'm assuming), <strong>I was kind of skeptical that this would actually work.</strong>
+</p>
+
+
+
+
+<h1>These were my questions:</h1>
+
+
+<ol>
+  <li>Is this applicable to programming? - is it better to simply just Google stuff and code?</li>
+  <li>Would I stick with it?</li>
+</ol>
+
+
+
+
+<h1>And here are my answers:</h1>
+
+
+
+
+<p>
+  After actually trying Anki (a popular SRS) out for 3 weeks now, here are my thoughts:
+</p>
+
+
+
+
+<h3>Is this applicable to programming? - is it better to simply just Google stuff and code?</h3>
+
+
+<p>
+  <strong>Yes - and no.</strong>
+</p>
+
+
+
+
+<p>
+  What I've found that for a lot of things, it's just faster for Google to memorize. For example, if I were to use SRS to try and memorize how to reverse a string in Ruby, I could make a flashcard to remind myself every now and then. On the other hand, it takes 2 seconds to find out how to reverse a string in Ruby, so it really doesn't make sense to memorize it. If Googling will take less time, you shouldn't be trying to memorize it.
+</p>
+
+
+
+
+<p>
+  On the flip side, <strong>SRS is great for learning programming concepts</strong>. A lot of times (atleast for me), I read about a concept and understand it (at the time) and then gain the feeling of satisfaction. But then in a few days when a friend asks me about the concept, my memory is fuzzy or I just don't remember (even though I read about it and understood it a few days back). Once I started using SRS to recall my understanding, it got easier for me to not only recall the concept, but actaully apply it in practice.
+</p>
+
+
+
+
+<p>
+  This is more of a topic of learning methodology than it is of SRS - <strong>you need to find ways to recall information in order to retain your knowledge.</strong> That's why many people are avid note takers. SRS is just another way of retaining information - except it's super efficient.
+</p>
+
+
+
+
+<h1>Would I stick with it?</h1>
+
+
+
+
+<p>
+  <strong>Yes.</strong>
+</p>
+
+
+
+
+<p>
+  The great thing about Anki is that it becomes addictive - every day you start up Anki, and it provides you with flashcards to go over for the day. Once you go through the flashcards, it feels like you've learned so much in a matter of 10 or 15 minutes.
+</p>
+
+
+
+
+<p>
+  The difference between Anki and regular Flash Card applications is that Anki removes all the unnecessary going-through of flash cards for you - <strong>if you felt the question was easy yesterday, it won't tell you to answer the flash card the next day.</strong> That means less flash cards and better learning.
+</p>
+
+
+
+
+<p>
+  Doing Anki every day has been so easy for me, just because of the way it's designed. It was easy for me to start a habit of using Anki and there are tons of people that would say the same thing as well.
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>
+  If you're currently trying to learn difficult programming concepts, then SRS might be the way to go. AnkiSrs is free open source software that you can download <a href="http://ankisrs.net/" target="_blank">here</a>.
+</p>
+
+
+
+
+<p>
+  I would highly recommend reading Derek Siver's post on SRS <a href="https://sivers.org/srs" target="_blank">here</a>, as it goes through the entire learning methodology involved in using SRS.
+</p>
+
+
+
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Coding Bootcamps vs Computer Science</title>
   <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html" />
@@ -1045,149 +1762,6 @@
 
 
 <p>Happy coding :)</p>
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Using Spaced Repetition Software to Learn Programming Concepts</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html" />
-  <id>https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts</id>
-  <published>2015-03-15T00:00:00Z</published>
-  <updated>2015-03-15T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  As a programmer who still has so much to learn, I strongly feel that finding the right tools and methodologies in learning how to program is super important. Learning is a hard skill - especially when it comes to increasing your knowledge around textbook type subjects. Reading a textbook and going through lectures are not always the most entertaining, and it can easily lead to a unproductive study session.
-</p>
-
-
-
-
-<p>
-  I was studying for one of my computer science classes when I stumbled across <a href="https://sivers.org/srs" target="_blank">this post</a> by Derek Sivers. He explains it perfectly, so there's really no point of me explaining it:
-</p>
-
-
-
-
-<p><em>
-  "When you hear a new fact, it's forgotten pretty quickly unless it's brought back to the forefront of your mind repeatedly. You can do this haphazardly by immersing yourself in a language, for example, where the new words you learn will be brought up by chance occasionally. <strong>But memory research shows that the most effective and efficient time for a new fact to be remembered is right before you were about to forget it.</strong> Say if you learn a new word in a foreign language, you'd want to practice it again a few minutes after hearing it, then a few hours, then the next day, then in 2 days, then 5 days, then 10 days, 3 weeks, 6 weeks, 3 months, 8 months, etc. After a while it's basically permanently memorized with a rare reminder. <strong>Spaced Repetition Software does this for you, so you can just give it a bunch of facts you want to remember, then have it quiz you once a day, and it manages the intervals based on your feedback. After each quiz question, if you say that one was easy, it won't be introduced for a long time, but if you were stumped, then it'll ask it again in a few minutes, until you've got it.</strong>" - Derek Sivers
-</em></p>
-
-
-
-
-<p>
-  Basically Spaced Repetition Software, or SRS, is a flash card software that is optimized to increase your chances of learning based on memory research. Pretty cool stuff - but like a lot of you (I'm assuming), <strong>I was kind of skeptical that this would actually work.</strong>
-</p>
-
-
-
-
-<h1>These were my questions:</h1>
-
-
-<ol>
-  <li>Is this applicable to programming? - is it better to simply just Google stuff and code?</li>
-  <li>Would I stick with it?</li>
-</ol>
-
-
-
-
-<h1>And here are my answers:</h1>
-
-
-
-
-<p>
-  After actually trying Anki (a popular SRS) out for 3 weeks now, here are my thoughts:
-</p>
-
-
-
-
-<h3>Is this applicable to programming? - is it better to simply just Google stuff and code?</h3>
-
-
-<p>
-  <strong>Yes - and no.</strong>
-</p>
-
-
-
-
-<p>
-  What I've found that for a lot of things, it's just faster for Google to memorize. For example, if I were to use SRS to try and memorize how to reverse a string in Ruby, I could make a flashcard to remind myself every now and then. On the other hand, it takes 2 seconds to find out how to reverse a string in Ruby, so it really doesn't make sense to memorize it. If Googling will take less time, you shouldn't be trying to memorize it.
-</p>
-
-
-
-
-<p>
-  On the flip side, <strong>SRS is great for learning programming concepts</strong>. A lot of times (atleast for me), I read about a concept and understand it (at the time) and then gain the feeling of satisfaction. But then in a few days when a friend asks me about the concept, my memory is fuzzy or I just don't remember (even though I read about it and understood it a few days back). Once I started using SRS to recall my understanding, it got easier for me to not only recall the concept, but actaully apply it in practice.
-</p>
-
-
-
-
-<p>
-  This is more of a topic of learning methodology than it is of SRS - <strong>you need to find ways to recall information in order to retain your knowledge.</strong> That's why many people are avid note takers. SRS is just another way of retaining information - except it's super efficient.
-</p>
-
-
-
-
-<h1>Would I stick with it?</h1>
-
-
-
-
-<p>
-  <strong>Yes.</strong>
-</p>
-
-
-
-
-<p>
-  The great thing about Anki is that it becomes addictive - every day you start up Anki, and it provides you with flashcards to go over for the day. Once you go through the flashcards, it feels like you've learned so much in a matter of 10 or 15 minutes.
-</p>
-
-
-
-
-<p>
-  The difference between Anki and regular Flash Card applications is that Anki removes all the unnecessary going-through of flash cards for you - <strong>if you felt the question was easy yesterday, it won't tell you to answer the flash card the next day.</strong> That means less flash cards and better learning.
-</p>
-
-
-
-
-<p>
-  Doing Anki every day has been so easy for me, just because of the way it's designed. It was easy for me to start a habit of using Anki and there are tons of people that would say the same thing as well.
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  If you're currently trying to learn difficult programming concepts, then SRS might be the way to go. AnkiSrs is free open source software that you can download <a href="http://ankisrs.net/" target="_blank">here</a>.
-</p>
-
-
-
-
-<p>
-  I would highly recommend reading Derek Siver's post on SRS <a href="https://sivers.org/srs" target="_blank">here</a>, as it goes through the entire learning methodology involved in using SRS.
-</p>
-
-
 
  ]]></content>
 </entry>

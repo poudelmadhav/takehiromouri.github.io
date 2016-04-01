@@ -20,6 +20,10 @@ body {
   /*padding: 0 0 60px;*/
 }
 
+p {
+  margin: 0 0 30px;
+}
+
 .about_ul {
   list-style-type: none;
   margin: 10px 0px;

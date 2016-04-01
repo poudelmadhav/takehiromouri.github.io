@@ -9,7 +9,7 @@
     <link rel="icon" href="static/img/favicon.ico">
 
     
-      <title>Useful techniques for arrays and strings in ruby</title>
+      <title>My Approach to Achieving Deep Focus</title>
     
 	
     <!-- Bootstrap -->
@@ -66,12 +66,12 @@
     <div class="container">
 	<div class="blog-post">
 		<h3>
-		  <strong><a href="/Useful-techniques-for-arrays-and-strings-in-ruby.html">Useful techniques for arrays and strings in ruby</a></strong>
+		  <strong><a href="/Entering-Zen-Mode.html">My Approach to Achieving Deep Focus</a></strong>
 		</h3>
 	</div>
 	<div class="blog-title">
 		<h4>
-		February 22, 2016
+		March 30, 2016
 			&nbsp;&nbsp;
 			
 		</h4>
@@ -79,131 +79,45 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <p>
-  Ruby comes with several useful techniques that you can use to manipulate various data types. In this post, I'll go over some particularly useful techniques that can be used with arrays and strings in Ruby.
-</p>
+			  <p>If you ever want to get good at something, I’m a firm believer of going into what I like to call <strong>“Zen Mode”</strong>. Some people call it <i>“the state of flow”</i>, some people call it <i>“deep focus”</i>, other people call it other things.</p>
 
+<p>I get the most things done when I’m in my Zen Mode.</p>
 
+<p><strong>If I’m not in my Zen Mode, I’m distracted, I’m unfocused, and I’m wasting my time.</strong></p>
 
+<h1>First I ask myself: Do I like what I’m doing?</h1>
 
-<h3>Using <code>%w{ }</code> to declare an array of strings</h3>
+<p>First things first, I find that <strong>if I don’t like what I’m learning or doing, I’m never able to enter Zen Mode.</strong></p>
 
+<p>So if I’m trying to enter Zen Mode in something I just don’t enjoy or care about, then <strong>I’m a strong believer in picking up something else instead.</strong></p>
 
+<h1>Locking Myself Up = Deep Focus</h1>
 
+<p>One of my friends who I consider to be a genius mathematician once told me this:</p>
 
-<p>
-  You can declare an array of strings like this:
-</p>
+<p><i>&ldquo;The only way you can improve on things is to lock yourself up in a room and practice.&rdquo;</i></p>
 
+<p>This might be a super asian way of thinking of things (I&rsquo;m asian) — <strong>BUT</strong> it has a lot of truths to it, especially if it’s a skill set in which individual work is important.</p>
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;pony&#39;</span><span class="o">]</span>
-<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+<p>How does one become a great artist? A great engineer?</p>
 
-<p>
-  There's another way you can declare strings that don't contain strings, which you may find a to be pretty convenient:
-</p>
+<p><strong>Most likely through hours of practice alone.</strong></p>
 
+<p>Whenever I’m trying to improve a skill, often times the best bet is to really immerse myself in the activity.</p>
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
-<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
+<p>And <strong>to immerse myself in the activity, I can’t have other people around me, or have other distractions.</strong></p>
 
-<p>
-  It takes less time to type but results in the same thing.
-</p>
+<h2>But it’s difficult when you have friends, social pressures, and obligations.</h2>
 
+<p><strong>It’s also hard to say no.</strong></p>
 
+<p>It was personally difficult for me to turn down invitations from my friends to go out and get drunk — <strong>but after my mathematician friend gave me his perspective, it made me feel fine about not always going out or being social.</strong></p>
 
+<p>Social pressures can work for people or it can work against people. Since my friend encouraged me to feel okay about being a nerd, I&rsquo;ve encouraged my friends to do so as well.</p>
 
-<h3>Using <code>find_index</code></h3>
+<p>This kind of creates an eco system where our group of friends can freely be nerds and be okay about it, and it works great.</p>
 
-
-
-
-<p>
-  To find the index of an object in array, the <code>find_index</code> method comes in handy:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">words</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
-<span class="n">words</span><span class="o">.</span><span class="n">find_index</span><span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;pony&quot;</span><span class="p">}</span>
-<span class="c1"># returns 4</span></code></pre></figure></p>
-
-<h3>The Inject Method</h3>
-
-
-
-
-<p>
-  When you want to get the sum of all numbers in an array, the <code>inject</code> method allows you to do so in an elegant way:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
-<span class="c1"># returns 15</span></code></pre></figure></p>
-
-<p>
-  <code>inject</code> is like an <code>each</code> loop, in that it iterates through each element of the array and performs something with each element. <code>inject</code> takes in 2 arguments. The first argument (<code>sum</code>) is the result of the expression performed in the block. In this case, it is the result of <code>sum += num</code>. The second argument (<code>num</code>) is the element in the array in which the iteration is currently on. For example, the first time around, <code>num</code> will equal <code>1</code>, the second time around, <code>num</code> will equal <code>2</code>.
-</p>
-
-
-
-
-<p>
-  <code>sum</code> by default is initialized at <code>0</code>, but you can specify another value like such:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="mi">100</span><span class="p">){</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
-<span class="c1"># returns 115</span></code></pre></figure></p>
-
-<p>
-  in which case it returns <code>115</code>.
-</p>
-
-
-
-
-<h3>No more escapes with <code>%q{ }</code></h3>
-
-
-
-
-<p>
-  Isn't it annoying when you have to do something like this?
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">string_full_of_escapes</span> <span class="o">=</span> <span class="s1">&#39;I&amp;#39;m in love with Ruby. &quot;Ruby isn&amp;#39;t just a language, it&amp;#39;s a lifestyle&quot;. &#39;</span></code></pre></figure></p>
-
-<p>
-  Instead, you could simple do this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">no_escape_string</span> <span class="o">=</span> <span class="sx">%q{I&#39;m in love with Ruby. &quot;Ruby isn&#39;t just a language, it&#39;s a lifestyle.&quot;}</span></code></pre></figure></p>
-
-<p>
-  The <code>q</code> stands for quotes, and it invokes single quotes for you. Beware that <code>#{}</code> won't work with single quotes, and only works with double quotes. In that case, you want to use <code>Q%{ }</code> instead:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Takehiro&quot;</span>
-<span class="sx">%Q{My name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">}</span>
-<span class="c1"># &quot;My name is Takehiro&quot;</span></code></pre></figure></p>
-
-<hr>
-
-
-
-
-<p>
-  Happy coding!
-</p>
-
-
-
+<p>If you&rsquo;re one of these people or want to make yourself feel better about being a nerd, please do message me and I will be super happy of making another hardworking nerdy friend.</p>
 
 			  <div class="subscribe">
   <hr>
@@ -247,12 +161,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 30, 2016
+								 	March 20, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Entering-Zen-Mode.html">My Approach to Achieving Deep Focus</a></strong>
+								 	<strong><a href="How-To-Learn-How-to-Code-while-Getting-Paid.html">How to Learn How to Code while Getting Paid</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -260,12 +174,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 20, 2016
+								 	March 15, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="How-To-Learn-How-to-Code-while-Getting-Paid.html">How to Learn How to Code while Getting Paid</a></strong>
+								 	<strong><a href="Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html">Using Spaced Repetition Software to Learn Programming Concepts</a></strong>
 								 </h6>
 							 </div>
 						</div>

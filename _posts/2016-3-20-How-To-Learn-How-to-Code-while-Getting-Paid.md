@@ -1,0 +1,245 @@
+---
+layout: post
+title: How to Learn How to Code while Getting Paid
+---
+
+<h3>
+  This was my stupid 3-step plan to becoming a superstar hacker 2 years ago when I first attempted to learn how to code:
+</h3>
+
+<ol>
+  <li>Go through Codecademy courses</li>
+  <li>Enroll in CS50</li>
+  <li>Become a superstar coder</li>
+</ol>
+
+<p>
+  I thought that this was all I needed to do in order for me to start creating the next Facebook.
+</p>
+
+<h1>WRONG.</h1>
+
+<h3>
+  This is what happened instead:
+</h3>
+
+<p>
+  I blew through the Codecademy HTML/CSS and JavaScript/jQuery course and then quickly enrolled in CS50 (online introductory computer science course held by Harvard). Phew! After I finish CS50, I'll be amazing! - or so I thought.
+</p>
+
+<h3>Not Quite.</h3>
+
+<p>
+  For the first 3 lectures, I sat in my "virtual class environment" (my sofa + laptop) super excited about programming. And of course, as any one supposedly embarking on a new adventure would, I thought CS50 was going to change my life. The lecturer was super easy to understand, energetic, and to the point. They did a great job presenting the information and I thought I was learning a whole lot.
+</p>
+
+<p>
+  But then after a couple of lectures, I was confused as <strong>#%!&</strong>. Pointers? Memory allocation? <strong>Programming suddenly seemed like a super complex thing to learn.</strong> The course went on about bubble sorts and merge sorts and all sorts of sorts. I was becoming more and more confused and I simply couldn't manage my motivation.
+</p>
+
+<h3>After 3 weeks, I had quit.</h3>
+
+<p>
+  My mind was spiraling with negative thoughts: <em>"I'm not smart enough for this. Coding is for smart people. Coding is for mathy people. I'm not fit for this."</em>
+</p>
+
+<p>
+  Plus, even though I breezed through the Codecademy stuff, I had forgot most of the stuff that I had learned in a matter of a few weeks! <strong>This was a terrible, terrible investment of my time.</strong>
+</p>
+
+<hr>
+
+<p>
+  Then in August 2015, I had the urge to give coding a try once again and joined a coding bootcamp called <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>. It was the best decision I made that year. (I talk more about coding bootcamps in <a href="http://takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html" target="_blank">this post</a> and how it has changed my life in many ways in non-woowoo pseudo-science ways.)
+</p>
+
+<p>
+  In short, the coding bootcamp was a super positive experience for me and lead me to land multiple jobs as a developer as well as dive deeper into programming and eventually computer science as well. The bootcamp's teaching methodologies enabled me to learn much quicker and much faster than going through Codecademy or CS50 or anything of that sort. 
+</p>
+
+<h3>
+  I hear a lot of close friends wanting to learn how to learn how to code, so this is a post that will talk about what <strong><em>I think</em></strong> is the best and fastest way to start coding based on my <strong><em>personal experiences</em></strong>.
+</h3>
+
+
+<hr>
+
+<h1>Step 1. Learn and Understand</h1>
+
+<p>
+  The first step is to <strong>learn and understand</strong>. Here's exactly how I go about it:
+</p>
+
+<ul>
+  <li>Google "Best resources for learning <em>&lt;programming language/framework here&gt;</em>"</li>
+  <li>If there is a Quora post, click on that (Quora tends to have higher quality answers)</li>
+  <li>Surf around other search results and find the common resources that show up in multiple places</li>
+  <li>Look through the common resources and see which ones excites me most</li>
+  <li>Start learning with the resources</li>
+</ul>
+
+<p>
+  The material you use for learning programming is super important. If you are spending 10 hours learning something, then the 10 hours better be spent learning material that is <strong>relevant and easy to understand</strong>. <strong>You don't want to spend hours and hours on resources that are hard to understand or not engaging - they are simply just a waste of time.</strong>
+</p>
+
+<p>
+  You'll see sites like Codecademy come up in your Google search, and you might be wondering if it's actually a good resource since I mentioned how it <em>didn't</em> work for me earlier in this post.
+</p>
+
+<p>
+  Despite my lack of success with Codecademy initially, I actually recommend it (and also websites similar to it) - it's great for learning the gist of the language. <strong>However, the important thing is to transition to Step 2 immediately after finishing this step. Otherwise, you'll just forget most of the stuff you learned (like I did initially).</strong>
+</p>
+
+<h1>Step 2. Build and Break</h1>
+
+<p>
+  You now understand the gist of the programming language or framework and how it works.
+</p>
+
+<p>
+  The next step is to <strong>build and break</strong>. This means going out and actually <strong>building</strong> something with the stuff you just learned and then fixing bugs as they come along. Bugs are inevitable, but you can learn a lot from bugs and broken code. <strong>You want to start building with the assumption that you're going to be writing bad code - and then improving it.</strong>
+</p>
+
+<p>
+  There are 2 steps to this, in my opinion. First, it's smart to go through some tutorials, or else you'll be completely lost. Once you've done some tutorials and feel comfortable, you should go and build your own project:
+</p>
+
+<!-- <h3>If it's your first time with the language or framework</h3>
+<p>
+  - go through some tutorials first
+</p>
+
+<h3>If you've already built something in Step 1</h3>
+<p>
+  - if you feel comfortable, then start building your own project.
+</p>
+<p>
+  - if you don't feel comfortable yet, then start another tutorial until you really understand how most of the stuff works.
+</p> -->
+
+<h2>Step 2-a. Tutorials</h2>
+
+<p>
+  Again, finding good tutorials are key here. Many times, the reputable tutorials show up in the results in Step 1, when searching for resources on whatever you're trying to learn.
+</p>
+
+<p>
+  If you've finished a tutorial or two and feel like you're ready to start building your app.
+</p>
+
+<h2>Step 2-b. Building Your Own Project</h2>
+
+<p>
+  In this step, you're going to be building your own project. Not following tutorials, not following directions. You're going to have to do everything yourself - but this is where you'll learn the most.
+</p>
+
+<h3>How to Pick a Project (this is the hardest part)</h3>
+
+<p>
+  In my experience, picking a project to work on is the most difficult part of this process. This is because if you pick a project that is a lousy idea, you just won't stick with it.
+</p>
+
+<p>
+  For example, one time I tried building a diary app with Ruby on Rails for no reason. After building out some of the basic functionality, I realized that Google Drive does the job better and it gave me no reason to keep building the app - <strong>never try building something for no reason</strong>.
+</p>
+
+<h3>But coming up with a good project idea is hard...</h3>
+
+<p>
+  <strong>TRUE.</strong>
+</p>
+
+<h1>
+  <strong>So here's my suggestion: Go out and sell your services.</strong>
+</h1>
+
+<h3><strong>Here's why:</strong></h3>
+<p>
+  <strong>If someone is paying you to build something, you're going to work your butt off to try and get everything right. You're going to be forced to learn at a super high speed in order to not mess anything up.</strong>
+</p>
+
+<h3><strong>BUT HOW?!</strong></h3>
+<p>
+  <strong>A lot of people want websites or web applications built for them, but lack the money to hire developers.</strong> They have ideas, but they lack the skills to actually build them. This is their thought process: 
+</p>
+
+<p>
+  "I have an idea that will make millions and will be the next (Facebook, Uber, replace popular start up name here) - <strong><em>if only I had a coder to build my app</em></strong>."
+</p>
+
+<p>
+  <strong>This is where you come in.</strong> Find these people and talk to them. Offer your services for super cheap at first and <strong>make an offer so sweet that they have no reason to reject you.</strong>
+</p>
+
+<p>
+  This was how I pitched myself to 2 guys who wanted to build a company based on a web app: <strong><em>"Yes, I am indeed a noob, but if you hire non-noobs, it will cost you tens of thousands. If you hire me, I can build out this app and it won't cost you tens of thousands. Instead, it will only be hundreds or maybe a couple thousand at most. Plus, if you don't like the website, you can decide not to use it and pay me nothing."</em></strong>
+</p>
+
+<h3><strong>This is why this worked (at least for me):</strong></h3>
+
+<p>
+  <strong>What was the number one thing they wanted?</strong> <em>Their idea to be built out.</em>
+</p>
+
+<p>
+  <strong>What was their number one constraint?</strong> <em>Money.</em>
+</p>
+
+<p>
+  <strong>If I were to pitch them, what would be their number one concern?</strong> <em>That I wasn't skilled enough and would be a waste of money.</em>
+</p>
+
+<p>
+  <strong>My pitch incorporated all of these factors so that they had no reason to reject my offer.</strong> If they didn't like the website, they could scrap it and pay <strong><em>nothing</em></strong>.
+</p>
+
+<p>
+  To initially build a portfolio, I personally think that it's a smart idea to price low and over-deliver (unless you're already experienced). As a side note, I did this when I first started my translation business as well and it worked that time as well. I priced my services lower than my competitors and over-delivered and built social proof.
+</p>
+
+<h2>Ask Yourself: Why exactly would they buy from me rather than somebody else?</h2>
+<p>
+  Would it be my price, my skill set, my past experiences, or some other factor?
+</p>
+
+<p>
+  Since I had minimal skill to do the job, had no past experience, the only way I could differentiate was to set a lower price and work my butt off. And for a lot of people reading this article, I'm assuming this is probably the case.
+</p>
+
+<p><strong>So find somebody to build a website for, give a pitch that they can't turn down, and start working on the project.</strong> Once you pass this step, it's time to do anything you can do to finish the app and build something that would satisfy your clients.</p>
+
+<p>
+  This means Googling for solutions to any bugs/problems you might encounter, asking people questions, and finding solutions.
+</p>
+
+<h3>And <strong>this</strong> is where you'll be learning <strong>2x, 3x</strong> as fast as you would compared to going through more tutorials. <strong>You're forced to build out real-world ideas and forced to solve real-world problems.</strong></h3>
+
+<h1>Examples</h1>
+
+<p>
+  I've given this advice to some people that were just starting out with their coding journey and it seems to have worked for them. One of my friends from <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>, Dany, asked for my advice. I told him mostly the same things that I laid out in this blog post and this was his response.
+</p>
+
+<img src="static/img/dany.png" alt="learning coding">
+
+<p>
+  When I talked to him a couple of months after that, he told me that he took some of my advice and things were going quite well for him:
+</p>
+
+<img src="static/img/dany_2.png" alt="learning coding">
+
+<p>
+  I've given the same advice to other people with the same results. It seems that it just makes sense - <strong>when you are forced to learn at an accelerated pace, you'll learn more quicker as a result.</strong>
+</p>
+
+<hr>
+
+<p>
+  Hopefully this blog post was somewhat helpful in motivating you to go out and grab a project that you can start working on (while maybe getting paid) to accelerate your learning speeds. This is something that's worked for me and the people around me, and I hope it works for the people reading this as well!
+</p>
+
+
+
+
+
+
