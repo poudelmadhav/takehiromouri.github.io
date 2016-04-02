@@ -6,7 +6,7 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-04-01T03:51:58Z</updated>
+  <updated>2016-04-02T14:23:02Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -14,9 +14,9 @@
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
   <entry>
-  <title type="text">Counting Objects? Introducing counter_cache</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Counting-Objects-Introducing-counter_cache.html" />
-  <id>https://www.takehiromouri.com/Counting-Objects?-Introducing-counter_cache</id>
+  <title type="text">How to Make Counting Belonging Objects in Rails More Efficient</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-Make-Counting-Belonging-Objects-in-Rails-More-Efficient.html" />
+  <id>https://www.takehiromouri.com/How-to-Make-Counting-Belonging-Objects-in-Rails-More-Efficient</id>
   <published>2016-04-01T00:00:00Z</published>
   <updated>2016-04-01T00:00:00Z</updated>
   <content type="html"><![CDATA[ <p>A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has.</p>
@@ -46,9 +46,9 @@ In an example app I created with the same models as above, I tested this out wit
    <span class="o">(</span>0.4ms<span class="o">)</span>  SELECT COUNT<span class="o">(</span></em><span class="o">)</span> FROM <span class="s2">&quot;comments&quot;</span> WHERE <span class="s2">&quot;comments&quot;</span>.<span class="s2">&quot;user_id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]]</span>
 <span class="o">=</span>&gt; 225</code></pre></figure></p>
 
-<p>Notice how the <code>comments</code> are queried here as well. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.</p>
+<p>Notice how the <code>comments</code> are queried with a COUNT(*) query. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.</p>
 
-<p>Here&rsquo;s how we can improve this:</p>
+<p>Here&rsquo;s how we can avoid the COUNT(*) query and improve performance:</p>
 
 <h2>Introducing <code>counter_cache</code></h2>
 
@@ -61,9 +61,9 @@ In an example app I created with the same models as above, I tested this out wit
   <span class="k">end</span>
 <span class="k">end</span></code></pre></figure></p>
 
-<p>So here, we have created a <code>comments_counter</code> column to store the number of comments inside.</p>
+<p>In order for <code>counter_cache</code> to work, we need to create a database column that ends with <code>_count</code>. So here, we have created a <code>comments_count</code> column that will store the number of comments inside.</p>
 
-<p>After we migrate the file, we want to update <code>comments_count</code> for each <code>User</code>.</p>
+<p>After we run the migration, we want to initially update the <code>comments_count</code> for each <code>User</code>.</p>
 
 <p>We can do this by creating a rake file, or manually running code in the console:</p>
 
@@ -82,13 +82,13 @@ In an example app I created with the same models as above, I tested this out wit
 
 <p>One more thing we need to do:</p>
 
-<p>In the <code>Comment</code> model, we need to add <code>counter_cache</code>.</p>
+<p>In the <code>Comment</code> model, we need to set <code>counter_cache: true</code>.</p>
 
 <p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">belongs_to</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">counter_cache</span><span class="p">:</span> <span class="kp">true</span>
 <span class="k">end</span></code></pre></figure></p>
 
-<p>This will increment and decrement the <code>comments_count</code> column in <code>User</code> whenever a comment is created or deleted.</p>
+<p>This will increment and decrement the <code>comments_count</code> column automatically in <code>User</code> whenever a comment is created or deleted.</p>
 
 <p>Let&rsquo;s test this out:</p>
 
@@ -103,9 +103,9 @@ irb<span class="o">(</span>main<span class="o">)</span>:019:0&gt; User.first
   User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.</em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT <span class="nv">1</span>
 <span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 226&gt;</span></code></pre></figure></p>
 
-<p>Awesome! As you can see, it properly incremented the <code>comments_count</code>.</p>
+<p>Awesome! As you can see, it properly incremented the <code>comments_count</code> from <code>225</code> to <code>226</code>.</p>
 
-<p>Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of a bunch of SQL queries, using <code>counter_cache</code>, you can access the same information by just accessing a field in the <code>User</code> table.</p>
+<p>Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of making a bunch of COUNT(*) queries, by using <code>counter_cache</code>, you can access the same information by just accessing a column in the <code>User</code> table.</p>
  ]]></content>
 </entry>
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Counting Objects? Introducing counter_cache
+title: How to Make Counting Belonging Objects in Rails More Efficient
 ---
 
 A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has. 
@@ -38,9 +38,9 @@ irb(main):015:0> User.first.comments.count
 => 225
 {% endhighlight %}
 
-Notice how the <code>comments</code> are queried here as well. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.
+Notice how the <code>comments</code> are queried with a COUNT(*) query. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.
 
-Here's how we can improve this:
+Here's how we can avoid the COUNT(*) query and improve performance:
 
 <h2>Introducing <code>counter_cache</code></h2>
 
@@ -54,9 +54,9 @@ class AddCommentCounterToUser < ActiveRecord::Migration
 end
 {% endhighlight %}
 
-So here, we have created a <code>comments_counter</code> column to store the number of comments inside.
+In order for <code>counter_cache</code> to work, we need to create a database column that ends with <code>_count</code>. So here, we have created a <code>comments_count</code> column that will store the number of comments inside.
 
-After we migrate the file, we want to update <code>comments_count</code> for each <code>User</code>.
+After we run the migration, we want to initially update the <code>comments_count</code> for each <code>User</code>.
 
 We can do this by creating a rake file, or manually running code in the console:
 
@@ -79,7 +79,7 @@ irb(main):016:0> User.first
 
 One more thing we need to do:
 
-In the <code>Comment</code> model, we need to add <code>counter_cache</code>.
+In the <code>Comment</code> model, we need to set <code>counter_cache: true</code>.
 
 {% highlight ruby %}
 class Comment < ActiveRecord::Base
@@ -87,7 +87,7 @@ class Comment < ActiveRecord::Base
 end
 {% endhighlight %}
 
-This will increment and decrement the <code>comments_count</code> column in <code>User</code> whenever a comment is created or deleted.
+This will increment and decrement the <code>comments_count</code> column automatically in <code>User</code> whenever a comment is created or deleted.
 
 Let's test this out:
 
@@ -104,7 +104,7 @@ irb(main):019:0> User.first
 => #<User id: 1, name: "Bob", created_at: "2016-04-01 06:51:53", updated_at: "2016-04-01 07:37:39", comments_count: 226>
 {% endhighlight %}
 
-Awesome! As you can see, it properly incremented the <code>comments_count</code>.
+Awesome! As you can see, it properly incremented the <code>comments_count</code> from <code>225</code> to <code>226</code>.
 
-Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of a bunch of SQL queries, using <code>counter_cache</code>, you can access the same information by just accessing a field in the <code>User</code> table.
+Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of making a bunch of COUNT(*) queries, by using <code>counter_cache</code>, you can access the same information by just accessing a column in the <code>User</code> table.
 
