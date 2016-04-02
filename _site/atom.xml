@@ -6,7 +6,7 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-04-02T14:23:02Z</updated>
+  <updated>2016-04-02T14:24:05Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -14,9 +14,9 @@
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
   <entry>
-  <title type="text">How to Make Counting Belonging Objects in Rails More Efficient</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-Make-Counting-Belonging-Objects-in-Rails-More-Efficient.html" />
-  <id>https://www.takehiromouri.com/How-to-Make-Counting-Belonging-Objects-in-Rails-More-Efficient</id>
+  <title type="text">How to Count Belonging Objects More Efficiently in Rails</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-Count-Belonging-Objects-More-Efficiently-in-Rails.html" />
+  <id>https://www.takehiromouri.com/How-to-Count-Belonging-Objects-More-Efficiently-in-Rails</id>
   <published>2016-04-01T00:00:00Z</published>
   <updated>2016-04-01T00:00:00Z</updated>
   <content type="html"><![CDATA[ <p>A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has.</p>

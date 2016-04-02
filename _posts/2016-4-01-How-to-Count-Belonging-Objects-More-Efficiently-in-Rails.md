@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Make Counting Belonging Objects in Rails More Efficient
+title: How to Count Belonging Objects More Efficiently in Rails
 ---
 
 A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has. 
