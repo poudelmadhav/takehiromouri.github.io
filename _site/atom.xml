@@ -6,7 +6,7 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-04-02T14:24:05Z</updated>
+  <updated>2016-04-02T14:37:08Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
@@ -76,8 +76,7 @@ In an example app I created with the same models as above, I tested this out wit
 
 <p>Now after we run this code, we see that the correct number of comments are stored in the user object:</p>
 
-<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:016:0&gt; User.first
-  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.* FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT <span class="nv">1</span>
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:005:0&gt; <span class="nv">user</span>
 <span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 225&gt;</span></code></pre></figure></p>
 
 <p>One more thing we need to do:</p>
@@ -92,16 +91,14 @@ In an example app I created with the same models as above, I tested this out wit
 
 <p>Let&rsquo;s test this out:</p>
 
-<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:018:0&gt; User.first.comments.create<span class="o">(</span>text: <span class="s2">&quot;Test&quot;</span><span class="o">)</span>
-  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.<em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT 1
-   <span class="o">(</span>0.2ms<span class="o">)</span>  begin transaction
-  SQL <span class="o">(</span>1.0ms<span class="o">)</span>  INSERT INTO <span class="s2">&quot;comments&quot;</span> <span class="o">(</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;user_id&quot;</span>, <span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;updated_at&quot;</span><span class="o">)</span> VALUES <span class="o">(</span>?, ?, ?, ?<span class="o">)</span>  <span class="o">[[</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;Test&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;2016-04-01 07:48:25.434601&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;updated_at&quot;</span>, <span class="s2">&quot;2016-04-01 07:48:25.434601&quot;</span><span class="o">]]</span>
-  SQL <span class="o">(</span>0.1ms<span class="o">)</span>  UPDATE <span class="s2">&quot;users&quot;</span> SET <span class="s2">&quot;comments_count&quot;</span> <span class="o">=</span> COALESCE<span class="o">(</span><span class="s2">&quot;comments_count&quot;</span>, 0<span class="o">)</span> + <span class="m">1</span> WHERE <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;id&quot;</span>, 1<span class="o">]]</span>
-   <span class="o">(</span>1.3ms<span class="o">)</span>  commit <span class="nv">transaction</span>
-<span class="o">=</span>&gt; <span class="c">#&lt;Comment id: 225, user_id: 1, text: &quot;Test&quot;, created_at: &quot;2016-04-01 07:48:25&quot;, updated_at: &quot;2016-04-01 07:48:25&quot;&gt;</span>
-irb<span class="o">(</span>main<span class="o">)</span>:019:0&gt; User.first
-  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.</em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT <span class="nv">1</span>
-<span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 226&gt;</span></code></pre></figure></p>
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:006:0&gt; user.comments.create<span class="o">(</span>text: <span class="s2">&quot;hello&quot;</span><span class="o">)</span>
+   <span class="o">(</span>1.7ms<span class="o">)</span>  begin transaction
+  SQL <span class="o">(</span>1.9ms<span class="o">)</span>  INSERT INTO <span class="s2">&quot;comments&quot;</span> <span class="o">(</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;user_id&quot;</span>, <span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;updated_at&quot;</span><span class="o">)</span> VALUES <span class="o">(</span>?, ?, ?, ?<span class="o">)</span>  <span class="o">[[</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;hello&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;2016-04-02 18:27:36.897717&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;updated_at&quot;</span>, <span class="s2">&quot;2016-04-02 18:27:36.897717&quot;</span><span class="o">]]</span>
+  SQL <span class="o">(</span>0.6ms<span class="o">)</span>  UPDATE <span class="s2">&quot;users&quot;</span> SET <span class="s2">&quot;comments_count&quot;</span> <span class="o">=</span> COALESCE<span class="o">(</span><span class="s2">&quot;comments_count&quot;</span>, 0<span class="o">)</span> + <span class="m">1</span> WHERE <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;id&quot;</span>, 1<span class="o">]]</span>
+   <span class="o">(</span>5.9ms<span class="o">)</span>  commit <span class="nv">transaction</span>
+<span class="o">=</span>&gt; <span class="c">#&lt;Comment id: 225, user_id: 1, text: &quot;hello&quot;, created_at: &quot;2016-04-02 18:27:36&quot;, updated_at: &quot;2016-04-02 18:27:36&quot;&gt;</span>
+irb<span class="o">(</span>main<span class="o">)</span>:007:0&gt; user.comments_count
+<span class="o">=</span>&gt; 226</code></pre></figure></p>
 
 <p>Awesome! As you can see, it properly incremented the <code>comments_count</code> from <code>225</code> to <code>226</code>.</p>
 

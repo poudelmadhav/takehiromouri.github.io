@@ -72,8 +72,7 @@ end
 Now after we run this code, we see that the correct number of comments are stored in the user object:
 
 {% highlight bash %}
-irb(main):016:0> User.first
-  User Load (0.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+irb(main):005:0> user
 => #<User id: 1, name: "Bob", created_at: "2016-04-01 06:51:53", updated_at: "2016-04-01 07:37:39", comments_count: 225>
 {% endhighlight %}
 
@@ -92,16 +91,14 @@ This will increment and decrement the <code>comments_count</code> column automat
 Let's test this out:
 
 {% highlight bash %}
-irb(main):018:0> User.first.comments.create(text: "Test")
-  User Load (0.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
-   (0.2ms)  begin transaction
-  SQL (1.0ms)  INSERT INTO "comments" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["text", "Test"], ["user_id", 1], ["created_at", "2016-04-01 07:48:25.434601"], ["updated_at", "2016-04-01 07:48:25.434601"]]
-  SQL (0.1ms)  UPDATE "users" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE "users"."id" = ?  [["id", 1]]
-   (1.3ms)  commit transaction
-=> #<Comment id: 225, user_id: 1, text: "Test", created_at: "2016-04-01 07:48:25", updated_at: "2016-04-01 07:48:25">
-irb(main):019:0> User.first
-  User Load (0.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
-=> #<User id: 1, name: "Bob", created_at: "2016-04-01 06:51:53", updated_at: "2016-04-01 07:37:39", comments_count: 226>
+irb(main):006:0> user.comments.create(text: "hello")
+   (1.7ms)  begin transaction
+  SQL (1.9ms)  INSERT INTO "comments" ("text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["text", "hello"], ["user_id", 1], ["created_at", "2016-04-02 18:27:36.897717"], ["updated_at", "2016-04-02 18:27:36.897717"]]
+  SQL (0.6ms)  UPDATE "users" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE "users"."id" = ?  [["id", 1]]
+   (5.9ms)  commit transaction
+=> #<Comment id: 225, user_id: 1, text: "hello", created_at: "2016-04-02 18:27:36", updated_at: "2016-04-02 18:27:36">
+irb(main):007:0> user.comments_count
+=> 226
 {% endhighlight %}
 
 Awesome! As you can see, it properly incremented the <code>comments_count</code> from <code>225</code> to <code>226</code>.
