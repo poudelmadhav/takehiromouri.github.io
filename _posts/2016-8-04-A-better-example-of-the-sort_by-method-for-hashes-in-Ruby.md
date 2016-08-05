@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Count Belonging Objects More Efficiently in Rails
+title: A better example of the sort_by method for hashes in Ruby
 ---
 
 <p>
