@@ -58,6 +58,10 @@ string_2.object_id
   Since there can only be one instance of any symbol, comparison is much faster with symbols compared to strings. With strings, there can be multiple instances of strings with the same value, making the comparison relatively slower.
 </p>
 
+<p>
+  Moreover, comparison of symbols are a O(1) comparison, so they are super efficient.
+</p>
+
 <h3>When to use symbols</h3>
 
 <p> 
