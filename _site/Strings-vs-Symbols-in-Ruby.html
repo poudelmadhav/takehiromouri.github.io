@@ -9,7 +9,7 @@
     <link rel="icon" href="static/img/favicon.ico">
 
     
-      <title>The Fastest Way to Learn Coding</title>
+      <title>Strings vs Symbols in Ruby</title>
     
 	
     <!-- Bootstrap -->
@@ -66,12 +66,12 @@
     <div class="container">
 	<div class="blog-post">
 		<h3>
-		  <strong><a href="/The-Fastest-Way-To-Learn-Coding-Is-To-Make-Stuff.html">The Fastest Way to Learn Coding</a></strong>
+		  <strong><a href="/Strings-vs-Symbols-in-Ruby.html">Strings vs Symbols in Ruby</a></strong>
 		</h3>
 	</div>
 	<div class="blog-title">
 		<h4>
-		March 20, 2016
+		August 15, 2016
 			&nbsp;&nbsp;
 			
 		</h4>
@@ -79,7 +79,126 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  
+			  <p>
+  Symbols can be really confusing when you first use Ruby - what are the differences between Strings and Symbols?
+</p>
+
+
+
+
+<h3>Symbols are Faster</h3>
+
+
+
+
+<p>
+  Why are symbols faster?
+</p>
+
+
+
+
+<p>
+  Consider the following:
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = "Hello"
+string_2 = "Hello"
+</code></pre>
+
+
+
+
+<p>
+  Even if it has the same value, we are creating a new string. In other words, in the above example, we have manufactured two strings with the value of <code>"Hello"</code>.
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = "Hello"
+string_2 = "Hello"
+
+string_1.object_id
+# => 70209310447280
+string_2.object_id
+# => 70209310428440
+</code></pre>
+
+
+
+
+<p>
+  However, with symbols this isn't the case.
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = :hello
+string_2 = :hello
+
+string_1.object_id
+# => 1149468
+string_2.object_id
+# => 1149468
+</code></pre>
+
+
+
+
+<p>
+  In this case, both <code>:hello</code>s are exactly the same, they are not created twice.
+</p>
+
+
+
+
+<p>
+  Since there can only be one instance of any symbol, comparison is much faster with symbols compared to strings. With strings, there can be multiple instances of strings with the same value, making the comparison relatively slower.
+</p>
+
+
+
+
+<p>
+  Moreover, comparison of symbols are a O(1) comparison, so they are super efficient.
+</p>
+
+
+
+
+<h3>When to use symbols</h3>
+
+
+
+
+<p> 
+  Symbols are <strong>immutable</strong>. This means that once you create a symbol, you can't change it.
+</p>
+
+
+
+
+<p>
+  With strings, you have handy methods like <code>upcase!</code> or <code>reverse!</code>, but symbols do not have that capability.
+</p>
+
+
+
+
+<p>
+  <strong>This is why symbols are great for using when you are representing something that shouldn't change.</strong>
+</p>
+
+
+
 
 			  <div class="subscribe">
   <hr>
@@ -110,12 +229,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 15, 2016
+								 	September  5, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html">Using Spaced Repetition Software to Learn Programming Concepts</a></strong>
+								 	<strong><a href="What-does-it-take-to-become-a-web-developer.html">What does it take to become a web developer?</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -123,12 +242,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March  3, 2016
+								 	August  4, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Coding-Bootcamps-vs-Computer-Science.html">Coding Bootcamps vs Computer Science</a></strong>
+								 	<strong><a href="Tips-for-understanding-the-each-loop-in-ruby.html">Tips for understanding the each loop in ruby</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -136,12 +255,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	February 25, 2016
+								 	August  4, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Rails-Caching-How-ETags-and-fresh_when-work.html">Caching in Rails - How ETags and fresh_when work</a></strong>
+								 	<strong><a href="A-better-example-of-the-sort_by-method-for-hashes-in-Ruby.html">A better example of the sort_by method for hashes in Ruby</a></strong>
 								 </h6>
 							 </div>
 						</div>

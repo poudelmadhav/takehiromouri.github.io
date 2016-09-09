@@ -9,7 +9,7 @@
     <link rel="icon" href="static/img/favicon.ico">
 
     
-      <title>Counting Objects? Introducing counter_cache</title>
+      <title>A better example of the sort_by method for hashes in Ruby</title>
     
 	
     <!-- Bootstrap -->
@@ -66,12 +66,12 @@
     <div class="container">
 	<div class="blog-post">
 		<h3>
-		  <strong><a href="/Counting-Objects-Use-counter_cache.html">Counting Objects? Introducing counter_cache</a></strong>
+		  <strong><a href="/A-better-example-of-the-sort_by-method-for-hashes-in-Ruby.html">A better example of the sort_by method for hashes in Ruby</a></strong>
 		</h3>
 	</div>
 	<div class="blog-title">
 		<h4>
-		April  1, 2016
+		August  4, 2016
 			&nbsp;&nbsp;
 			
 		</h4>
@@ -79,7 +79,130 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  
+			  <p>
+  Codecademy is great for learning the fundamentals, but at the same time sometimes they use really confusing examples.
+</p>
+
+
+
+
+<p>
+  For example, in one of the lessons, you have to write code that looks like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;Enter Text:&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">gets</span><span class="o">.</span><span class="n">chomp</span></p>
+
+<p><span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span></p>
+
+<p><span class="n">frequencies</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></p>
+
+<p><span class="n">words</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+    <span class="n">frequencies</span><span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">end</span></p>
+
+<p><span class="n">frequencies</span> <span class="o">=</span>  <span class="n">frequencies</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">v</span><span class="p">}</span>
+<span class="n">frequencies</span><span class="o">.</span><span class="n">reverse!</span></code></pre></figure></p>
+
+<p>
+  What is this <code>frequencies.sort_by { |k, v| v}</code> code?!
+</p>
+
+
+
+
+<p>
+  It's actually really easy to understand if you look at another example of how the <code>sort_by</code> method is used in hashes.
+</p>
+
+
+
+
+<h3>First, what are hashes?</h3>
+
+
+
+
+<p>
+  Hashes consist of keys and values. For example, we could have a <code>people</code> hash that contains information about a person's name and their age.
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:fred</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
+  <span class="ss">:joan</span> <span class="o">=&gt;</span> <span class="mi">18</span><span class="p">,</span>
+  <span class="ss">:pete</span> <span class="o">=&gt;</span> <span class="mi">54</span>
+<span class="p">}</span></code></pre></figure></p>
+
+<p>
+  Inside the <code>people</code> hash, we have 3 sets of keys and values. <code>:fred</code>, <code>:joan</code>, <code>:pete</code> are all keys, and <code>23</code>, <code>18</code>, and <code>54</code> are all values.
+</p>
+
+
+
+
+<p>
+  Hashes are really nice because you can get the value of a key really quickly. For example, if we wanted to find out the age of <code>:fred</code>, all we have to do is this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span><span class="o">[</span><span class="ss">:fred</span><span class="o">]</span>
+<span class="c1"># =&gt; 23</span></code></pre></figure></p>
+
+<p>
+  It's hard to do the same thing with arrays, so hashes are very useful.
+</p>
+
+
+<p></p>
+
+<p>
+  However, what if we want to sort the hash? What if we want to sort the hash by the name or the age?
+</p>
+
+
+
+
+<p>
+  This is where the <code>.sort_by</code> method is handy :) Take a look at the code below:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:fred</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
+  <span class="ss">:joan</span> <span class="o">=&gt;</span> <span class="mi">18</span><span class="p">,</span>
+  <span class="ss">:pete</span> <span class="o">=&gt;</span> <span class="mi">54</span>
+<span class="p">}</span></p>
+
+<p><span class="n">people</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="o">|</span> <span class="n">age</span> <span class="p">}</span>
+  <span class="c1"># =&gt; [[:joan, 18], [:fred, 23], [:pete, 54]]</span></p>
+
+<p><span class="n">people</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="o">|</span> <span class="nb">name</span> <span class="p">}</span>
+  <span class="c1"># =&gt; [[:fred, 23], [:joan, 18], [:pete, 54]]</span></code></pre></figure></p>
+
+<p>
+  <code>people.sort_by { |name, age| age }</code> -> here we are sorting the <code>people</code> hash by each person's <code>age</code>.
+</p>
+
+
+
+
+<p>
+  <code>people.sort_by { |name, age| name }</code> -> here we are sorting the <code>people</code> hash by each person's <code>name</code>.
+</p>
+
+
+
+
+<p> 
+  By looking at this example, hopefully all of the sudden the mystery of <code>frequencies.sort_by { |k, v| v}</code> is solved :)
+</p>
+
+
+<p></p>
+
+<p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
 
 			  <div class="subscribe">
   <hr>
@@ -110,12 +233,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 30, 2016
+								 	September  5, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Entering-Zen-Mode.html">My Approach to Achieving Deep Focus</a></strong>
+								 	<strong><a href="What-does-it-take-to-become-a-web-developer.html">What does it take to become a web developer?</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -123,12 +246,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 20, 2016
+								 	August 15, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="How-To-Learn-How-to-Code-while-Getting-Paid.html">How to Learn How to Code while Getting Paid</a></strong>
+								 	<strong><a href="Strings-vs-Symbols-in-Ruby.html">Strings vs Symbols in Ruby</a></strong>
 								 </h6>
 							 </div>
 						</div>
@@ -136,12 +259,12 @@
 						<div class="row">
 							 <div class="col-sm-4 col-md-4 col-lg-4">
 								 <h6 style="text-align: right">
-								 	March 15, 2016
+								 	August  4, 2016
 								 </h6>
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html">Using Spaced Repetition Software to Learn Programming Concepts</a></strong>
+								 	<strong><a href="Tips-for-understanding-the-each-loop-in-ruby.html">Tips for understanding the each loop in ruby</a></strong>
 								 </h6>
 							 </div>
 						</div>

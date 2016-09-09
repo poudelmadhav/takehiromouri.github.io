@@ -6,13 +6,524 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-05-22T07:37:09Z</updated>
+  <updated>2016-09-09T10:48:11Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
   </author>
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">What does it take to become a web developer?</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/What-does-it-take-to-become-a-web-developer.html" />
+  <id>https://www.takehiromouri.com/What-does-it-take-to-become-a-web-developer</id>
+  <published>2016-09-05T00:00:00Z</published>
+  <updated>2016-09-05T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <h3>If you&rsquo;re just starting to dive into the field of web development, you&rsquo;re probably nervous about whether or not you are going to be able to actually become a programmer or not.</h3>
+
+<p>I know, because I also felt the same way when I first started. I had close to no experience in coding, I didn&rsquo;t know if I was smart enough, and I didn&rsquo;t know if learning web development would actually be worth my time.</p>
+
+<p>There are certain traits that I have found many software developers to share. While the traits may seem innately intrinsic, they are rather attitudes that can be developed.</p>
+
+<h1>1. Motivation</h1>
+
+<p>The most important trait to have when learning web development is motivation. Without motivation, no matter how smart you may be, you will never be able to learn web development.</p>
+
+<p>Learning how to code initially is extremely difficult. At first, it seems like an impossible task. Most people who have never reached the level required to start making applications imagine coding as being incredibly difficult and a feat for the intelligent. I thought the same as well, thinking that coding is something for smart people.</p>
+
+<p>But learning how to code is more of a mental game. When you first start out, you&rsquo;ll run into countless bugs, and you&rsquo;ll have no idea how to solve them at first. If you don&rsquo;t have the motivation, instead of trying to solve those problems, you&rsquo;ll most likely quit.</p>
+
+<p>So before even considering learning to code, it&rsquo;s important to ask yourself if you have the proper motivation to start learning in the first place. If you feel an inner motivation coming within you that is urging you to learn, then chances are, you will be learning extremely quickly.</p>
+
+<h1>2. Grit</h1>
+
+<p>Debugging errors in the inital phase is both extremely time consuming and frustrating. You&rsquo;ll Google the error message, you&rsquo;ll try out different solutions, and most of the times you still won&rsquo;t be able to fix the bug.</p>
+
+<p>As a software developer, it&rsquo;s common to be stuck on a bug for hours and hours. If you don&rsquo;t have the grit to work on the problem until it is fixed, you won&rsquo;t progress as a developer.</p>
+
+<h1>3. Ability to Figure Things Out</h1>
+
+<p>As a software developer, your job is solve problems. A common trait amongst developers is the ability to figure things out.</p>
+
+<p>Figuring things out is essentially just breaking down big problems into small pieces, then solving them step by step. People that are good at this also tend to be extremely fast at breaking things down, trying different solutions, and figuring out what works and what doesn&rsquo;t.</p>
+
+<h1>4. Ability to Self-Learn</h1>
+
+<p>Software engeering is a pursuit in which there is no limit to the amount of knowledge and skills there are to learn. Most software engineers are passionate about what they do, and find the job interesting and fulfilling, thus spend a lot of time learning things on their own.</p>
+
+<p>However, most of the times, there won&rsquo;t be a teacher teaching you everything you need to know - most learning is done by reading books, reading blogs, and actually implementing new knowledge.</p>
+
+<p>Self-learning is a crucial way to progress forward as a developer.</p>
+
+<p>In the end, all of these things are really come down to your attitude towards learning in my opinion. They aren&rsquo;t traits that are impossible to acquire - they&rsquo;re simply traits that can be acquired through a shift in attitudes.</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Strings vs Symbols in Ruby</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Strings-vs-Symbols-in-Ruby.html" />
+  <id>https://www.takehiromouri.com/Strings-vs-Symbols-in-Ruby</id>
+  <published>2016-08-15T00:00:00Z</published>
+  <updated>2016-08-15T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  Symbols can be really confusing when you first use Ruby - what are the differences between Strings and Symbols?
+</p>
+
+
+
+
+<h3>Symbols are Faster</h3>
+
+
+
+
+<p>
+  Why are symbols faster?
+</p>
+
+
+
+
+<p>
+  Consider the following:
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = "Hello"
+string_2 = "Hello"
+</code></pre>
+
+
+
+
+<p>
+  Even if it has the same value, we are creating a new string. In other words, in the above example, we have manufactured two strings with the value of <code>"Hello"</code>.
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = "Hello"
+string_2 = "Hello"
+
+string_1.object_id
+# => 70209310447280
+string_2.object_id
+# => 70209310428440
+</code></pre>
+
+
+
+
+<p>
+  However, with symbols this isn't the case.
+</p>
+
+
+
+
+<pre><code class="ruby">
+string_1 = :hello
+string_2 = :hello
+
+string_1.object_id
+# => 1149468
+string_2.object_id
+# => 1149468
+</code></pre>
+
+
+
+
+<p>
+  In this case, both <code>:hello</code>s are exactly the same, they are not created twice.
+</p>
+
+
+
+
+<p>
+  Since there can only be one instance of any symbol, comparison is much faster with symbols compared to strings. With strings, there can be multiple instances of strings with the same value, making the comparison relatively slower.
+</p>
+
+
+
+
+<p>
+  Moreover, comparison of symbols are a O(1) comparison, so they are super efficient.
+</p>
+
+
+
+
+<h3>When to use symbols</h3>
+
+
+
+
+<p> 
+  Symbols are <strong>immutable</strong>. This means that once you create a symbol, you can't change it.
+</p>
+
+
+
+
+<p>
+  With strings, you have handy methods like <code>upcase!</code> or <code>reverse!</code>, but symbols do not have that capability.
+</p>
+
+
+
+
+<p>
+  <strong>This is why symbols are great for using when you are representing something that shouldn't change.</strong>
+</p>
+
+
+
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Tips for understanding the each loop in ruby</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Tips-for-understanding-the-each-loop-in-ruby.html" />
+  <id>https://www.takehiromouri.com/Tips-for-understanding-the-each-loop-in-ruby</id>
+  <published>2016-08-04T00:00:00Z</published>
+  <updated>2016-08-04T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  I've had some students ask me about the <code>.each</code> loop in ruby :D Hopefully I can clarify some things.
+</p>
+
+
+
+
+<h3>Different Ways to Write .each Loop</h3>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span></p>
+
+<p><span class="c1"># one way to loop</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">item</span> <span class="p">}</span></p>
+
+<p><span class="c1"># another way to loop</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">item</span>
+<span class="k">end</span></code></pre></figure></p>
+
+<p>
+  Above, we see two ways to write the <code>each</code> loop. Which one is better?
+</p>
+
+
+
+
+<p>
+  The answer is, it depends. If the code is really short, then it makes sense to write it as a one liner. But if it's longer, it's better to write it as a <code>do</code> <code>end</code> block.
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="o">]</span></p>
+
+<p><span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">number</span> <span class="p">}</span>
+<span class="c1"># this is better as one liner</span></p>
+
+<p><span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">number</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hello World&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Another thing&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Do another thing&quot;</span>
+<span class="k">end</span>
+<span class="c1"># this is better with each do, since doing this in </span>
+<span class="c1"># one line would be very messy :)</span></code></pre></figure></p>
+
+<p>
+  In ruby, there are often multiple ways of writing code. Ruby developers tend to like shorter and more concise code :) For example, the <code>if</code> statement can even be written as a one-liner:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">some_condition</span>
+  <span class="nb">puts</span> <span class="s2">&quot;TECHRISE students are awesome&quot;</span>
+<span class="k">end</span></p>
+
+<p><span class="c1"># the above is OK, but we can rewrite it like this</span></p>
+
+<p><span class="nb">puts</span> <span class="s2">&quot;TECHRISE students are awesome&quot;</span> <span class="k">if</span> <span class="n">some_condition</span></p>
+
+<p><span class="c1"># this is considered to be cleaner and many ruby programmers</span>
+<span class="c1"># prefer this style</span></code></pre></figure></p>
+
+<p>
+  Pretty cool right? :)
+</p>
+
+
+
+
+<h3>What is this || thing?</h3>
+
+
+
+
+<p>
+  When you are using <code>each</code> loops, you'll encounter these <code>||</code> things. You're probably wondering what these are :)
+</p>
+
+
+
+
+<p>
+  Let's take a look at the following:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">number</span>
+<span class="k">end</span></p>
+
+<p><span class="c1"># this will print out </span>
+<span class="c1"># 1</span>
+<span class="c1"># 2</span>
+<span class="c1"># 3</span>
+<span class="c1"># 4</span>
+<span class="c1"># 5</span></code></pre></figure></p>
+
+<p>
+  Notice how we have <code>|number|</code>. These placeholders only work within the loop and not outside:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">number</span>
+<span class="k">end</span></p>
+
+<p><span class="nb">puts</span> <span class="n">number</span></p>
+
+<p><span class="c1"># returns an error =&gt; &quot;NameError: undefined local variable or method `number&#39; for main:Object&quot;</span></code></pre></figure></p>
+
+<p>
+  You can name these placeholders whatever you want:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">momo</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">momo</span>
+<span class="k">end</span></p>
+
+<p><span class="c1"># still prints out all of the numbers</span></p>
+
+<p><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">dog</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">dog</span>
+<span class="k">end</span></p>
+
+<p><span class="c1"># still prints out all of the numbers</span></code></pre></figure></p>
+
+<p>
+  However, we should name the placeholder something that makes sense.
+</p>
+
+
+
+
+<ul>
+  <li>Be careful of pluralization</li>
+  <ul>
+    <li>If it's singular, name it a singular placeholder (<code>number</code>)</li>
+    <li>If it's pluralization, name it a plural placeholder (<code>numbers</code>)</li>
+  </ul>
+  <li>The name should represent what the item is</li>
+</ul>
+
+
+<p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">A better example of the sort_by method for hashes in Ruby</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/A-better-example-of-the-sort_by-method-for-hashes-in-Ruby.html" />
+  <id>https://www.takehiromouri.com/A-better-example-of-the-sort_by-method-for-hashes-in-Ruby</id>
+  <published>2016-08-04T00:00:00Z</published>
+  <updated>2016-08-04T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  Codecademy is great for learning the fundamentals, but at the same time sometimes they use really confusing examples.
+</p>
+
+
+
+
+<p>
+  For example, in one of the lessons, you have to write code that looks like this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;Enter Text:&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">gets</span><span class="o">.</span><span class="n">chomp</span></p>
+
+<p><span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span></p>
+
+<p><span class="n">frequencies</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></p>
+
+<p><span class="n">words</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+    <span class="n">frequencies</span><span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">end</span></p>
+
+<p><span class="n">frequencies</span> <span class="o">=</span>  <span class="n">frequencies</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">v</span><span class="p">}</span>
+<span class="n">frequencies</span><span class="o">.</span><span class="n">reverse!</span></code></pre></figure></p>
+
+<p>
+  What is this <code>frequencies.sort_by { |k, v| v}</code> code?!
+</p>
+
+
+
+
+<p>
+  It's actually really easy to understand if you look at another example of how the <code>sort_by</code> method is used in hashes.
+</p>
+
+
+
+
+<h3>First, what are hashes?</h3>
+
+
+
+
+<p>
+  Hashes consist of keys and values. For example, we could have a <code>people</code> hash that contains information about a person's name and their age.
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:fred</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
+  <span class="ss">:joan</span> <span class="o">=&gt;</span> <span class="mi">18</span><span class="p">,</span>
+  <span class="ss">:pete</span> <span class="o">=&gt;</span> <span class="mi">54</span>
+<span class="p">}</span></code></pre></figure></p>
+
+<p>
+  Inside the <code>people</code> hash, we have 3 sets of keys and values. <code>:fred</code>, <code>:joan</code>, <code>:pete</code> are all keys, and <code>23</code>, <code>18</code>, and <code>54</code> are all values.
+</p>
+
+
+
+
+<p>
+  Hashes are really nice because you can get the value of a key really quickly. For example, if we wanted to find out the age of <code>:fred</code>, all we have to do is this:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span><span class="o">[</span><span class="ss">:fred</span><span class="o">]</span>
+<span class="c1"># =&gt; 23</span></code></pre></figure></p>
+
+<p>
+  It's hard to do the same thing with arrays, so hashes are very useful.
+</p>
+
+
+<p></p>
+
+<p>
+  However, what if we want to sort the hash? What if we want to sort the hash by the name or the age?
+</p>
+
+
+
+
+<p>
+  This is where the <code>.sort_by</code> method is handy :) Take a look at the code below:
+</p>
+
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:fred</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
+  <span class="ss">:joan</span> <span class="o">=&gt;</span> <span class="mi">18</span><span class="p">,</span>
+  <span class="ss">:pete</span> <span class="o">=&gt;</span> <span class="mi">54</span>
+<span class="p">}</span></p>
+
+<p><span class="n">people</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="o">|</span> <span class="n">age</span> <span class="p">}</span>
+  <span class="c1"># =&gt; [[:joan, 18], [:fred, 23], [:pete, 54]]</span></p>
+
+<p><span class="n">people</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="o">|</span> <span class="nb">name</span> <span class="p">}</span>
+  <span class="c1"># =&gt; [[:fred, 23], [:joan, 18], [:pete, 54]]</span></code></pre></figure></p>
+
+<p>
+  <code>people.sort_by { |name, age| age }</code> -> here we are sorting the <code>people</code> hash by each person's <code>age</code>.
+</p>
+
+
+
+
+<p>
+  <code>people.sort_by { |name, age| name }</code> -> here we are sorting the <code>people</code> hash by each person's <code>name</code>.
+</p>
+
+
+
+
+<p> 
+  By looking at this example, hopefully all of the sudden the mystery of <code>frequencies.sort_by { |k, v| v}</code> is solved :)
+</p>
+
+
+<p></p>
+
+<p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">.split method</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/.split-method.html" />
+  <id>https://www.takehiromouri.com/.split-method</id>
+  <published>2016-08-04T00:00:00Z</published>
+  <updated>2016-08-04T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>
+  I've had some students ask me about the <code>.split</code> method in ruby :D
+</p>
+
+
+
+
+<p>
+  Here's a brief rundown of how it works. Hopefully the examples do a good job of explaining what it does :)
+</p>
+
+
+<p></p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">momos</span> <span class="o">=</span> <span class="s2">&quot;I love momos&quot;</span>
+<span class="n">momos</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="c1"># =&gt; [&quot;I&quot;, &quot;love&quot;, &quot;momos&quot;]</span>
+<span class="c1"># returns an array of strings seperated by &quot; &quot;</span></p>
+
+<p><span class="n">string_2</span> <span class="o">=</span> <span class="s2">&quot;A, bc, def, ghi&quot;</span>
+<span class="n">string_2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="c1"># =&gt; [&quot;A&quot;, &quot; bc&quot;, &quot; def&quot;, &quot; ghi&quot;]</span>
+<span class="c1"># here, we are splitting the array with &quot;,&quot;</span>
+<span class="c1"># then we are storing them in an array</span></p>
+
+<p><span class="n">string_3</span> <span class="o">=</span> <span class="s2">&quot;abcdefgabcdefg&quot;</span>
+<span class="n">string_3</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="c1"># =&gt; [&quot;&quot;, &quot;bcdefg&quot;, &quot;bcdefg&quot;]</span>
+<span class="c1"># here, we are splitting the array by &quot;a&quot;, so we get this result</span></code></pre></figure></p>
+
+<p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">How to Count Belonging Objects More Efficiently in Rails</title>
   <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-Count-Belonging-Objects-More-Efficiently-in-Rails.html" />
@@ -918,847 +1429,6 @@ irb<span class="o">(</span>main<span class="o">)</span>:007:0&gt; user.comments_
 </p>
 
 
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Caching in Rails - How ETags and fresh_when work</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Rails-Caching-How-ETags-and-fresh_when-work.html" />
-  <id>https://www.takehiromouri.com/Rails-Caching-How-ETags-and-fresh_when-work</id>
-  <published>2016-02-25T00:00:00Z</published>
-  <updated>2016-02-25T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  To make web pages load faster, caching is super important. Let's first look at what caching means:
-</p>
-
-
-
-
-<p>
-  <q><i>Caching means to store content generated during the request-response cycle and to reuse it when responding to similar requests</i></q> (from <a href="http://edgeguides.rubyonrails.org/caching_with_rails.html" target="_blank">Rails Guides</a>)
-</p>
-
-
-
-
-<p>
-  Let's break down what happens when a request is sent to a server to figure out what this all means:
-</p>
-
-
-
-
-<h4>First Request</h4>
-
-
-<ol>
-  <li>A request is sent to server</li>
-  <li>Renders entire response body</li>
-  <li>Generates an ETag by doing an MD% hash on entire response body (looks like below)</li>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;ETag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">MD5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="n">body</span><span class="p">)</span></code></pre></figure>
-
-  <li>
-    Rails sends back the response body as well as the ETag as a header field to the client (usually a browser)
-  </li>
-  <li>The client caches the response and stores the ETag</li>
-</ol>
-
-
-
-
-<h4>Second Request</h4>
-
-
-<ol>
-  <li>We request the same page again</li>
-  <li>The client sends the stored ETag as a <code>If-None-Match</code>header</li>
-  <li>Renders entire reponse body</li>
-  <li>Generates an ETag in the same way as previous</li>
-  <li>Compares ETag that was sent as header to the one that was just generated</li>
-  <li>If it matched, then the body is not sent to the client and instead sent a <code>304</code> not modified status</li>
-</ol>
-
-
-
-
-<p>
-  Basically if the page isn't modified, the browser reads the page from the cache.
-</p>
-
-
-
-
-<h3>So what are ETags?</h3>
-
-
-<p>
-  <strong>ETags</strong> stands for <strong>Entity Tags</strong>. It's essentially a key to see if the page has changed or not.
-</p>
-
-
-
-
-<p>
-  From a client side perspective, this is awesome because now we don't have to re-download everything, everything is stored in the cache.
-</p>
-
-
-
-
-<p>
-  But from a server side perspective, it still has to generate the ETag every single time there is a request. Processing the entire response body everytime we want to generate an ETag is not the most efficient.
-</p>
-
-
-
-
-<h3>Introducing <code>fresh_when</code></h3>
-
-
-<p>
-  You can set your custom ETags with <code>fresh_when</code>. For example, let's say you have a blog application and you want to tell rails to update the cache when an article has been updated or created. You can simply add <code>fresh_when</code> in your controller action. In this case, we're going to add it in the <code>show</code> action.
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
-  <span class="vi">@article</span> <span class="o">=</span> <span class="no">Article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-  <span class="n">fresh_when</span><span class="p">(</span><span class="vi">@article</span><span class="p">)</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  What this does is generate an ETag for us like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Etag&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">MD5</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="vi">@article</span><span class="o">.</span><span class="n">cache_key</span><span class="p">)</span></code></pre></figure></p>
-
-<p>
-  The <code>cache_key</code> is what keeps track of if something has updated. For instance, <code>@article.cache_key</code> would look something like <code>'article/23-2016-224150000'</code>.
-</p>
-
-
-
-
-<p>
-  The <code>cache_key</code> is generated in this format: <code>&lt;model name&gt;/&lt;id&gt;-&lt;updated_at&gt;</code>.
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  According to <a href="https://robots.thoughtbot.com/introduction-to-conditional-http-caching-with-rails" target="_blank">a simple test that thoughtbot ran</a>, performance improved by 94% (33ms to 2ms) just by including one <code>fresh_when</code> in a controller action. That's an amazing improvement.
-</p>
-
-
-
-
-<p>
-  As we can see <code>fresh_when</code> is a powerful tool that we can use to improve our caching. Instead of processing the whole response body, we can focus on tracking if a resource is stale or fresh by using <code>fresh_when</code>.
-</p>
-
-
-
-
-<p>
-  Happy coding!
-</p>
-
-
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">How to Write Better Ruby Methods - The Composed Method Technique</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-write-better-ruby-methods-The-Composed-Method-Technique.html" />
-  <id>https://www.takehiromouri.com/How-to-write-better-ruby-methods-The-Composed-Method-Technique</id>
-  <published>2016-02-24T00:00:00Z</published>
-  <updated>2016-02-24T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  In my search to write better code, I've stumbled across a technique to write better methods. It's called <strong>The Composed Method Technique</strong> (from <a href="https://read.amazon.com/kp/embed?asin=B004MMEJ36&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_JqsYwb0AAT5XE" target="_blank">Eloquent Ruby</a>).
-</p>
-
-
-
-
-<p>
-  The composed method technique basically has 3 rules.
-</p>
-
-
-<p><strong>
-  <ol>
-    <li>Each method should do a single thing</li>
-    <li>Each method needs to operate at a single conceptual level</li>
-    <li>Each method needs to have a name that reflects its purpose</li>
-  </ol>
-</strong></p>
-
-<p>
-  Let's walk through what each of these rules mean.
-</p>
-
-
-
-
-<h3>Each method should do a single thing</h3>
-
-
-<p>
-  Each method should focus on solving a single aspect of the problem. So if your method is solving two problems, then you should be creating a new method. For example, consider the following method that determines if one should transition from one relationship to another:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">transition</span>
-  <span class="k">return</span> <span class="k">if</span> <span class="n">numeric_love_level</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span>
-  <span class="k">if</span> <span class="n">life_partner_material?</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">side_chick</span><span class="o">.</span><span class="n">exists?</span> <span class="o">&amp;&amp;</span> <span class="n">current_partner</span><span class="o">.</span><span class="n">knows_about_side_chick?</span> <span class="o">||</span> <span class="nb">self</span><span class="o">.</span><span class="n">cant_take_anymore_crap</span>
-      <span class="nb">puts</span> <span class="s2">&quot;Sorry, we can&#39;t be together anymore&quot;</span>
-      <span class="n">current_partner</span> <span class="o">=</span> <span class="n">null</span>
-      <span class="k">if</span> <span class="n">side_chick</span><span class="o">.</span><span class="n">exists?</span>
-        <span class="n">side_chick</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;Wanna netflix and chill?&quot;</span><span class="p">)</span>
-      <span class="k">else</span>
-        <span class="n">tinder</span><span class="o">.</span><span class="n">find_partner</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></p>
-
-<p><span class="c1"># other methods of figuring out relationship problems</span></code></pre></figure></p>
-
-<p>
-  This is such messy code (and a horrible algorithm to begin with...) The <code>transition</code> method does so many things: it tries to see if there's still love between the two, it tries to see if the partner is life partner material, it tries to see if a side chick exists and if the partner knows about her, and if so, break up with the partner and seek out other potentials. All in all, this method is a <i>mess</i>. Again, <strong>each method should do a single thing</strong>.
-</p>
-
-
-
-
-<p>
-  Let's seperate each problem into a method and see what it looks like (still a horrible algorithm):
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">transition</span>
-  <span class="k">return</span> <span class="k">if</span> <span class="n">love_still_exists?</span>
-  <span class="k">return</span> <span class="kp">false</span> <span class="k">unless</span> <span class="n">break_up?</span>
-  <span class="n">break_up!</span>
-  <span class="n">find_new_partner</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">love_still_exists?</span>
-  <span class="n">numeric_love_level</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">?</span> <span class="kp">false</span> <span class="p">:</span> <span class="kp">true</span>
-  <span class="k">return</span> <span class="kp">true</span> <span class="k">if</span> <span class="n">life_partner_material?</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span>
-  <span class="c1"># other complicated relationship stuff below</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">break_up?</span>
-  <span class="n">side_chick</span><span class="o">.</span><span class="n">exists?</span> <span class="o">&amp;&amp;</span> <span class="n">current_partner</span><span class="o">.</span><span class="n">knows_about_side_chick?</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span>
-  <span class="k">return</span> <span class="kp">true</span> <span class="k">if</span> <span class="nb">self</span><span class="o">.</span><span class="n">cant_take_anymore_crap</span>
-  <span class="kp">false</span>
-  <span class="c1"># what a crappy algorithm to figure out if you should break up or not :/</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">break_up!</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Sorry, we can&#39;t be together anymore&quot;</span>
-  <span class="n">current_partner</span> <span class="o">=</span> <span class="n">null</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">find_new_partner</span>
-  <span class="k">if</span> <span class="n">side_chick</span><span class="o">.</span><span class="n">exists?</span>
-    <span class="n">side_chick</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;Wanna netflix and chill?&quot;</span><span class="p">)</span>
-  <span class="k">else</span>
-    <span class="n">tinder</span><span class="o">.</span><span class="n">find_partner</span>
-  <span class="k">end</span>
-<span class="k">end</span></p>
-
-<p><span class="c1"># other methods of figuring out relationship problems</span></code></pre></figure></p>
-
-<p>
-  Although I advise absolutely no one to try out this algorithm in real life, the code itself is much easier to read and understand. Splitting the methods into small little chunks result in better code.
-</p>
-
-
-
-
-<h3>Each method nees to operate at a single conceptual level</h3>
-
-
-<p>
-  This basically means not to mix high-level logic with the nitty-gritty details. For example, the <code>transition</code> method holds high-level logic and branches out to other methods:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">transition</span>
-  <span class="k">return</span> <span class="k">if</span> <span class="n">love_still_exists?</span>
-  <span class="k">return</span> <span class="kp">false</span> <span class="k">unless</span> <span class="n">break_up?</span>
-  <span class="n">break_up!</span>
-  <span class="n">find_new_partner</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  What we don't want is something like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">transition</span>
-  <span class="c1"># high-level logic</span>
-  <span class="k">return</span> <span class="k">if</span> <span class="n">love_still_exists?</span>
-  <span class="k">return</span> <span class="kp">false</span> <span class="k">unless</span> <span class="n">break_up?</span>
-  <span class="c1"># nitty gritty details here</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Sorry, we can&#39;t be together anymore&quot;</span>
-  <span class="n">current_partner</span> <span class="o">=</span> <span class="n">null</span>
-  <span class="c1"># nitty gritty details again</span>
-  <span class="k">if</span> <span class="n">side_chick</span><span class="o">.</span><span class="n">exists?</span>
-    <span class="n">side_chick</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;Wanna netflix and chill?&quot;</span><span class="p">)</span>
-  <span class="k">else</span>
-    <span class="n">tinder</span><span class="o">.</span><span class="n">find_partner</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  It's much better organized if the conceptual level is constant as we saw in the above example.
-</p>
-
-
-
-
-<h3>Each method needs to have a name that reflects its purpose</h3>
-
-
-<p>
-  This one is quite straightforward. In essense, what we don't want is something like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">eat_cheeseburger</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Sorry, we can&#39;t be together anymore&quot;</span>
-  <span class="n">current_partner</span> <span class="o">=</span> <span class="n">null</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  or this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">draw_circle</span>
-  <span class="n">numeric_love_level</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span> <span class="o">?</span> <span class="kp">false</span> <span class="p">:</span> <span class="kp">true</span>
-  <span class="k">return</span> <span class="kp">true</span> <span class="k">if</span> <span class="n">life_partner_material?</span><span class="p">(</span><span class="n">current_partner</span><span class="p">)</span>
-  <span class="c1"># other complicated relationship stuff below</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  A method named <code>eat_cheeseburger</code> is expected to eat a cheese burger, not say a cliche break up quote and set <code>current_partner</code> to <code>null</code>. Similarly, a method named <code>draw_circle</code> is expected to draw a circle, not figure out complicated love matters.
-</p>
-
-
-
-
-<p>
-  In this situation, <code>break_up!</code> or <code>love_still_exists?</code> makes 500% more sense.
-</p>
-
-
-
-
-<h3>Writing Shorter Methods</h3>
-
-
-<p>
-  Applying the composed method technique allows you to write shorter and smaller methods instead of long ones. There are several merits to writing shorter methods in Ruby.
-</p>
-
-
-
-
-<p>
-  The first is that <strong>writing smaller details will help you get the details correct</strong>. It's the same idea to writing pseudocode - except you are defining a new method for each line of pseudocode.
-</p>
-
-
-
-
-<p>
-  The second is that <strong>it's easier to test with smaller methods</strong>. If a method contains a solution to more than one problem, you can't isolate a buggy solution; you can only test the entire method. If you have methods that are divided into seperate purposes, you can isolate them and test if they work. It's much easier to debug this way.
-</p>
-
-
-
-
-<p>
-  The last upside is that in Ruby, the composed method way of defining and building classes is super effective since <strong>the cost of defining a new method in Ruby is extremely low</strong>. You just need an additional <code>def</code> and <code>end</code>. In other languages, it can take a little bit more code and thus a little bit more costly. The cost performance of defining a new method in Ruby is high and there's really no reason not to define a new method.
-</p>
-
-
-
-
-<p>
-  <strong><i>Unless</i></strong> you are over doing the "short methods" thing. Your "short method" should actually do something and you shouldn't just define a short method because you can:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">break_up!</span>
-  <span class="n">say_cliche_break_up_line</span>
-  <span class="n">set_current_partner_to_null</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">say_cliche_break_up_line</span>
-  <span class="nb">puts</span> <span class="s2">&quot;Sorry, we can&#39;t be together anymore&quot;</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">set_current_partner_to_null</span>
-  <span class="n">current_partner</span> <span class="o">=</span> <span class="n">null</span>
-<span class="k">end</span>
-<span class="c1"># this is over doing it</span></code></pre></figure></p>
-
-<hr>
-
-
-
-
-<p>
-  I hope my poorly thoughout algorithm was able to explain the topic of writing better methods in Ruby. I apologize for my lack of relationship intelligence, if you have any suggestions please reach out to me as I would like to refactor my poorly constructed model of how one should transition between relationships.
-</p>
-
-
-
-
-<p>
-  Happy coding!
-</p>
-
-
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Useful techniques for arrays and strings in ruby</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Useful-techniques-for-arrays-and-strings-in-ruby.html" />
-  <id>https://www.takehiromouri.com/Useful-techniques-for-arrays-and-strings-in-ruby</id>
-  <published>2016-02-22T00:00:00Z</published>
-  <updated>2016-02-22T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  Ruby comes with several useful techniques that you can use to manipulate various data types. In this post, I'll go over some particularly useful techniques that can be used with arrays and strings in Ruby.
-</p>
-
-
-
-
-<h3>Using <code>%w{ }</code> to declare an array of strings</h3>
-
-
-
-
-<p>
-  You can declare an array of strings like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="s1">&#39;pony&#39;</span><span class="o">]</span>
-<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
-
-<p>
-  There's another way you can declare strings that don't contain strings, which you may find a to be pretty convenient:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">array</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
-<span class="c1"># [&quot;I&quot;, &quot;am&quot;, &quot;a&quot;, &quot;little&quot;, &quot;pony&quot;]</span></code></pre></figure></p>
-
-<p>
-  It takes less time to type but results in the same thing.
-</p>
-
-
-
-
-<h3>Using <code>find_index</code></h3>
-
-
-
-
-<p>
-  To find the index of an object in array, the <code>find_index</code> method comes in handy:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">words</span> <span class="o">=</span> <span class="sx">%w{I am a little pony}</span>
-<span class="n">words</span><span class="o">.</span><span class="n">find_index</span><span class="p">{</span><span class="o">|</span><span class="n">word</span><span class="o">|</span> <span class="n">word</span> <span class="o">==</span> <span class="s2">&quot;pony&quot;</span><span class="p">}</span>
-<span class="c1"># returns 4</span></code></pre></figure></p>
-
-<h3>The Inject Method</h3>
-
-
-
-
-<p>
-  When you want to get the sum of all numbers in an array, the <code>inject</code> method allows you to do so in an elegant way:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
-<span class="c1"># returns 15</span></code></pre></figure></p>
-
-<p>
-  <code>inject</code> is like an <code>each</code> loop, in that it iterates through each element of the array and performs something with each element. <code>inject</code> takes in 2 arguments. The first argument (<code>sum</code>) is the result of the expression performed in the block. In this case, it is the result of <code>sum += num</code>. The second argument (<code>num</code>) is the element in the array in which the iteration is currently on. For example, the first time around, <code>num</code> will equal <code>1</code>, the second time around, <code>num</code> will equal <code>2</code>.
-</p>
-
-
-
-
-<p>
-  <code>sum</code> by default is initialized at <code>0</code>, but you can specify another value like such:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">numbers</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="mi">100</span><span class="p">){</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">num</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">}</span>
-<span class="c1"># returns 115</span></code></pre></figure></p>
-
-<p>
-  in which case it returns <code>115</code>.
-</p>
-
-
-
-
-<h3>No more escapes with <code>%q{ }</code></h3>
-
-
-
-
-<p>
-  Isn't it annoying when you have to do something like this?
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">string_full_of_escapes</span> <span class="o">=</span> <span class="s1">&#39;I&amp;#39;m in love with Ruby. &quot;Ruby isn&amp;#39;t just a language, it&amp;#39;s a lifestyle&quot;. &#39;</span></code></pre></figure></p>
-
-<p>
-  Instead, you could simple do this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">no_escape_string</span> <span class="o">=</span> <span class="sx">%q{I&#39;m in love with Ruby. &quot;Ruby isn&#39;t just a language, it&#39;s a lifestyle.&quot;}</span></code></pre></figure></p>
-
-<p>
-  The <code>q</code> stands for quotes, and it invokes single quotes for you. Beware that <code>#{}</code> won't work with single quotes, and only works with double quotes. In that case, you want to use <code>Q%{ }</code> instead:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">name</span> <span class="o">=</span> <span class="s2">&quot;Takehiro&quot;</span>
-<span class="sx">%Q{My name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">}</span>
-<span class="c1"># &quot;My name is Takehiro&quot;</span></code></pre></figure></p>
-
-<hr>
-
-
-
-
-<p>
-  Happy coding!
-</p>
-
-
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Using case statements to declare variables</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Using-case-statements-to-declare-variables.html" />
-  <id>https://www.takehiromouri.com/Using-case-statements-to-declare-variables</id>
-  <published>2016-02-21T00:00:00Z</published>
-  <updated>2016-02-21T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  If you wanted to assign different variables depending on several different situations, you might be tempted to do so like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Air 13.3&#39;</span>
-  <span class="n">price</span> <span class="o">=</span> <span class="mi">999</span><span class="o">.</span><span class="mo">00</span>
-<span class="k">elsif</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 13.3&#39;</span>
-  <span class="n">price</span> <span class="o">=</span> <span class="mi">1169</span><span class="o">.</span><span class="mo">00</span>
-<span class="k">elsif</span> <span class="n">model</span> <span class="o">==</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 15&#39;</span>
-  <span class="n">price</span> <span class="o">=</span> <span class="mi">1849</span><span class="o">.</span><span class="mo">00</span>
-<span class="k">else</span>
-  <span class="n">price</span> <span class="o">=</span> <span class="s2">&quot;Could not find model&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  In these situations, ruby offers a more elegant solution using <strong>case statements</strong> to do the same thing. It turns out that you can use case statements to declare variables like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">price</span> <span class="o">=</span> <span class="k">case</span> <span class="n">model</span>
-        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Air 13.3&#39;</span> <span class="k">then</span> <span class="mi">999</span><span class="o">.</span><span class="mo">00</span>
-        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 13.3&#39;</span> <span class="k">then</span> <span class="mi">1169</span><span class="o">.</span><span class="mo">00</span>
-        <span class="k">when</span> <span class="s1">&#39;Apple MacBook Pro with Retina Display 15&#39;</span> <span class="k">then</span> <span class="mi">1849</span><span class="o">.</span><span class="mo">00</span>
-        <span class="k">else</span> <span class="s2">&quot;Could not find model&quot;</span>
-        <span class="k">end</span></code></pre></figure></p>
-
-<p>
-  This is a quick little trick that you could use in this common situation.
-</p>
-
-
-
-
-<p>
-  Happy coding! :)
-</p>
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">5 Tips for Beginners to Write Better Ruby Code Instantly</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/5-tips-for-beginners-to-write-better-ruby-code-instantly.html" />
-  <id>https://www.takehiromouri.com/5-tips-for-beginners-to-write-better-ruby-code-instantly</id>
-  <published>2016-02-20T00:00:00Z</published>
-  <updated>2016-02-20T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  Now that you've learned the basic syntax and gained a basic understanding of ruby works, you want to learn how to write better and more concise code. Here are 5 quick tips picked up from a fantastic book called <a href="https://read.amazon.com/kp/embed?asin=B004MMEJ36&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_JqsYwb0AAT5XE" target="_blank">Eloquent Ruby</a> that you can start using right now to make your code more readable.
-</p>
-
-
-
-
-<h2>Don't write comments for the wrong reasons</h2>
-
-
-
-
-<p>
-  Adding comments, especially in a more complex app can be useful. You have to make sure that you provide comments so that other people can read and understand your code. You also have to make sure that you can understand the code yourself after a while.
-</p>
-
-
-
-
-<p>
-  On the other hand, you don't want to get in the mindset of, <i>"Oh, this code is pretty messy but I'm going to add comments so it'll be fine."</i> Adding comments to make badly written code somewhat comprehensible is an extremely bad reason for adding comments. <strong>In general, your ruby code should be clear enough so that it explains itself.</strong> Hence the quote from the book, <strong><i>"Good code is like a good joke: it needs no explanation."</i></strong> <span style="font-size:12px;">(pg. 8 - Eloquent Ruby)</span>
-</p>
-
-
-
-
-<h2>Ternary Operators</h2>
-
-
-<p>
-  Ever write code like this?
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">subscribed?</span>
-  <span class="n">render_already_subscribed_message</span>
-<span class="k">else</span>
-  <span class="n">current_user</span><span class="o">.</span><span class="n">subscribe!</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  This makes perfect sense, except we can make it much shorter with ternary operators. Ternary operators work like such:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">if_this_is_a_true_value</span> <span class="p">?</span> <span class="n">then_the_result_is_this</span> <span class="p">:</span> <span class="n">else_it_is_this</span></code></pre></figure></p>
-
-<p>
-   So in this example, we can re-write the code like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">current_user</span><span class="o">.</span><span class="n">subscribed?</span> <span class="p">?</span> <span class="n">render_already_subscribed_message</span> <span class="p">:</span> <span class="n">current_user</span><span class="o">.</span><span class="n">subscribe!</span></code></pre></figure></p>
-
-<h2>Method Name Conventions: Using <code>?</code> and <code>!</code></h2>
-
-
-<p>
-  When you are using ruby, you may have noticed that a lot of the built in methods use <code>?</code> and <code>!</code>. For example <code>.nil?</code> or <code>.flatten!</code>. <code>?</code> and <code>!</code> aren't special symbols in method names, but rather just naming conventions in the ruby community.
-</p>
-
-
-
-
-<p>
-  <code>?</code>s are used when the method returns a <code>true</code> or <code>false</code> boolean. So for example instead of this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_legal</span>
-  <span class="nb">self</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-<span class="k">end</span></p>
-
-<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal</span></code></pre></figure></p>
-
-<p>
-  You want to write add a <code>?</code> to the method like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">is_legal?</span>
-  <span class="nb">self</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-<span class="k">end</span></p>
-
-<p><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
-
-<p>
-  You can see here that <code>current_user.is_legal?</code> makes a little more sense than <code>current_user.is_legal</code>, since we are essentially asking a yes or no question.
-</p>
-
-
-
-
-<p>
-  Now let's take a look at the <code>!</code> operator in methods. The <code>!</code> operator when used in a method infers that the method is potentially dangerous and could change the state of the variable that the method is called upon. Here's an example:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]</span></p>
-
-<p><span class="nb">print</span> <span class="n">a</span><span class="o">.</span><span class="n">reverse</span></p>
-
-<p><span class="nb">print</span> <span class="n">a</span>
-<span class="c1"># returns [1, 2, 3, 4]</span></code></pre></figure></p>
-
-<p>
-  What we see here is that we expect <code>.reverse</code> to actually modify the array <code>a</code>. However, we see that it doesn't modify the actual array, but it just returns the reversed array. Now what if we change the <code>reverse</code> method to <code>reverse!</code>?
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]</span></p>
-
-<p><span class="nb">print</span> <span class="n">a</span><span class="o">.</span><span class="n">reverse!</span></p>
-
-<p><span class="nb">print</span> <span class="n">a</span>
-<span class="c1"># returns [4, 3, 2, 1]</span></code></pre></figure></p>
-
-<p>
-  Now we see that <code>reverse!</code> has actually modified the actual array. It's important to know the differences between methods with and without the bang operator.
-</p>
-
-
-
-
-<h2>Using <code>unless</code> and <code>until</code></h2>
-
-
-<p>
-  When you want to write logic when something is <i>not</i> true, you might be tempted to write code like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="o">!</span><span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>or alternatively</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="ow">not</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  Instead of combining <code>if</code> and <code>!</code>, it is often times more intuitive to use <code>unless</code>.
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  This sounds closer to English and is far more readable. Instead of "If current user is not legal, do this", it takes a little less mental energy if I were to say "Unless current user is legal, do this".
-</p>
-
-
-
-
-<p>
-  Same thing with <code>while</code> loops. Instead of writing this kind of code:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">while</span> <span class="o">!</span><span class="n">fruit</span><span class="o">.</span><span class="n">is_ripe?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;This fruit isn&#39;t ripe yet.&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  You could make the code much easier to mentally process by rewriting it like this:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">until</span> <span class="n">fruit</span><span class="o">.</span><span class="n">is_ripe?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;This fruit isn&#39;t ripe yet.&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>
-  It takes less mental energy to read and understand code if we use <code>unless</code> and <code>until</code> in these kinds of situations.
-</p>
-
-
-
-
-<h2>One Line Statements</h2>
-
-
-
-
-<p>Let's say we have code written like this:</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span>
-  <span class="nb">puts</span> <span class="s2">&quot;I can buy alcohol&quot;</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>Instead of using multiple lines, we can rewrite this code in one line like this:</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I can buy alcohol&quot;</span> <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
-
-<p>
-  This applies to things like <code>unless</code> as well:
-</p>
-
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;I can&#39;t buy alcohol&quot;</span> <span class="k">unless</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_legal?</span></code></pre></figure></p>
-
-<p>
-  When writing these one-liners, make sure that the line isn't too long. The point here is to make the code more readable, so you don't want to defeat the purpose by cramming a bunch of code into one line just because you can.
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  Just implementing these simple techniques will make you a better ruby programmer. Ruby offers many elegant solutions like these and learning them are really worth the time.
-</p>
-
-
-
-
-<p>Happy coding :)</p>
 
  ]]></content>
 </entry>
