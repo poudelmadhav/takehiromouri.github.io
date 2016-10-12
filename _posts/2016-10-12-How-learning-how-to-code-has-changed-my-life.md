@@ -17,7 +17,7 @@ After I moved to Japan when I was 13, surprisingly many of the people I went to 
 
 High school for me was odd - though I knew I was an introverted nerd by nature, I found myself playing basketball extremely intensely. We were winning prefectural championships, I was selected as a prefectural representative (mostly for the reason that I am considered to be super tall in Japan), and we played in national tournaments. 
 
-On the other hand, despite my involvement in athletic activities, I still found myself wanting to tinker with computers. So I started a blog about basketball.
+On the other hand, despite my involvement in athletic activities, I still found myself wanting to tinker with computers. So I started a blog about basketball. It turned out that the training methods in the US were different from the ones practiced in Japan, so I targeted motivated high school students playing basketball and wrote about US training methods.
 
 As a high school kid, I wanted to make some money, but my time limitations being a student-athlete didn't allow me to take on any part-time jobs - so I searched for ways to make money doing what I liked; using computers. I first started by signing up to one of those websites where you make extremely small amounts of money by clicking on ads.
 
@@ -25,9 +25,9 @@ I quickly realized this was inefficient, boring, and a waste of time, so I start
 
 As naive as I was, that was how I got started writing my basketball blog. I googled around for SEO, learned some basic HTML and CSS, and read a bunch of articles about content marketing.
 
-I learned how important it is to determine a specific target audience and write the article as if I were speaking to them. I also learned that to reach a larger audience, I needed to write a bunch of articles with high quality (quantity and quality). I also learned how to research for keywords, where to place Google ads (I'm not sure if these things still apply), and a bunch of other things. I probably only learned the surface of these things, but it was enough to make me around 100 USD per month from Google ad revenues. 
+I learned how important it is to determine a specific target audience and write the article as if I were speaking to them. I also learned that to reach a larger audience, I needed to write a bunch of articles with high quality (quantity and quality). I also learned how to research for keywords, where to place Google ads (I'm not sure if these things still apply), how to measure metrics using Google Analytics, etc. I probably only learned the surface of these things, but it was enough to make me around 100 USD per month from Google ad revenues. 
 
-This was my first experience of making money without actually working for a company. What I realized was that I could simply work part-time for a company and make the same amount by working for a week or so. Thus I left my blog (although it continued making some revenue for some months).
+This was my first experience of making money without actually working for a company. But what I realized was that I could simply work part-time for a company and make the same amount by working for a week or so - it wasn't really worth the time and effort. Plus, I didn't feel that excited to write about basketball, so I left my blog (although it continued making some revenue for some months).
 
 Fast forward to the present and I'm still tinkering with computers. I write a lot of code because it's a lot of fun for me, it's an intense hobby I have and I never get tired of it.
 
@@ -61,7 +61,7 @@ Creating the platform is one of the things I enjoy most - not only do I get to c
 
 #### I learn something new everyday
 
-I literally learn something new everyday. There are just limitless amounts of things to know as a programmer which motivates me and forces me in a way to continue learning. I am sure that when I look back at the code I am writing today in 2 or 3 years, or maybe even a couple of months, I will surely be disappointed in myself for that lack of consideration and immaturity of design.
+I learn something new everyday, not in the sense of emotional growth, but in a sense of practical concrete knowledge that can be applied immediately. There are just limitless amounts of things to know as a programmer which motivates me and forces me in a way to continue learning. I am sure that when I look back at the code I am writing today in 2 or 3 years, or maybe even a couple of months, I will surely be disappointed in myself for that lack of consideration and immaturity of design.
 
 #### I can fail
 
