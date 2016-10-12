@@ -3,7 +3,7 @@ layout: post
 title: How learning how to code has changed my life
 ---
 
-I always have liked building things.
+I've always liked building things.
 
 I grew up in the US, where a lot of nerds play a lot of video games and spend a lot of time with computers. One of my best friends growing up had a family full of computer people, and my other best friend was also really into playing video games.
 
