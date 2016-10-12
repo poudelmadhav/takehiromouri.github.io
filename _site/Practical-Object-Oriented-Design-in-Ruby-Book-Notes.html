@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Takehiro Mouri" />
+    <meta name="description" content="Ruby on Rails developer. I read, write, and live code.">
+    <link rel="icon" href="static/img/favicon.ico">
+
+    
+      <title>Practical Object Oriented Design in Ruby Book Notes</title>
+    
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74317216-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+<!--         <li><a href="projects.html">PROJECTS</a></li>
+ -->        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="now.html">NOW</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/Practical-Object-Oriented-Design-in-Ruby-Book-Notes.html">Practical Object Oriented Design in Ruby Book Notes</a></strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		September 10, 2016
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <ul>
+<li><p>The programming techniques that make code a joy to write overlap with those that most efficiently produce software</p></li>
+<li><p>The techniques of object-oriented design solve both the moral and the technical dilemmas of programming; following them produces cost- effective software using code that is also a pleasure to work on.</p></li>
+<li><p>Design does not matter unless there will be change to the application - but there is always change to the application</p></li>
+<li><p>Object-oriented design is about managing dependencies. It is a set of coding techniques that arrange dependencies such that objects can tolerate change.</p></li>
+<li><p>Dependent objects would wreak havoc because changing one object forces change upon another, leading another object to change etc.</p></li>
+<li><p>You must not only write code for the feature you plan to deliver today, you must also create code that is amenable to being changed later.</p></li>
+<li><p>Practical design does not anticipate what will happen to your application, it merely accepts that something will and that, in the present, you cannot know what. It doesn’t guess the future; it preserves your options for accommodating the future. It doesn’t choose; it leaves you room to move.</p></li>
+<li><p>The purpose of design is to allow you to do design later and its primary goal is to reduce the cost of change.</p></li>
+</ul>
+
+
+<!-- 
+* **SOLID**
+  * Single Responsibility
+  * Open-closed
+  * Liskov Subtitution
+  * Interface Segregation
+  * Dependency Inversion -->
+
+
+<ul>
+<li><p>Studies were done to measure code quality, and indeed these design principles lead to high quality code</p></li>
+<li><p>The Agile experience is that this collaboration produces software that differs from what was initially imagined; the resulting software could not have been anticipated by any other means.</p></li>
+<li><p>BUFD stands for Big Up Front Design</p></li>
+<li><p>Because Agile processes guarantee change, the ability to make changes to the code is necessary. Otherwise, everytime you would need to rewrite a bunch of code.</p></li>
+<li><p>SLOC (source lines of code) to measure programmer contribution says nothing about overall equality</p></li>
+<li><p>Object-oriented programming is object-oriented relative to non object-oriented, or procedural, programming.</p></li>
+<li><p>Class-based OO languages like Ruby allow you to define a class that provides a blueprint for the construction of similar objects.</p></li>
+<li><p>The trick to getting the most bang for your design buck is to acquire an understanding of the theories of design and to apply these theories appropriately, at the right time, and in the right amounts. Design relies on your ability to translate theory into practice.</p></li>
+</ul>
+
+
+<h2>Designing Classes with a Single Responsibility</h2>
+
+<ul>
+<li><p>The classes you create define a virtual world, and will affect how you think about your application forever.</p></li>
+<li><p>Code should be <strong>TRUE</strong></p>
+
+<ul>
+<li>Transparent
+
+<ul>
+<li>The consequences of change should be obvious in the code that is changing and in distant code that relies upon it</li>
+</ul>
+</li>
+<li>Reasonable
+
+<ul>
+<li>The cost of any change should be proportional to the benefits the change achieves</li>
+</ul>
+</li>
+<li>Usable
+
+<ul>
+<li>Existing code should be usable in new and unexpected contexts</li>
+</ul>
+</li>
+<li>Exemplary
+
+<ul>
+<li>The code itself should encourage those who change it to perpetuate
+these qualities</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>A class should do the smallest possible useful thing; that is, it should have a single responsibility.</strong></p></li>
+<li><p>A class that has more than one responsibility is difficult to reuse. The various responsibilities are likely thoroughly entangled within the class. If you want to reuse some (but not all) of its behavior, it is impossible to get at only the parts you need. You are faced with two options and neither is particularly appealing.</p></li>
+<li><p>How can you determine if the Gear class contains behavior that belongs somewhere else?</p>
+
+<ul>
+<li><p><strong>One way is to pretend that it’s sentient (act as if it has feelings) and to interrogate it.</strong></p>
+
+<ul>
+<li>For example, “Please Mr. Gear, what is your ratio?” seems perfectly reasonable, while “Please Mr. Gear, what are your gear_inches?” is on shaky ground, and “Please Mr. Gear, what is your tire (size)?” is just downright ridiculous.</li>
+</ul>
+</li>
+<li><p><strong>Another way is to attempt to describe it in one sentence</strong></p>
+
+<ul>
+<li>If the explanation requires the use of words such as <code>and</code> or <code>or</code>, then it most likely has more than one responsibility.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>When everything in a class is related to its central purpose, the class is said to be highly cohesive or to have a single responsibility.</strong></p></li>
+<li><p>When faced with an imperfect and muddled class like Gear, ask yourself: “What is the future cost of doing nothing today?”</p></li>
+<li><p>This “improve it now” versus “improve it later” tension always exists. Applications are never perfectly designed. Every choice has a price. A good designer understands this tension and minimizes costs by making informed tradeoffs between the needs of the present and the possibilities of the future.</p></li>
+<li><p>Methods should also only have one single responsibility</p></li>
+<li><p>If code inside a method needs a comment, extract that into a seperate method - the method name will serve the same purpose as the old comment.</p></li>
+<li><p>Small methods encourage reuse</p></li>
+<li><p>If you have a muddled class with too many responsibilities, seperate those responsibilities into different classes.</p></li>
+<li><p>An object has a dependency when it knows</p></li>
+<li><p>A class should know just enough to do its job and not one thing more</p></li>
+<li><p><strong>Dependency Injection</strong> - moving an explicit dependency to an implicit one.</p></li>
+<li><p>When a message requires arguments, not only can you not avoid having knowledge of those arguments, you also require that those arguments be passed in a specific fixed order.</p>
+
+<ul>
+<li>To avoid this, initialize the arguments using a hash</li>
+</ul>
+</li>
+<li><p>Use the fetch method to set defaults instead of using ||</p></li>
+<li><p>Depend on things that change less often than you do</p></li>
+<li><p>When a class reveals al, it causes difficult to reuse objects</p></li>
+<li><p>Comparison of classes vs kitchens - the class exists to fulfill a single responsibility but implements many methods</p></li>
+<li><p>The context that an object expects has a direct effect on how difficult it is to reuse.</p></li>
+<li><p>Distinction between what <strong>what</strong> and <strong>how</strong></p></li>
+<li><p>Blind trust is a keystone of object-oriented design. It allows objects to collaborate without binding themselves to context and is necessary in any appliation that expects to gow and change</p></li>
+<li><p>Duck types are public interfaces that are not tied to any specific class</p></li>
+</ul>
+
+
+			  <div class="subscribe">
+  <hr>
+  <h2>If you found this post useful, sign up for my personal mailing list below. Every now and then, I share coding articles that I've found or written that you might find to be useful or interesting.</h2>
+      <!-- Begin MailChimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+  <div id="mc_embed_signup">
+  <form action="//takehiromouri.us12.list-manage.com/subscribe/post?u=2da1dc093352ef1e1ebf161ad&amp;id=09f268a271" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+    <label for="mce-EMAIL" style="text-align:center">Subscribe to my personal mailing list</label>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required style="margin: 0 auto 10px;">
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2da1dc093352ef1e1ebf161ad_09f268a271" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Keep Me in The Loop" name="subscribe" id="mc-embedded-subscribe" class="button" style="margin: 0 auto;background-color:#27A822;"></div>
+      </div>
+  </form>
+  </div>
+</div>
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	October 12, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="Should-I-Learn-How-to-Code.html">Should I learn how to code?</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	October 12, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="How-learning-how-to-code-has-changed-my-life.html">How learning how to code has changed my life</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	September  5, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="What-does-it-take-to-become-a-web-developer.html">What does it take to become a web developer?</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© Takehiro Mouri 2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

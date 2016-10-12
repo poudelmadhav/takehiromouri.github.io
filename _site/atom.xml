@@ -6,13 +6,233 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-09-09T10:48:11Z</updated>
+  <updated>2016-10-12T16:24:44Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
   </author>
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Should I learn how to code?</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Should-I-Learn-How-to-Code.html" />
+  <id>https://www.takehiromouri.com/Should-I-Learn-How-to-Code?</id>
+  <published>2016-10-12T00:00:00Z</published>
+  <updated>2016-10-12T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>I&rsquo;m pretty sure that there are other people like me who like building things and would rather do that instead of whatever work they are involved in that they aren&rsquo;t fit for. On the other hand, I have the impression that many people think that learning how to code is difficult and only for the mathematically capable (this was me in the past). But in my personal experience and looking at other examples as well, despite the common image of whiz kid programmers (think Mark Zuckerburg in Social Network), coding isn&rsquo;t that difficult to learn. And it certainly doesn&rsquo;t require high levels of computational skills, at least to start out.</p>
+
+<p>There are so many free online resources that anyone can use to learn the basics of programming. There are also many wonderful paid resources to dive deeper. I really enjoy teaching people how to code because I sincerely believe that it&rsquo;s a skill/hobby that is not only a viable career option, but is also fun.</p>
+
+<h4>Should I learn how to code?</h4>
+
+<p>With that being said, I don&rsquo;t think everyone should be a programmer, nor should they be forced to be. Learning how to code is a good thing, but it doesn&rsquo;t mean that everyone should necessarily pursue a career in programming.</p>
+
+<p>There tends to be a lot of articles suggesting that everyone should learn how to code. Education is moving towards the direction of making it mandatory for students to learn programming from a young age as well. This is a great thing in that it will certainly open a lot of doors for a lot of people. However, I&rsquo;m skeptical on whether most of the classes on programming that these students will enroll in will teach programming in a way that excites them. Sure, they can learn basic syntax and (be forced to) build some simple games, but will it be something that excites students? Or will it have an unfortunate effect of giving them a false impression that programming is boring and lead potential programmers to shy away from it?</p>
+
+<p>I also think that even if one tries to force him/herself into becoming a programmer, I don&rsquo;t think it really works that way. You either like it and you spend lots of time doing it, and therefore become a good programmer, or you either don&rsquo;t like it and leave it.</p>
+
+<p>That&rsquo;s why I think it&rsquo;s crucial to teach in a way that excites and motivates students to actually <em>build</em> things, instead of worrying about the complicated theoretical matters that may be involved with programming. I believe that the more the indiviual <em>likes</em> to program intrinsically, the better the individual will become at programming.</p>
+
+<p>Learning how to program is a lifelong pursuit; like any thing that involve various elements, programming is easy to learn, but hard to master. However, although I certainly can&rsquo;t say that I have mastered programming in any way, I can say with confidence that the small rewards of pursuing mastery is extremely worthwhile.</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">How learning how to code has changed my life</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-learning-how-to-code-has-changed-my-life.html" />
+  <id>https://www.takehiromouri.com/How-learning-how-to-code-has-changed-my-life</id>
+  <published>2016-10-12T00:00:00Z</published>
+  <updated>2016-10-12T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>I always have liked building things.</p>
+
+<p>I grew up in the US, where a lot of nerds play a lot of video games and spend a lot of time with computers. One of my best friends growing up had a family full of computer people, and my other best friend was also really into playing video games.</p>
+
+<p>Like many programmers, I started out playing a bunch of video games growing up, and in an attempt to beat other gamers, I would try out different hacks (wall-hacks, auto-aim, etc.). Sometimes the patches would work, sometimes they would not work. I spent a lot of time tinkering with the computer to get these things to try and work.</p>
+
+<p>When I was around 10 years old, I built my first crappy third person shooter. I used some kind of game development software and created an extremely buggy, but playable third person shooter with bots that move right and left across the screen. Although I don&rsquo;t recall anyone but myself playing the game, I do remember spending quite a lot of time on it.</p>
+
+<p>I also remember playing Runescape (an MMORPG) in the early days, and using macros to automate actions to increase my character&rsquo;s level. Unfortunately Runescape put in detection for these kind of macros, and that account soon got banned.</p>
+
+<p>After I moved to Japan when I was 13, surprisingly many of the people I went to school with didn&rsquo;t play much PC video games, and they also didn&rsquo;t know much about using a computer. I naturally faded away from computers and gradually shifted towards playing basketball.</p>
+
+<p>High school for me was odd - though I knew I was an introverted nerd by nature, I found myself playing basketball extremely intensely. We were winning prefectural championships, I was selected as a prefectural representative (mostly for the reason that I am considered to be super tall in Japan), and we played in national tournaments.</p>
+
+<p>On the other hand, despite my involvement in athletic activities, I still found myself wanting to tinker with computers. So I started a blog about basketball.</p>
+
+<p>As a high school kid, I wanted to make some money, but my time limitations being a student-athlete didn&rsquo;t allow me to take on any part-time jobs - so I searched for ways to make money doing what I liked; using computers. I first started by signing up to one of those websites where you make extremely small amounts of money by clicking on ads.</p>
+
+<p>I quickly realized this was inefficient, boring, and a waste of time, so I started looking for something that would be more interesting and worthwhile. I soon found out that some people make money writing blogs through ads.</p>
+
+<p>As naive as I was, that was how I got started writing my basketball blog. I googled around for SEO, learned some basic HTML and CSS, and read a bunch of articles about content marketing.</p>
+
+<p>I learned how important it is to determine a specific target audience and write the article as if I were speaking to them. I also learned that to reach a larger audience, I needed to write a bunch of articles with high quality (quantity and quality). I also learned how to research for keywords, where to place Google ads (I&rsquo;m not sure if these things still apply), and a bunch of other things. I probably only learned the surface of these things, but it was enough to make me around 100 USD per month from Google ad revenues.</p>
+
+<p>This was my first experience of making money without actually working for a company. What I realized was that I could simply work part-time for a company and make the same amount by working for a week or so. Thus I left my blog (although it continued making some revenue for some months).</p>
+
+<p>Fast forward to the present and I&rsquo;m still tinkering with computers. I write a lot of code because it&rsquo;s a lot of fun for me, it&rsquo;s an intense hobby I have and I never get tired of it.</p>
+
+<p>Once I learned how to code, my life has changed dramatically.</p>
+
+<h4>I have a hobby that is a viable career</h4>
+
+<p>I&rsquo;ve always had a bunch of hobbies that I would spend a lot of time with, like playing music, playing basketball, playing video games, etc. but they were never viable career options. When I was a naive middle school kid, I once tried persuading my parents that I wanted to go to Berklee School of Music and become a professional jazz drummer. My parents unsuprisingly discouraged me from that career option, saying that there&rsquo;s no money in it; which I completely agree with now that I reflect back on it.</p>
+
+<p>Hobbies may inheritenly be a difficult career option for most cases, in the sense that hobbies are by definition, activities that are done in one&rsquo;s leisure time for one&rsquo;s pleasure, and not necessary for the fulfillment of others. Since money is just a currency that is exchanged for the value you create for society, unless you are solving someone else&rsquo;s problems or meeting some kind of need in some kind of way, it&rsquo;s really unlikely that you&rsquo;ll be making a career off of it. Unless you are in the top rank of musicians or gamers, it&rsquo;s really hard to create value for others, since there is a relatively limited market for these careers as of now.</p>
+
+<p>On the other hand, programming has the same addictive nature that things like music or video games have, in that there is never an end to learning, and you can always get better. It&rsquo;s also easy to measure how competent you are compared to other people (just like how you can compare how much better you are at CounterStrike compared to your rival friend).</p>
+
+<p>One of the things that is different is that there is a high demand for programmers compared to musicians or gamers. This makes sense since a lot of things are now automated or is starting to become automated with software, which means that programmers are needed to create that software.</p>
+
+<p>A high demand for programmers also means that programmers have the ability to solve problems - and when you can solve problems, you tend to get some kind of value in return.</p>
+
+<h4>I have more freedom</h4>
+
+<p>There are many viable career options, but programming is somewhat of a rare one, since the only essential things you need to code and be productive is a laptop and good wifi. I&rsquo;ve worked remotely for a lot of projects while making a fair amount of money. A lot of companies are allowing developers to work remotely, and it seems that this trend might continue as there are more and more tools being developed to collaborate online with a team.</p>
+
+<h4>I am back to creating things</h4>
+
+<p>I&rsquo;ve always spent a lot of time making things because I like to do so. Coding has allowed me to pursue building things again.</p>
+
+<h4>I can create a product for free</h4>
+
+<p>You don&rsquo;t <em>have</em> to work for a company if you have something that you want to pursue. Right now I&rsquo;m working on a start up in Nepal that teaches people web development through a combination of an online curriculum and 1 on 1 personal mentor sessions.</p>
+
+<p>Creating the platform is one of the things I enjoy most - not only do I get to code, I get to code the features that I want to build. I don&rsquo;t need to pay anyone to create the software (that would cost a lot of money), I just build it myself.</p>
+
+<h4>I learn something new everyday</h4>
+
+<p>I literally learn something new everyday. There are just limitless amounts of things to know as a programmer which motivates me and forces me in a way to continue learning. I am sure that when I look back at the code I am writing today in 2 or 3 years, or maybe even a couple of months, I will surely be disappointed in myself for that lack of consideration and immaturity of design.</p>
+
+<h4>I can fail</h4>
+
+<p>Bugs are encountered numerous times every day and software never works perfectly on the first try. Thus I make a lot of errors everyday. This is normal and I like the idea that I don&rsquo;t have to be perfect on the first try. I seems cliche, but I never liked the idea of how tests in most schools grade you on the performance of one test. It&rsquo;s efficient for sure, but it doesn&rsquo;t really capture and reflect the nature of most types of work. If one of the main purposes of education is to nurture more productive human beings, then why create tests that are opposite of what is practiced in most types of real work?</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Practical Object Oriented Design in Ruby Book Notes</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Practical-Object-Oriented-Design-in-Ruby-Book-Notes.html" />
+  <id>https://www.takehiromouri.com/Practical-Object-Oriented-Design-in-Ruby-Book-Notes</id>
+  <published>2016-09-10T00:00:00Z</published>
+  <updated>2016-09-10T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <ul>
+<li><p>The programming techniques that make code a joy to write overlap with those that most efficiently produce software</p></li>
+<li><p>The techniques of object-oriented design solve both the moral and the technical dilemmas of programming; following them produces cost- effective software using code that is also a pleasure to work on.</p></li>
+<li><p>Design does not matter unless there will be change to the application - but there is always change to the application</p></li>
+<li><p>Object-oriented design is about managing dependencies. It is a set of coding techniques that arrange dependencies such that objects can tolerate change.</p></li>
+<li><p>Dependent objects would wreak havoc because changing one object forces change upon another, leading another object to change etc.</p></li>
+<li><p>You must not only write code for the feature you plan to deliver today, you must also create code that is amenable to being changed later.</p></li>
+<li><p>Practical design does not anticipate what will happen to your application, it merely accepts that something will and that, in the present, you cannot know what. It doesn’t guess the future; it preserves your options for accommodating the future. It doesn’t choose; it leaves you room to move.</p></li>
+<li><p>The purpose of design is to allow you to do design later and its primary goal is to reduce the cost of change.</p></li>
+</ul>
+
+
+<!-- 
+* **SOLID**
+  * Single Responsibility
+  * Open-closed
+  * Liskov Subtitution
+  * Interface Segregation
+  * Dependency Inversion -->
+
+
+<ul>
+<li><p>Studies were done to measure code quality, and indeed these design principles lead to high quality code</p></li>
+<li><p>The Agile experience is that this collaboration produces software that differs from what was initially imagined; the resulting software could not have been anticipated by any other means.</p></li>
+<li><p>BUFD stands for Big Up Front Design</p></li>
+<li><p>Because Agile processes guarantee change, the ability to make changes to the code is necessary. Otherwise, everytime you would need to rewrite a bunch of code.</p></li>
+<li><p>SLOC (source lines of code) to measure programmer contribution says nothing about overall equality</p></li>
+<li><p>Object-oriented programming is object-oriented relative to non object-oriented, or procedural, programming.</p></li>
+<li><p>Class-based OO languages like Ruby allow you to define a class that provides a blueprint for the construction of similar objects.</p></li>
+<li><p>The trick to getting the most bang for your design buck is to acquire an understanding of the theories of design and to apply these theories appropriately, at the right time, and in the right amounts. Design relies on your ability to translate theory into practice.</p></li>
+</ul>
+
+
+<h2>Designing Classes with a Single Responsibility</h2>
+
+<ul>
+<li><p>The classes you create define a virtual world, and will affect how you think about your application forever.</p></li>
+<li><p>Code should be <strong>TRUE</strong></p>
+
+<ul>
+<li>Transparent
+
+<ul>
+<li>The consequences of change should be obvious in the code that is changing and in distant code that relies upon it</li>
+</ul>
+</li>
+<li>Reasonable
+
+<ul>
+<li>The cost of any change should be proportional to the benefits the change achieves</li>
+</ul>
+</li>
+<li>Usable
+
+<ul>
+<li>Existing code should be usable in new and unexpected contexts</li>
+</ul>
+</li>
+<li>Exemplary
+
+<ul>
+<li>The code itself should encourage those who change it to perpetuate
+these qualities</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>A class should do the smallest possible useful thing; that is, it should have a single responsibility.</strong></p></li>
+<li><p>A class that has more than one responsibility is difficult to reuse. The various responsibilities are likely thoroughly entangled within the class. If you want to reuse some (but not all) of its behavior, it is impossible to get at only the parts you need. You are faced with two options and neither is particularly appealing.</p></li>
+<li><p>How can you determine if the Gear class contains behavior that belongs somewhere else?</p>
+
+<ul>
+<li><p><strong>One way is to pretend that it’s sentient (act as if it has feelings) and to interrogate it.</strong></p>
+
+<ul>
+<li>For example, “Please Mr. Gear, what is your ratio?” seems perfectly reasonable, while “Please Mr. Gear, what are your gear_inches?” is on shaky ground, and “Please Mr. Gear, what is your tire (size)?” is just downright ridiculous.</li>
+</ul>
+</li>
+<li><p><strong>Another way is to attempt to describe it in one sentence</strong></p>
+
+<ul>
+<li>If the explanation requires the use of words such as <code>and</code> or <code>or</code>, then it most likely has more than one responsibility.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>When everything in a class is related to its central purpose, the class is said to be highly cohesive or to have a single responsibility.</strong></p></li>
+<li><p>When faced with an imperfect and muddled class like Gear, ask yourself: “What is the future cost of doing nothing today?”</p></li>
+<li><p>This “improve it now” versus “improve it later” tension always exists. Applications are never perfectly designed. Every choice has a price. A good designer understands this tension and minimizes costs by making informed tradeoffs between the needs of the present and the possibilities of the future.</p></li>
+<li><p>Methods should also only have one single responsibility</p></li>
+<li><p>If code inside a method needs a comment, extract that into a seperate method - the method name will serve the same purpose as the old comment.</p></li>
+<li><p>Small methods encourage reuse</p></li>
+<li><p>If you have a muddled class with too many responsibilities, seperate those responsibilities into different classes.</p></li>
+<li><p>An object has a dependency when it knows</p></li>
+<li><p>A class should know just enough to do its job and not one thing more</p></li>
+<li><p><strong>Dependency Injection</strong> - moving an explicit dependency to an implicit one.</p></li>
+<li><p>When a message requires arguments, not only can you not avoid having knowledge of those arguments, you also require that those arguments be passed in a specific fixed order.</p>
+
+<ul>
+<li>To avoid this, initialize the arguments using a hash</li>
+</ul>
+</li>
+<li><p>Use the fetch method to set defaults instead of using ||</p></li>
+<li><p>Depend on things that change less often than you do</p></li>
+<li><p>When a class reveals al, it causes difficult to reuse objects</p></li>
+<li><p>Comparison of classes vs kitchens - the class exists to fulfill a single responsibility but implements many methods</p></li>
+<li><p>The context that an object expects has a direct effect on how difficult it is to reuse.</p></li>
+<li><p>Distinction between what <strong>what</strong> and <strong>how</strong></p></li>
+<li><p>Blind trust is a keystone of object-oriented design. It allows objects to collaborate without binding themselves to context and is necessary in any appliation that expects to gow and change</p></li>
+<li><p>Duck types are public interfaces that are not tied to any specific class</p></li>
+</ul>
+
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">What does it take to become a web developer?</title>
   <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/What-does-it-take-to-become-a-web-developer.html" />
@@ -663,773 +883,6 @@ irb<span class="o">(</span>main<span class="o">)</span>:007:0&gt; user.comments_
 <p>This kind of creates an eco system where our group of friends can freely be nerds and be okay about it, and it works great.</p>
 
 <p>If you&rsquo;re one of these people or want to make yourself feel better about being a nerd, please do message me and I will be super happy of making another hardworking nerdy friend.</p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">How to Learn How to Code while Getting Paid</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-To-Learn-How-to-Code-while-Getting-Paid.html" />
-  <id>https://www.takehiromouri.com/How-To-Learn-How-to-Code-while-Getting-Paid</id>
-  <published>2016-03-20T00:00:00Z</published>
-  <updated>2016-03-20T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <h3>
-  This was my stupid 3-step plan to becoming a superstar hacker 2 years ago when I first attempted to learn how to code:
-</h3>
-
-
-
-
-<ol>
-  <li>Go through Codecademy courses</li>
-  <li>Enroll in CS50</li>
-  <li>Become a superstar coder</li>
-</ol>
-
-
-
-
-<p>
-  I thought that this was all I needed to do in order for me to start creating the next Facebook.
-</p>
-
-
-
-
-<h1>WRONG.</h1>
-
-
-
-
-<h3>
-  This is what happened instead:
-</h3>
-
-
-
-
-<p>
-  I blew through the Codecademy HTML/CSS and JavaScript/jQuery course and then quickly enrolled in CS50 (online introductory computer science course held by Harvard). Phew! After I finish CS50, I'll be amazing! - or so I thought.
-</p>
-
-
-
-
-<h3>Not Quite.</h3>
-
-
-
-
-<p>
-  For the first 3 lectures, I sat in my "virtual class environment" (my sofa + laptop) super excited about programming. And of course, as any one supposedly embarking on a new adventure would, I thought CS50 was going to change my life. The lecturer was super easy to understand, energetic, and to the point. They did a great job presenting the information and I thought I was learning a whole lot.
-</p>
-
-
-
-
-<p>
-  But then after a couple of lectures, I was confused as <strong>#%!&</strong>. Pointers? Memory allocation? <strong>Programming suddenly seemed like a super complex thing to learn.</strong> The course went on about bubble sorts and merge sorts and all sorts of sorts. I was becoming more and more confused and I simply couldn't manage my motivation.
-</p>
-
-
-
-
-<h3>After 3 weeks, I had quit.</h3>
-
-
-
-
-<p>
-  My mind was spiraling with negative thoughts: <em>"I'm not smart enough for this. Coding is for smart people. Coding is for mathy people. I'm not fit for this."</em>
-</p>
-
-
-
-
-<p>
-  Plus, even though I breezed through the Codecademy stuff, I had forgot most of the stuff that I had learned in a matter of a few weeks! <strong>This was a terrible, terrible investment of my time.</strong>
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  Then in August 2015, I had the urge to give coding a try once again and joined a coding bootcamp called <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>. It was the best decision I made that year. (I talk more about coding bootcamps in <a href="http://takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html" target="_blank">this post</a> and how it has changed my life in many ways in non-woowoo pseudo-science ways.)
-</p>
-
-
-
-
-<p>
-  In short, the coding bootcamp was a super positive experience for me and lead me to land multiple jobs as a developer as well as dive deeper into programming and eventually computer science as well. The bootcamp's teaching methodologies enabled me to learn much quicker and much faster than going through Codecademy or CS50 or anything of that sort. 
-</p>
-
-
-
-
-<h3>
-  I hear a lot of close friends wanting to learn how to learn how to code, so this is a post that will talk about what <strong><em>I think</em></strong> is the best and fastest way to start coding based on my <strong><em>personal experiences</em></strong>.
-</h3>
-
-
-
-
-<hr>
-
-
-
-
-<h1>Step 1. Learn and Understand</h1>
-
-
-
-
-<p>
-  The first step is to <strong>learn and understand</strong>. Here's exactly how I go about it:
-</p>
-
-
-
-
-<ul>
-  <li>Google "Best resources for learning <em>&lt;programming language/framework here&gt;</em>"</li>
-  <li>If there is a Quora post, click on that (Quora tends to have higher quality answers)</li>
-  <li>Surf around other search results and find the common resources that show up in multiple places</li>
-  <li>Look through the common resources and see which ones excites me most</li>
-  <li>Start learning with the resources</li>
-</ul>
-
-
-
-
-<p>
-  The material you use for learning programming is super important. If you are spending 10 hours learning something, then the 10 hours better be spent learning material that is <strong>relevant and easy to understand</strong>. <strong>You don't want to spend hours and hours on resources that are hard to understand or not engaging - they are simply just a waste of time.</strong>
-</p>
-
-
-
-
-<p>
-  You'll see sites like Codecademy come up in your Google search, and you might be wondering if it's actually a good resource since I mentioned how it <em>didn't</em> work for me earlier in this post.
-</p>
-
-
-
-
-<p>
-  Despite my lack of success with Codecademy initially, I actually recommend it (and also websites similar to it) - it's great for learning the gist of the language. <strong>However, the important thing is to transition to Step 2 immediately after finishing this step. Otherwise, you'll just forget most of the stuff you learned (like I did initially).</strong>
-</p>
-
-
-
-
-<h1>Step 2. Build and Break</h1>
-
-
-
-
-<p>
-  You now understand the gist of the programming language or framework and how it works.
-</p>
-
-
-
-
-<p>
-  The next step is to <strong>build and break</strong>. This means going out and actually <strong>building</strong> something with the stuff you just learned and then fixing bugs as they come along. Bugs are inevitable, but you can learn a lot from bugs and broken code. <strong>You want to start building with the assumption that you're going to be writing bad code - and then improving it.</strong>
-</p>
-
-
-
-
-<p>
-  There are 2 steps to this, in my opinion. First, it's smart to go through some tutorials, or else you'll be completely lost. Once you've done some tutorials and feel comfortable, you should go and build your own project:
-</p>
-
-
-
-
-<!-- <h3>If it's your first time with the language or framework</h3>
-<p>
-  - go through some tutorials first
-</p>
-
-<h3>If you've already built something in Step 1</h3>
-<p>
-  - if you feel comfortable, then start building your own project.
-</p>
-<p>
-  - if you don't feel comfortable yet, then start another tutorial until you really understand how most of the stuff works.
-</p> -->
-
-
-
-
-<h2>Step 2-a. Tutorials</h2>
-
-
-
-
-<p>
-  Again, finding good tutorials are key here. Many times, the reputable tutorials show up in the results in Step 1, when searching for resources on whatever you're trying to learn.
-</p>
-
-
-
-
-<p>
-  If you've finished a tutorial or two and feel like you're ready to start building your app.
-</p>
-
-
-
-
-<h2>Step 2-b. Building Your Own Project</h2>
-
-
-
-
-<p>
-  In this step, you're going to be building your own project. Not following tutorials, not following directions. You're going to have to do everything yourself - but this is where you'll learn the most.
-</p>
-
-
-
-
-<h3>How to Pick a Project (this is the hardest part)</h3>
-
-
-
-
-<p>
-  In my experience, picking a project to work on is the most difficult part of this process. This is because if you pick a project that is a lousy idea, you just won't stick with it.
-</p>
-
-
-
-
-<p>
-  For example, one time I tried building a diary app with Ruby on Rails for no reason. After building out some of the basic functionality, I realized that Google Drive does the job better and it gave me no reason to keep building the app - <strong>never try building something for no reason</strong>.
-</p>
-
-
-
-
-<h3>But coming up with a good project idea is hard...</h3>
-
-
-
-
-<p>
-  <strong>TRUE.</strong>
-</p>
-
-
-
-
-<h1>
-  <strong>So here's my suggestion: Go out and sell your services.</strong>
-</h1>
-
-
-
-
-<h3><strong>Here's why:</strong></h3>
-
-
-<p>
-  <strong>If someone is paying you to build something, you're going to work your butt off to try and get everything right. You're going to be forced to learn at a super high speed in order to not mess anything up.</strong>
-</p>
-
-
-
-
-<h3><strong>BUT HOW?!</strong></h3>
-
-
-<p>
-  <strong>A lot of people want websites or web applications built for them, but lack the money to hire developers.</strong> They have ideas, but they lack the skills to actually build them. This is their thought process: 
-</p>
-
-
-
-
-<p>
-  "I have an idea that will make millions and will be the next (Facebook, Uber, replace popular start up name here) - <strong><em>if only I had a coder to build my app</em></strong>."
-</p>
-
-
-
-
-<p>
-  <strong>This is where you come in.</strong> Find these people and talk to them. Offer your services for super cheap at first and <strong>make an offer so sweet that they have no reason to reject you.</strong>
-</p>
-
-
-
-
-<p>
-  This was how I pitched myself to 2 guys who wanted to build a company based on a web app: <strong><em>"Yes, I am indeed a noob, but if you hire non-noobs, it will cost you tens of thousands. If you hire me, I can build out this app and it won't cost you tens of thousands. Instead, it will only be hundreds or maybe a couple thousand at most. Plus, if you don't like the website, you can decide not to use it and pay me nothing."</em></strong>
-</p>
-
-
-
-
-<h3><strong>This is why this worked (at least for me):</strong></h3>
-
-
-
-
-<p>
-  <strong>What was the number one thing they wanted?</strong> <em>Their idea to be built out.</em>
-</p>
-
-
-
-
-<p>
-  <strong>What was their number one constraint?</strong> <em>Money.</em>
-</p>
-
-
-
-
-<p>
-  <strong>If I were to pitch them, what would be their number one concern?</strong> <em>That I wasn't skilled enough and would be a waste of money.</em>
-</p>
-
-
-
-
-<p>
-  <strong>My pitch incorporated all of these factors so that they had no reason to reject my offer.</strong> If they didn't like the website, they could scrap it and pay <strong><em>nothing</em></strong>.
-</p>
-
-
-
-
-<p>
-  To initially build a portfolio, I personally think that it's a smart idea to price low and over-deliver (unless you're already experienced). As a side note, I did this when I first started my translation business as well and it worked that time as well. I priced my services lower than my competitors and over-delivered and built social proof.
-</p>
-
-
-
-
-<h2>Ask Yourself: Why exactly would they buy from me rather than somebody else?</h2>
-
-
-<p>
-  Would it be my price, my skill set, my past experiences, or some other factor?
-</p>
-
-
-
-
-<p>
-  Since I had minimal skill to do the job, had no past experience, the only way I could differentiate was to set a lower price and work my butt off. And for a lot of people reading this article, I'm assuming this is probably the case.
-</p>
-
-
-
-
-<p><strong>So find somebody to build a website for, give a pitch that they can't turn down, and start working on the project.</strong> Once you pass this step, it's time to do anything you can do to finish the app and build something that would satisfy your clients.</p>
-
-
-
-
-<p>
-  This means Googling for solutions to any bugs/problems you might encounter, asking people questions, and finding solutions.
-</p>
-
-
-
-
-<h3>And <strong>this</strong> is where you'll be learning <strong>2x, 3x</strong> as fast as you would compared to going through more tutorials. <strong>You're forced to build out real-world ideas and forced to solve real-world problems.</strong></h3>
-
-
-
-
-<h1>Examples</h1>
-
-
-
-
-<p>
-  I've given this advice to some people that were just starting out with their coding journey and it seems to have worked for them. One of my friends from <a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a>, Dany, asked for my advice. I told him mostly the same things that I laid out in this blog post and this was his response.
-</p>
-
-
-<p><img src="static/img/dany.png" alt="learning coding"></p>
-
-<p>
-  When I talked to him a couple of months after that, he told me that he took some of my advice and things were going quite well for him:
-</p>
-
-
-<p><img src="static/img/dany_2.png" alt="learning coding"></p>
-
-<p>
-  I've given the same advice to other people with the same results. It seems that it just makes sense - <strong>when you are forced to learn at an accelerated pace, you'll learn more quicker as a result.</strong>
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  Hopefully this blog post was somewhat helpful in motivating you to go out and grab a project that you can start working on (while maybe getting paid) to accelerate your learning speeds. This is something that's worked for me and the people around me, and I hope it works for the people reading this as well!
-</p>
-
-
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Using Spaced Repetition Software to Learn Programming Concepts</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts.html" />
-  <id>https://www.takehiromouri.com/Using-Spaced-Repetition-Software-To-Learn-Programming-Concepts</id>
-  <published>2016-03-15T00:00:00Z</published>
-  <updated>2016-03-15T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  As a programmer who still has so much to learn, I strongly feel that finding the right tools and methodologies in learning how to program is super important. Learning is a hard skill - especially when it comes to increasing your knowledge around textbook type subjects. Reading a textbook and going through lectures are not always the most entertaining, and it can easily lead to a unproductive study session.
-</p>
-
-
-
-
-<p>
-  I was studying for one of my computer science classes when I stumbled across <a href="https://sivers.org/srs" target="_blank">this post</a> by Derek Sivers. He explains it perfectly, so there's really no point of me explaining it:
-</p>
-
-
-
-
-<p><em>
-  "When you hear a new fact, it's forgotten pretty quickly unless it's brought back to the forefront of your mind repeatedly. You can do this haphazardly by immersing yourself in a language, for example, where the new words you learn will be brought up by chance occasionally. <strong>But memory research shows that the most effective and efficient time for a new fact to be remembered is right before you were about to forget it.</strong> Say if you learn a new word in a foreign language, you'd want to practice it again a few minutes after hearing it, then a few hours, then the next day, then in 2 days, then 5 days, then 10 days, 3 weeks, 6 weeks, 3 months, 8 months, etc. After a while it's basically permanently memorized with a rare reminder. <strong>Spaced Repetition Software does this for you, so you can just give it a bunch of facts you want to remember, then have it quiz you once a day, and it manages the intervals based on your feedback. After each quiz question, if you say that one was easy, it won't be introduced for a long time, but if you were stumped, then it'll ask it again in a few minutes, until you've got it.</strong>" - Derek Sivers
-</em></p>
-
-
-
-
-<p>
-  Basically Spaced Repetition Software, or SRS, is a flash card software that is optimized to increase your chances of learning based on memory research. Pretty cool stuff - but like a lot of you (I'm assuming), <strong>I was kind of skeptical that this would actually work.</strong>
-</p>
-
-
-
-
-<h1>These were my questions:</h1>
-
-
-<ol>
-  <li>Is this applicable to programming? - is it better to simply just Google stuff and code?</li>
-  <li>Would I stick with it?</li>
-</ol>
-
-
-
-
-<h1>And here are my answers:</h1>
-
-
-
-
-<p>
-  After actually trying Anki (a popular SRS) out for 3 weeks now, here are my thoughts:
-</p>
-
-
-
-
-<h3>Is this applicable to programming? - is it better to simply just Google stuff and code?</h3>
-
-
-<p>
-  <strong>Yes - and no.</strong>
-</p>
-
-
-
-
-<p>
-  What I've found that for a lot of things, it's just faster for Google to memorize. For example, if I were to use SRS to try and memorize how to reverse a string in Ruby, I could make a flashcard to remind myself every now and then. On the other hand, it takes 2 seconds to find out how to reverse a string in Ruby, so it really doesn't make sense to memorize it. If Googling will take less time, you shouldn't be trying to memorize it.
-</p>
-
-
-
-
-<p>
-  On the flip side, <strong>SRS is great for learning programming concepts</strong>. A lot of times (atleast for me), I read about a concept and understand it (at the time) and then gain the feeling of satisfaction. But then in a few days when a friend asks me about the concept, my memory is fuzzy or I just don't remember (even though I read about it and understood it a few days back). Once I started using SRS to recall my understanding, it got easier for me to not only recall the concept, but actaully apply it in practice.
-</p>
-
-
-
-
-<p>
-  This is more of a topic of learning methodology than it is of SRS - <strong>you need to find ways to recall information in order to retain your knowledge.</strong> That's why many people are avid note takers. SRS is just another way of retaining information - except it's super efficient.
-</p>
-
-
-
-
-<h1>Would I stick with it?</h1>
-
-
-
-
-<p>
-  <strong>Yes.</strong>
-</p>
-
-
-
-
-<p>
-  The great thing about Anki is that it becomes addictive - every day you start up Anki, and it provides you with flashcards to go over for the day. Once you go through the flashcards, it feels like you've learned so much in a matter of 10 or 15 minutes.
-</p>
-
-
-
-
-<p>
-  The difference between Anki and regular Flash Card applications is that Anki removes all the unnecessary going-through of flash cards for you - <strong>if you felt the question was easy yesterday, it won't tell you to answer the flash card the next day.</strong> That means less flash cards and better learning.
-</p>
-
-
-
-
-<p>
-  Doing Anki every day has been so easy for me, just because of the way it's designed. It was easy for me to start a habit of using Anki and there are tons of people that would say the same thing as well.
-</p>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-  If you're currently trying to learn difficult programming concepts, then SRS might be the way to go. AnkiSrs is free open source software that you can download <a href="http://ankisrs.net/" target="_blank">here</a>.
-</p>
-
-
-
-
-<p>
-  I would highly recommend reading Derek Siver's post on SRS <a href="https://sivers.org/srs" target="_blank">here</a>, as it goes through the entire learning methodology involved in using SRS.
-</p>
-
-
-
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Coding Bootcamps vs Computer Science</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Coding-Bootcamps-vs-Computer-Science.html" />
-  <id>https://www.takehiromouri.com/Coding-Bootcamps-vs-Computer-Science</id>
-  <published>2016-03-03T00:00:00Z</published>
-  <updated>2016-03-03T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <h1>Coding Bootcamps vs Computer Science</h1>
-
-
-
-
-<p>
-  Joining a coding bootcamp was the best choice I made in my college career — and it could be the best choice you make as well, especially if you have never coded before. Coding bootcamps are a fairly new thing — <strong>they are intensive training schools where students can learn programming to a professional level in an extremely short period of time (12 ~ 15 weeks). By omitting computer science topics that aren’t really used in actual work and focusing solely on the practical skills that are used most in the industry, bootcamps are able to teach programming in an extremely short period of time.</strong> These coding bootcamps are mostly targeted towards adults who are looking for a career change or want to start their own businesses.
-</p>
-
-
-
-
-<p>
-  I was an outlier, joining an online coding bootcamp called <a href="http://www.thefirehoseproject.com" target="_blank"><a href="http://www.thefirehoseproject.com" target="_blank">theFirehoseProject</a></a> as a college junior. Despite the fact that coding bootcamps usually aren’t targeted towards college undergraduates like me, I’ve found that going through the bootcamp as an undergrad has been one of the most rewarding experiences in my college life. <strong>Here’s why:</strong>
-</p>
-
-
-
-
-<h1>Coding Bootcamps vs Computer Science</h1>
-
-
-
-
-<p>
-   <strong>How are coding bootcamps different from traditional Computer Science courses?</strong> This is a question that gets asked a lot, and is a question that I was asking before I joined. Here are my impressions based on my own experiences of experiencing both.
-</p>
-
-
-
-
-<p>
-  <strong>Coding bootcamps focus greatly on applicable skills and modern technologies being used by the industry.</strong> Many focus on teaching Ruby, a modern programming language, which is also a great first language since it is a “programmer friendly” language and is relatively easier to grasp compared to a language like C or Java.
-</p>
-
-
-
-
-<p>
-  On the other hand, <strong>many computer science classes start with relatively difficult languages like C or Java.</strong> These languages might be essential to learn as a coder, but they tend to be the difficult for beginners to grasp, and <strong>many people quit coding at this point. I was one of these people, when I tried learning programming with CS50, a famous online course offered by Harvard.</strong> The course itself was fantastic and high quality, but the programming language I was taught was C. Although this might be pedagogically better as it forces you to learn the intricacies of programming, it might also scare beginners away, <strong>giving the false impression that learning a programming language is difficult to learn, when in fact, it isn’t.</strong>
-</p>
-
-
-<p><figure>
-  <img src="static/img/mathishard.jpg" alt="Coding Bootcamps vs Computer Science" />
-  <figcaption>Mathematics and computer science go hand in hand — but you don’t need so much math for most types of programming you’ll actually do in your job</figcaption>
-</figure></p>
-
-<p>
-  <strong>Another point to make is that a lot of intermediate to advanced computer science courses require some mathematics and thus have a higher barrier to entry.</strong> Mathematical thinking is important, but is only required in a limited variety of programming jobs. Coding bootcamps do a great job of taking out a lot of the unnecessary math for developing web applications in their curriculum, thus creating a low barrier to entry.
-</p>
-
-
-
-
-<p>
-  Since the objective of bootcamps are to train total newbie programmers into professionals in a short period of time, the top bootcamps do a great job in teaching things in a way that a complete beginner can understand. The curriculum and lesson style at <a href="http://www.thefirehoseproject.com" target="_blank">theFirehoseProject</a> was indeed, extremely easy to understand as a beginner. After 7 weeks upon training with <a href="http://www.thefirehoseproject.com" target="_blank">theFirehoseProject</a>, I was able to land a job as a web developer at a local start up. With that, I was able to pay off most of my bootcamp tuition fees, so already it was a great investment.
-</p>
-
-
-<p><img src="static/img/csinfographic.jpg" alt="Coding Bootcamps vs Computer Science"></p>
-
-<h1>How new opportunities opened up as I learned to code</h1>
-
-
-
-
-<p><strong>Being able to code opened up a tremendous amount of opportunities on and off campus.</strong></p>
-
-
-
-
-<p>
-  In my 8th week, I participated in a student hackathon called HackNC (hackathons are typically events where teams try to hack together something cool within a 24 ~ 48 hour timeframe). I worked with a team of 2 other developers and 1 business student, and we were able to hack together a minimally viable product after working 24 hours straight. I was in charge of doing a lot of the front end work which I was already used to doing from the curriculum at <a href="http://www.thefirehoseproject.com" target="_blank">theFirehoseProject</a>. We ended up receiving 3 prizes at the hackathon along with offers from multiple companies in my first hackathon. The team that I worked with at that event are still buddies and it was overall a great experience that was made possible because I joined a coding bootcamp.
-</p>
-
-
-<p><figure>
-  <img src="static/img/guru.png" alt="Coding Bootcamps vs Computer Science">
-  <img src="static/img/guru_2.png" alt="Coding Bootcamps vs Computer Science">
-  <figcaption>Front end stuff I hacked together at the hackathon after 9 weeks of training at <a href="http://www.thefirehoseproject.com" target="_blank">theFirehoseProject</a></figcaption>
-</figure></p>
-
-<p>
-  <strong>Outside of school, being able to code also led me to gaining some work experience.</strong> I saw a Facebook post by a person who wanted to build a web application for their new business idea. Plus, they were willing to pay for it. I was only in my 7th week, but figured I’d at least give it a try. Since I had already built a couple of web applications, I told them that despite being relatively a beginner at coding, I knew how to build basic web applications and could work with them to build out their idea for cheaper. They also liked the idea of giving a college kid some experience, as well as the costs that they were able to cut, and so they hired me (that gig alone paid for my tuition at the bootcamp).
-</p>
-
-
-
-
-<h1>If you’re in college why didn’t you just take computer science courses?</h1>
-
-
-
-
-<p>
-  Well you might be thinking by now, <i><strong>if you’re in college and wanted to learn how to code, why didn’t you just take Computer Science courses in the first place?</strong></i>
-</p>
-
-
-
-
-<p><strong>The answer to this question is simple: I thought I wasn’t smart enough to learn how to code.</strong></p>
-
-
-
-
-<p>
-  <strong>The common misconception is that coding is a super difficult skill to learn. It’s not.</strong> You just have to have the right support system, motivation, and resources to overcome the initial barriers that you might face when starting out. I learned that through joining a bootcamp.
-</p>
-
-
-<p><figure>
-<img src="static/img/banghead.jpg" alt="Coding Bootcamps vs Computer Science" style="width:200px;margin: 0 auto;display:block">
-<figcaption>Me when I first tried to learn how to code through a computer science course</figcaption>
-</figure></p>
-
-<p>
-  If I hadn’t joined a bootcamp, I wouldn’t have decided to not only take computer science courses, but also major in it as well. Although being able to code was a dream for me, I tried and I failed with my initial dab at it with CS50, the Harvard CS course I mentioned before. The course taught in C and immediately went into sorting algorithms. This gave me the initial impression that learning to program was hard.
-</p>
-
-
-
-
-<p>
-  <strong>But the truth is, learning how to program isn’t as hard as you might think. You just need to start with a programmer friendly language with an awesome support system and friendly community. That’s what bootcamps are able to provide.</strong>
-</p>
-
-
-
-
-<p>
-  So if you’re a college student and you’ve been wanting to learn programming but just thought it wasn’t for you, <strong>take a look at some top coding bootcamps</strong> (some bootcamps are apparently not worth the money so make sure to look at the top schools). You might be surprised to find that <strong>anyone can learn how to code given the right resources. Once you start learning how to code, you’ll see new opportunities open up to you that you’ve never realized before.</strong>
-</p>
-
-
-
-
-<h3>
-  I don’t think that coding bootcamps can replace computer science courses at this point in time— they are just two different things. Computer science is a study of computers and not just simply programming. On the other hand, coding bootcamps equip you with practical skills to build basic web applications and join a team as a junior developer.
-</h3>
-
-
-<p></p>
-
-<p>
-  So if you’re interested in learning how to code but don’t want to get into the computer science topics, then joining a bootcamp might be the right choice for you.
-</p>
-
-
-
-
-<h3>
-  Here’s a list of bootcamps that I’ve heard great things about that you can take a look at: 
-</h3>
-
-
-
-
-<p>
-  <a href="http://www.thefirehoseproject.com/" target="_blank"><a href="http://www.thefirehoseproject.com" target="_blank">The Firehose Project</a></a> — A extremely reasonably priced online Ruby on Rails coding bootcamp ($4,000) with a super helpful team and supporting community. With weekly mentor sessions with top notch developers, you can really grow at a fast pace as a developer. The curriculum is intensive, where you get the best of both worlds with a combination of practical web development skills with computer science topics such as Data Structures and Algorithms. It’s also perfect for people that don’t want to quit their jobs and spend a ton of money. I personally recommend it for most people because of it's learn by doing approach and algorithm training that is necessary to succeed in technical job interviews. The student community is very active and there are always interactions going on in the private Slack channel. The mentors are top notch developers, the curriculum is top notch, and overall I highly recommend the Firehose Project.
-</p>
-
-
-
-
-<p>
-  <a href="http://www.hackreactor.com/" target="_blank">HackReactor</a> — This bootcamp costs $18,000 to enroll, but it’s supposed to be well worth the money. If you are looking to go to a top notch bootcamp and are willing to pay the money, HackReactor is probably the bootcamp for you.
-</p>
-
-
-
-
-<p>
-  <a href="http://www.fullstackacademy.com/" target="_blank">Fullstack Academy</a> — Also another immersive bootcamp like HackReactor. Their student projects are super impressive, which is always a great sign.
-</p>
-
-
-
-
-<p>
-  <a href="http://www.makersquare.com/" target="_blank">Makersquare</a> — Similar to HackReactor and Fullstack Academy. Full time coding bootcamps with a focus on JavaScript frameworks. They claim to have high rates of graduates getting jobs.
-</p>
-
-
-
  ]]></content>
 </entry>
 
