@@ -27,6 +27,8 @@ Another thing to note is that **being a whiz programmer doesn’t always mean th
 
 I don’t think we can call TECHRISE a successful business just yet, but I believe that it’s really about trying your best to provide as much value as you can to your customers in a way that others can’t. And to do so, it most likely takes tremendous amount of hard work, diligence, and persistence.
 
+We also try different things out and see what works and what doesn't. We try to study how we can provide value and how we can provide value to more people as well.
+
 ### What problem-solving skills do you think will help the most once you enter the real market?
 -Yankee M.
 
