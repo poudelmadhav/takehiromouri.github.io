@@ -10,9 +10,9 @@ I couldn't cover everyone's questions, but here's my take on some of them.
 ### When I check out the foreign students, they seem to be getting better education in an IT field and they actually start learning coding or designing from the very young age. For a developing country like Nepal, even for me, I could access the Internet after 12 grade only. How can we compete with the young and talented and more practiced student in IT field if we have to get better than them?
 -Sujan J.
 
-Although starting from a young age might correlate somewhat with your ability to write code, there are many people who have started programming after college and are great programmers. Initially the key to getting better at programming is writing as much code as you possibly can, but at a certain point, **it is more about the type of content and information you expose yourself to**, in which many are free online. In other words, read a lot of good books programming related or non-programming related and expose yourself to more ideas and more knowledge. 
+Although starting from a young age might correlate somewhat with your ability to write code, there are many people who have started programming after college and are great programmers. Initially the key to getting better at programming is writing as much code as you possibly can, but at a certain point, **it is more about the type of content and information you expose yourself to**, of which many are free online. In other words, read a lot of good books programming related or non-programming related and expose yourself to more ideas and more knowledge. 
 
-On that note, I’m starting to compile a list of resources that I think are really good (list is imcomplete):
+On that note, I’m starting to compile a list of resources that I think are really good (list is incomplete):
 
 [Startup Resources](https://github.com/takehiromouri/startup_resources)
 
