@@ -34,7 +34,7 @@ def transition
   if life_partner_material?(current_partner)
     if side_chick.exists? && current_partner.knows_about_side_chick? || self.cant_take_anymore_crap
       puts "Sorry, we can't be together anymore"
-      current_partner = null
+      current_partner = nil
       if side_chick.exists?
         side_chick.send_message("Wanna netflix and chill?")
       else
