@@ -2,10 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.takehiromouri.com/</loc>
-    <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+    <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>https://www.takehiromouri.com/Longer-Work-Hours-vs-Shorter-Work-Hours.html</loc>
+      
+        <lastmod>2016-11-12T00:00:00+05:45</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://www.takehiromouri.com/The-Non-Designers-Design-Book.html</loc>
+      
+        <lastmod>2016-10-30T00:00:00+05:45</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
   
     <url>
       <loc>https://www.takehiromouri.com/Answers-to-some-questions-by-TECHRISE-Students.html</loc>
@@ -138,19 +164,6 @@
     </url>
   
     <url>
-      <loc>https://www.takehiromouri.com/Entering-Zen-Mode.html</loc>
-      
-        <lastmod>2016-03-30T00:00:00+05:45</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
       <loc>https://www.takehiromouri.com/How-To-Learn-How-to-Code-while-Getting-Paid.html</loc>
       
         <lastmod>2016-03-20T00:00:00+05:45</lastmod>
@@ -258,7 +271,7 @@
   <url>
     <loc>https://www.takehiromouri.com/404</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -271,7 +284,7 @@
   <url>
     <loc>https://www.takehiromouri.com/about</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -284,7 +297,7 @@
   <url>
     <loc>https://www.takehiromouri.com/atom.xml</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -297,7 +310,7 @@
   <url>
     <loc>https://www.takehiromouri.com/blog</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -310,7 +323,7 @@
   <url>
     <loc>https://www.takehiromouri.com/</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -323,7 +336,7 @@
   <url>
     <loc>https://www.takehiromouri.com/now</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -336,7 +349,7 @@
   <url>
     <loc>https://www.takehiromouri.com/projects</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -349,7 +362,7 @@
   <url>
     <loc>https://www.takehiromouri.com/sitemap.xml</loc>
     
-      <lastmod>2016-10-23T21:41:56+05:45</lastmod>
+      <lastmod>2016-11-12T01:14:24+05:45</lastmod>
     
     
       <changefreq>monthly</changefreq>

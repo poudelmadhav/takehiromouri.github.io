@@ -6,13 +6,81 @@
   
   <link href="https://www.takehiromouri.com/"/>
   <id>https://www.takehiromouri.com/</id>
-  <updated>2016-10-23T21:41:56Z</updated>
+  <updated>2016-11-12T01:14:24Z</updated>
   <author>
     <name>Takehiro Mouri</name>
     <email>takehiromouri@gmail.com</email>
   </author>
   <rights type="text">Copyright © 2016 Takehiro Mouri. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Longer Work Hours vs Shorter Work Hours</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Longer-Work-Hours-vs-Shorter-Work-Hours.html" />
+  <id>https://www.takehiromouri.com/Longer-Work-Hours-vs-Shorter-Work-Hours</id>
+  <published>2016-11-12T00:00:00Z</published>
+  <updated>2016-11-12T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>Lately I&rsquo;ve been thinking about a few things about time:</p>
+
+<p>It&rsquo;s really common in Japan to say that you should be working at 100% horsepower with only 3 hours of sleep a day. And as a matter of fact, it seems many successful people do operate and even insist on such sleep schedules.</p>
+
+<p>It seems that a lot of Japanese workers try to maximize the amount of output they produce, as well as the time they put in producing that output. The basic idea is simple: Maximum output per time unit multiplied by maximum time put in work yields maximum results.</p>
+
+<p>On the other hand, I do agree with the thoughts of DHH and Jason Fried on how you should try to maximize your working hours, not necessarily try to enlong it. Jason Fried&rsquo;s argument in &ldquo;Rework&rdquo; was that most people&rsquo;s working hours are shitty hours and that you only need short bursts of concetrated work time to get things done.</p>
+
+<p>His argument is that maximum output can only be achieved for limited amounts of time throughout the day. Instead of trying to spend more time with diluted quality, his argument is to spend less time working, but with 100% quality. So quality over quantity.</p>
+
+<p>Tim Ferris&rsquo;s famous Four-Hour Work Week also proposed a similar theme - effectiveness and efficiency are two different things. It doesn&rsquo;t matter if you are efficient if you are working on the wrong things.</p>
+
+<p>I&rsquo;ve found that personally as an individual that works in a rather creative field, the latter argument is more convincing and is more practical. I&rsquo;m sure science can back it up as well.</p>
+
+<ul>
+<li><strong>When I&rsquo;m tired I tend to produce sloppy output</strong>. It might seem great at the time because of the adrenaline, but when I look at it with fresh eyes, it tends to be subpar quality.</li>
+<li>If I&rsquo;m focused on being productive 100% of the time, <strong>I end up not prioritizing</strong>. I feel that because I am determined to be productive 100% of the time, I have more time, thus I don&rsquo;t feel the need to prioritize.</li>
+<li><strong>I find it impossible to maximize productivity when my brain is fried.</strong> (I think that is where the &ldquo;Maximum output per time unit multiplied by maximum time put in work equals maximum results.&rdquo; forumla may be flawed)</li>
+<li><strong>I make worse decisions when my brain is fried</strong></li>
+</ul>
+
+
+<p>It seems that if one is engaged in simple tasks throughout the day, maximizing work time and trying to stretch the output per time unit might work to some extent.</p>
+
+<p>On the other hand, if you&rsquo;re a creative guy or girl, that won&rsquo;t really work - <strong>your creative mind is what will get the job done</strong>. Frying your creative mind definitely won&rsquo;t do the job.</p>
+
+<p>The problem is that for people like me, I <em>like</em> to work. I love to code and I would do it all day long. I always think that the key to improving is to code more, read more, experiment more - even if it means sacrificing a few hours of sleep.</p>
+
+<p>Lately, I&rsquo;ve been following these internal guidelines, which seem to be practical for people like me:</p>
+
+<ul>
+<li>I allow myself to binge code a few times a month</li>
+<li>When I start working on something new, I lock myself up and allow myself to lose a few hours of sleep to get in the state of flow</li>
+<li>When I start feeling tired/burnt out, I take it easy for a few days until I feel fresh again</li>
+<li>Before starting anything, I try to be super clear about what I&rsquo;m going to try to accomplish</li>
+</ul>
+
+
+<p>For people like me who want to maximize output, <strong>it seems that the key is realizing that maximizing output can be achieved far better by sleeping more, prioritizing, and trying to work more quality hours.</strong></p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">The Non Designer's Design Book</title>
+  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/The-Non-Designers-Design-Book.html" />
+  <id>https://www.takehiromouri.com/The-Non-Designers-Design-Book</id>
+  <published>2016-10-30T00:00:00Z</published>
+  <updated>2016-10-30T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <ul>
+<li>The principle of proximity - group related items together</li>
+<li><p>Items that are not related to each other should not be positioned close to each other</p></li>
+<li><p>As in life, <strong>proximity implies a relationship</strong></p></li>
+<li><p>The basic purpose of alignment is to unify and organize</p></li>
+<li><p>Avoid using more than one alignment</p></li>
+<li><p>In order for contrast to work, the contrasting elements must be not just slightly differently, but <strong>very</strong> different</p></li>
+</ul>
+
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Answers To Some Questions by TECHRISE Students</title>
   <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/Answers-to-some-questions-by-TECHRISE-Students.html" />
@@ -27,9 +95,9 @@
 
 <p>-Sujan J.</p>
 
-<p>Although starting from a young age might correlate somewhat with your ability to write code, there are many people who have started programming after college and are great programmers. Initially the key to getting better at programming is writing as much code as you possibly can, but at a certain point, <strong>it is more about the type of content and information you expose yourself to</strong>, in which many are free online. In other words, read a lot of good books programming related or non-programming related and expose yourself to more ideas and more knowledge.</p>
+<p>Although starting from a young age might correlate somewhat with your ability to write code, there are many people who have started programming after college and are great programmers. Initially the key to getting better at programming is writing as much code as you possibly can, but at a certain point, <strong>it is more about the type of content and information you expose yourself to</strong>, of which many are free online. In other words, read a lot of good books programming related or non-programming related and expose yourself to more ideas and more knowledge.</p>
 
-<p>On that note, I’m starting to compile a list of resources that I think are really good (list is imcomplete):</p>
+<p>On that note, I’m starting to compile a list of resources that I think are really good (list is incomplete):</p>
 
 <p><a href="https://github.com/takehiromouri/startup_resources">Startup Resources</a></p>
 
@@ -44,6 +112,8 @@
 <p>-Yankee M.</p>
 
 <p>I don’t think we can call TECHRISE a successful business just yet, but I believe that it’s really about trying your best to provide as much value as you can to your customers in a way that others can’t. And to do so, it most likely takes tremendous amount of hard work, diligence, and persistence.</p>
+
+<p>We also try different things out and see what works and what doesn&rsquo;t. We try to study how we can provide value and how we can provide value to more people as well.</p>
 
 <h3>What problem-solving skills do you think will help the most once you enter the real market?</h3>
 
@@ -332,6 +402,7 @@ these qualities</li>
 <li><p>Distinction between what <strong>what</strong> and <strong>how</strong></p></li>
 <li><p>Blind trust is a keystone of object-oriented design. It allows objects to collaborate without binding themselves to context and is necessary in any appliation that expects to gow and change</p></li>
 <li><p>Duck types are public interfaces that are not tied to any specific class</p></li>
+<li><p>Inheritance at its core is a mechanism for automatic message delegation</p></li>
 </ul>
 
  ]]></content>
@@ -804,141 +875,6 @@ string_2.object_id
 <p></p>
 
 <p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">.split method</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/.split-method.html" />
-  <id>https://www.takehiromouri.com/.split-method</id>
-  <published>2016-08-04T00:00:00Z</published>
-  <updated>2016-08-04T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>
-  I've had some students ask me about the <code>.split</code> method in ruby :D
-</p>
-
-
-
-
-<p>
-  Here's a brief rundown of how it works. Hopefully the examples do a good job of explaining what it does :)
-</p>
-
-
-<p></p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">momos</span> <span class="o">=</span> <span class="s2">&quot;I love momos&quot;</span>
-<span class="n">momos</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-<span class="c1"># =&gt; [&quot;I&quot;, &quot;love&quot;, &quot;momos&quot;]</span>
-<span class="c1"># returns an array of strings seperated by &quot; &quot;</span></p>
-
-<p><span class="n">string_2</span> <span class="o">=</span> <span class="s2">&quot;A, bc, def, ghi&quot;</span>
-<span class="n">string_2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-<span class="c1"># =&gt; [&quot;A&quot;, &quot; bc&quot;, &quot; def&quot;, &quot; ghi&quot;]</span>
-<span class="c1"># here, we are splitting the array with &quot;,&quot;</span>
-<span class="c1"># then we are storing them in an array</span></p>
-
-<p><span class="n">string_3</span> <span class="o">=</span> <span class="s2">&quot;abcdefgabcdefg&quot;</span>
-<span class="n">string_3</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="c1"># =&gt; [&quot;&quot;, &quot;bcdefg&quot;, &quot;bcdefg&quot;]</span>
-<span class="c1"># here, we are splitting the array by &quot;a&quot;, so we get this result</span></code></pre></figure></p>
-
-<p><small>Originally posted in TECHRISE Community at www.techrise.me</small></p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">How to Count Belonging Objects More Efficiently in Rails</title>
-  <link rel="alternate" type="text/html" href="https://www.takehiromouri.com/How-to-Count-Belonging-Objects-More-Efficiently-in-Rails.html" />
-  <id>https://www.takehiromouri.com/How-to-Count-Belonging-Objects-More-Efficiently-in-Rails</id>
-  <published>2016-04-01T00:00:00Z</published>
-  <updated>2016-04-01T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>A lot of times when writing rails apps, you face a situation where you have to count the number of child objects a parent object has.</p>
-
-<p>For instance, let&rsquo;s say we have a <code>User</code> model and a <code>Comment</code> model where <code>User</code> <code>has_many :comments</code> and <code>Comment</code> <code>belongs_to :user</code>.</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">has_many</span> <span class="ss">:comments</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">belongs_to</span> <span class="ss">:user</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>What do we do when we want to count the number of comments that a <code>User</code> has? A lot of times, it would look something like this:</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">user</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">count</span></code></pre></figure></p>
-
-<p>This is all fine, if you&rsquo;re only using it once in a while.
-But say we need to query the database often for the number of comments that a <code>User</code> has.</p>
-
-<p>Let&rsquo;s see what the performance is like when using <code>user.comments.count</code>.
-In an example app I created with the same models as above, I tested this out with a <code>user</code> with 225 <code>comments</code>:</p>
-
-<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:015:0&gt; User.first.comments.count
-  User Load <span class="o">(</span>0.3ms<span class="o">)</span>  SELECT  <span class="s2">&quot;users&quot;</span>.<em> FROM <span class="s2">&quot;users&quot;</span>  ORDER BY <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> ASC LIMIT 1
-   <span class="o">(</span>0.4ms<span class="o">)</span>  SELECT COUNT<span class="o">(</span></em><span class="o">)</span> FROM <span class="s2">&quot;comments&quot;</span> WHERE <span class="s2">&quot;comments&quot;</span>.<span class="s2">&quot;user_id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]]</span>
-<span class="o">=</span>&gt; 225</code></pre></figure></p>
-
-<p>Notice how the <code>comments</code> are queried with a COUNT(*) query. If we were to query 100 users at once for <code>comments.count</code>, it would be a big load for the database.</p>
-
-<p>Here&rsquo;s how we can avoid the COUNT(*) query and improve performance:</p>
-
-<h2>Introducing <code>counter_cache</code></h2>
-
-
-<p>Instead of querying <code>comments</code>, we can just store the number of comments a user has in the <code>User</code> table and get the number of comments without any SQL query.</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddCommentCounterToUser</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
-  <span class="k">def</span> <span class="nf">change</span>
-    <span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:comments_count</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">default</span><span class="p">:</span> <span class="mi">0</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>In order for <code>counter_cache</code> to work, we need to create a database column that ends with <code>_count</code>. So here, we have created a <code>comments_count</code> column that will store the number of comments inside.</p>
-
-<p>After we run the migration, we want to initially update the <code>comments_count</code> for each <code>User</code>.</p>
-
-<p>We can do this by creating a rake file, or manually running code in the console:</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">User</span><span class="o">.</span><span class="n">reset_column_information</span>
-<span class="no">User</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
-  <span class="no">User</span><span class="o">.</span><span class="n">update_counters</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="ss">comments_count</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">comments</span><span class="o">.</span><span class="n">length</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p><code>reset_column_information</code> resets all the cached information about columns, and will be reloaded before the code below runs.</p>
-
-<p>Now after we run this code, we see that the correct number of comments are stored in the user object:</p>
-
-<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:005:0&gt; <span class="nv">user</span>
-<span class="o">=</span>&gt; <span class="c">#&lt;User id: 1, name: &quot;Bob&quot;, created_at: &quot;2016-04-01 06:51:53&quot;, updated_at: &quot;2016-04-01 07:37:39&quot;, comments_count: 225&gt;</span></code></pre></figure></p>
-
-<p>One more thing we need to do:</p>
-
-<p>In the <code>Comment</code> model, we need to set <code>counter_cache: true</code>.</p>
-
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Comment</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">belongs_to</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">counter_cache</span><span class="p">:</span> <span class="kp">true</span>
-<span class="k">end</span></code></pre></figure></p>
-
-<p>This will increment and decrement the <code>comments_count</code> column automatically in <code>User</code> whenever a comment is created or deleted.</p>
-
-<p>Let&rsquo;s test this out:</p>
-
-<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">irb<span class="o">(</span>main<span class="o">)</span>:006:0&gt; user.comments.create<span class="o">(</span>text: <span class="s2">&quot;hello&quot;</span><span class="o">)</span>
-   <span class="o">(</span>1.7ms<span class="o">)</span>  begin transaction
-  SQL <span class="o">(</span>1.9ms<span class="o">)</span>  INSERT INTO <span class="s2">&quot;comments&quot;</span> <span class="o">(</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;user_id&quot;</span>, <span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;updated_at&quot;</span><span class="o">)</span> VALUES <span class="o">(</span>?, ?, ?, ?<span class="o">)</span>  <span class="o">[[</span><span class="s2">&quot;text&quot;</span>, <span class="s2">&quot;hello&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;user_id&quot;</span>, 1<span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;created_at&quot;</span>, <span class="s2">&quot;2016-04-02 18:27:36.897717&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;updated_at&quot;</span>, <span class="s2">&quot;2016-04-02 18:27:36.897717&quot;</span><span class="o">]]</span>
-  SQL <span class="o">(</span>0.6ms<span class="o">)</span>  UPDATE <span class="s2">&quot;users&quot;</span> SET <span class="s2">&quot;comments_count&quot;</span> <span class="o">=</span> COALESCE<span class="o">(</span><span class="s2">&quot;comments_count&quot;</span>, 0<span class="o">)</span> + <span class="m">1</span> WHERE <span class="s2">&quot;users&quot;</span>.<span class="s2">&quot;id&quot;</span> <span class="o">=</span> ?  <span class="o">[[</span><span class="s2">&quot;id&quot;</span>, 1<span class="o">]]</span>
-   <span class="o">(</span>5.9ms<span class="o">)</span>  commit <span class="nv">transaction</span>
-<span class="o">=</span>&gt; <span class="c">#&lt;Comment id: 225, user_id: 1, text: &quot;hello&quot;, created_at: &quot;2016-04-02 18:27:36&quot;, updated_at: &quot;2016-04-02 18:27:36&quot;&gt;</span>
-irb<span class="o">(</span>main<span class="o">)</span>:007:0&gt; user.comments_count
-<span class="o">=</span>&gt; 226</code></pre></figure></p>
-
-<p>Awesome! As you can see, it properly incremented the <code>comments_count</code> from <code>225</code> to <code>226</code>.</p>
-
-<p>Using <code>counter_cache</code> can increase performance when you are trying to display, for instance, many users and their comment counts. Instead of making a bunch of COUNT(*) queries, by using <code>counter_cache</code>, you can access the same information by just accessing a column in the <code>User</code> table.</p>
  ]]></content>
 </entry>
 

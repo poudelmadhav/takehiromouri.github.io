@@ -110,3 +110,4 @@ title: Practical Object Oriented Design in Ruby Book Notes
 
 * Duck types are public interfaces that are not tied to any specific class
 
+* Inheritance at its core is a mechanism for automatic message delegation
