@@ -23,9 +23,9 @@ I've found that personally as an individual that works in a rather creative fiel
 - **I find it impossible to maximize productivity when my brain is fried.** (I think that is where the "Maximum output per time unit multiplied by maximum time put in work equals maximum results." forumla may be flawed)
 - **I make worse decisions when my brain is fried**
 
-It seems that if one is engaged in simple tasks throughout the day, maximizing work time and trying to stretch the output per time unit might work to some extent. 
+If one is engaged in only simple tasks throughout the day, maximizing work time and trying to stretch the output per time unit might work to some extent. 
 
-On the other hand, if you're a creative guy or girl, that won't really work - **your creative mind is what will get the job done**. Frying your creative mind definitely won't do the job.
+On the other hand, if you're in a creative field, that won't really work - **your creative mind is what will get the job done**. Frying your creative mind definitely won't do the job.
 
 The problem is that for people like me, I *like* to work. I love to code and I would do it all day long. I always think that the key to improving is to code more, read more, experiment more - even if it means sacrificing a few hours of sleep.
 
